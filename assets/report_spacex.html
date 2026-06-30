@@ -1,0 +1,1041 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>
+*{box-sizing:border-box}
+body{margin:0;background:#fbfaf7;color:#22262c;
+  font-family:"PingFang SC","Helvetica Neue",-apple-system,"Segoe UI",sans-serif;
+  font-size:15px;line-height:1.78;-webkit-font-smoothing:antialiased}
+.report{max-width:860px;margin:0 auto;padding:38px 46px 80px}
+.report>p:first-child{font-size:1.5rem;font-weight:700;color:#13283e;line-height:1.3;margin:0 0 .2em}
+.report>p:first-child+p strong{font-size:1.05rem;color:#3a6186}
+h1,h2,h3,h4,h5{color:#13283e;line-height:1.3;font-weight:700}
+h1{font-size:1.5rem;margin:1.7em 0 .7em;padding-bottom:.34em;border-bottom:2px solid #13283e}
+h2{font-size:1.22rem;margin:1.9em 0 .7em;padding:.18em 0 .18em .7em;border-left:4px solid #C8923D;color:#16314c;
+  background:linear-gradient(90deg,rgba(200,146,61,.08),transparent)}
+h3{font-size:1.06rem;margin:1.4em 0 .5em;color:#1c4063;
+  padding-left:.6em;border-left:3px solid #9fb9d0}
+h4{font-size:.98rem;margin:1.1em 0 .4em;color:#3f4a57}
+p{margin:.6em 0}
+strong{color:#13283e;font-weight:600}
+em{color:#8a5a1c;font-style:normal;background:rgba(200,146,61,.14);padding:0 .25em;border-radius:2px}
+a{color:#1c4063;text-decoration:none;border-bottom:1px solid rgba(28,64,99,.3)}
+ul,ol{margin:.5em 0 .9em;padding-left:1.5em}
+li{margin:.28em 0}
+hr{border:0;border-top:1px solid #e6e0d4;margin:1.6em 0}
+table{width:100%;border-collapse:collapse;margin:1.1em 0;font-size:.9rem;
+  box-shadow:0 1px 0 #e6e0d4;background:#fff}
+thead th{background:#f1ece1;color:#13283e;font-weight:700;text-align:left;padding:9px 12px;border:1px solid #e7e1d5;
+  border-bottom:2px solid #cfc7b6;font-size:.88rem;letter-spacing:.01em}
+thead th *{color:#13283e !important;background:transparent !important;font-weight:700 !important}
+tbody td{border:1px solid #e7e1d5;padding:8px 12px;vertical-align:top}
+tbody tr:nth-child(even) td{background:#faf8f3}
+tbody td:first-child{font-weight:600;color:#16314c;background:#f4f1ea}
+/* 单列"特别提示/醒目标注"表 -> 还原成高亮提示框 */
+table.callout{background:#fff7e8;box-shadow:none;border-left:4px solid #C8923D;margin:1.2em 0}
+table.callout thead{display:none}
+table.callout td,table.callout th{border:0;padding:12px 16px;background:transparent !important;
+  font-weight:500 !important;color:#5a4216 !important}
+table.callout em{background:transparent;color:#8a5a1c}
+/* 文字色块（KPI 等）保持可读 */
+::selection{background:#cfe0ef}
+</style></head><body><article class="report"><p><strong>SPACEX（SPCX）</strong></p>
+<p><strong>IPO 招股说明书（S-1）深度梳理</strong></p>
+<p>基于 2026 年 5 月 20 日 SEC 备案 S-1 原文</p>
+<p>发射服务 · 卫星宽带连接 · AI 算力</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>发行人</strong></th>
+<th>Space Exploration Technologies Corp. (SpaceX)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>注册地 / 总部</strong></td>
+<td>Texas（得克萨斯州） / Starbase, Texas</td>
+</tr>
+<tr>
+<td><strong>备案日期 / 表格</strong></td>
+<td>2026-05-20 / S-1（初步招股书 / PRELIMINARY PROSPECTUS）</td>
+</tr>
+<tr>
+<td><strong>招股书状态</strong></td>
+<td>SUBJECT TO COMPLETION（待完成的初步招股书）</td>
+</tr>
+<tr>
+<td><strong>拟上市 / 代码</strong></td>
+<td>Nasdaq 及 Nasdaq Texas / SPCX（已申请）</td>
+</tr>
+<tr>
+<td><strong>CEO</strong></td>
+<td>Elon Musk（创始人 / CEO / CTO / 董事长）</td>
+</tr>
+<tr>
+<td><strong>主承销商</strong></td>
+<td>Goldman Sachs、Morgan Stanley、J.P. Morgan、Barclays、Allen &amp;
+Company</td>
+</tr>
+</tbody>
+</table>
+<p><strong>阅读须知与数据来源声明</strong></p>
+<p>本文是对 SpaceX 于 2026 年 5 月 20
+日向美国证券交易委员会（SEC）提交的 S-1
+招股说明书的深度梳理。所有数据原则上取自该 S-1 原文；凡 S-1
+未披露的内容，本文一律以醒目方式标注，绝不基于推测填补空白。</p>
+<p><strong>数据来源标记体系：</strong></p>
+<p>• [S-1] 该数字直接来自 S-1 招股说明书原文，可在 SEC
+备案文件中查证。</p>
+<p>• [推算] 该数字由作者基于 S-1
+数据自行计算（如分部收入占比、同比增速的换算），过程可复现。</p>
+<p>• [外部] 该数字来自外部公开报道或第三方分析，与 S-1
+无关，仅供横向参照。</p>
+<p>• [未披露] S-1 文件本身以空白占位符呈现，未给出具体数值。</p>
+<table class="callout">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><em>【特别提示】本 S-1 为「SUBJECT TO
+COMPLETION」初步招股书。其封面上的发行价、发行股数、募资总额、绿鞋股数等关键字段均以空白占位符（如「$___
+per share」「___
+shares」）呈现，文件本身未披露这些数字。因此，凡涉及「发行价 / 募资规模
+/ 对应估值」的具体数字，均属 [外部] 来源，本文已明确标注，不应被理解为
+S-1 的正式披露内容。</em></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p><em>本文不构成任何投资建议，不预测股价，不给出目标价。估值争议部分仅客观并列看多与看空两类逻辑，不站队。</em></p>
+<p><strong>一、本次 IPO 一览：史上最大规模的科技 IPO 之一</strong></p>
+<p>Space Exploration Technologies Corp.（以下简称 SpaceX
+或公司）是一家注册于得克萨斯州的航天与科技公司，总部位于得州
+Starbase。本次 S-1 由 Elon
+Musk（创始人、CEO、CTO、董事长）领导的管理层签署，拟在 Nasdaq 及新设立的
+Nasdaq Texas 交易所上市，交易代码「SPCX」，由 Goldman Sachs、Morgan
+Stanley、J.P. Morgan、Barclays、Allen &amp; Company
+联合担任主承销商。[S-1]</p>
+<p>SpaceX 在 S-1
+中将自身定位为同时横跨三条赛道的公司，并明确划分为三大可报告分部：[S-1]</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>分部</strong></th>
+<th style="text-align: center;"><strong>业务定位</strong></th>
+<th style="text-align: center;"><strong>FY2025 收入</strong></th>
+<th style="text-align: center;"><strong>收入占比 [推算]</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Space（发射服务）</strong></td>
+<td
+style="text-align: right;">运载火箭发射、在轨交付、载人航天、政府/商业任务</td>
+<td style="text-align: right;">$4,086M</td>
+<td style="text-align: right;">21.9%</td>
+</tr>
+<tr>
+<td><strong>Connectivity（星链）</strong></td>
+<td style="text-align: right;">卫星宽带、Starlink
+消费者/企业服务、政府服务</td>
+<td style="text-align: right;">$11,387M</td>
+<td style="text-align: right;">61.0%</td>
+</tr>
+<tr>
+<td><strong>AI（xAi 合并形成）</strong></td>
+<td style="text-align: right;">前沿大模型
+Grok、超大规模算力基础设施</td>
+<td style="text-align: right;">$3,201M</td>
+<td style="text-align: right;">17.1%</td>
+</tr>
+<tr>
+<td><strong>合并</strong></td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">$18,674M</td>
+<td style="text-align: right;">100.0%</td>
+</tr>
+</tbody>
+</table>
+<p>注：三大分部 FY2025 收入之和（$4,086 + $11,387 + $3,201 =
+$18,674M）与合并收入完全相等，说明 S-1
+分部口径下不存在重大分部间收入消除，数据自洽。占比为本文推算。[推算]</p>
+<p>本次 IPO
+的最大特点在于：这是一份「业务基本面完整披露、但发行条款尚未定价」的初步招股书。S-1
+详尽披露了 SpaceX
+三大分部的收入、利润、现金流、运营指标与风险，却将定价与发行规模留白。因此，从研究价值看，本份
+S-1 提供了 SpaceX
+作为一家公司的全景式财务画像；但从投资决策看，关键的「价格信号」仍需等待最终招股书与上市定价。[S-1]</p>
+<p><strong>1.1 核心发现速览（TL;DR）</strong></p>
+<p>为便于快速把握全貌，本节先以结论先行的方式列出本次梳理的若干核心发现，各项数据的详细推导见后续各章：</p>
+<p>1. 三分部收入结构：FY2025 合并收入 $18,674M
+中，Connectivity（星链）$11,387M 占 61.0%、Space（发射）$4,086M 占
+21.9%、AI $3,201M 占 17.1%。星链已是绝对主力 [S-1+推算]。</p>
+<p>2. 盈利高度分化：Connectivity FY2025 运营利润 $4,423M（+120%）；AI
+分部运营亏损 $(6,355)M。公司 FY2025 净亏 $(4,937)M，本质是「主业赚钱、AI
+烧钱」[S-1]。</p>
+<p>3. 资本开支拐点：AI 分部资本开支 FY2023 仅 $463M，FY2025 飙至
+$12,727M（两年 27 倍），Q1'26 单季 $7,723M。现金流的绝大部分正流向算力
+[S-1]。</p>
+<p>4. 初步招股书留白：发行价、股数、募资规模、绿鞋、Musk
+控制比例等核心数字在封面均为空白占位符 [未披露]。</p>
+<p>5. 双层股权控制：Class A 1票/股、Class B 10票/股，Musk
+绝对控制；将援引 Nasdaq controlled company 豁免 [S-1]。</p>
+<p>6. 内部估值锚点：与 EchoStar 频谱交易中，股权作价
+$42.40/股（拆股后口径），是 S-1 内罕见的内部作价锚点 [S-1]。</p>
+<p>7. 关键人物与治理：公司高度依赖 Musk，其同时管理 Tesla、X
+等多家公司，存在利益冲突与关键人物风险 [S-1]。</p>
+<p>8. 外部估值分歧大：报道目标估值约 $1.75 万亿 vs Morningstar DCF $780
+亿，相差逾 4 倍；卖方普遍谨慎 [外部]。</p>
+<p><strong>二、业务与财务拆解</strong></p>
+<p><strong>2.1 三大业务分部：收入、占比与增速</strong></p>
+<p><strong>（1）Space 分部 —— 发射服务（FY2025 收入 $4,086M，占比
+21.9%）[S-1]</strong></p>
+<p>Space 分部对应运载火箭发射与在轨交付业务，核心资产是 Falcon 9、Falcon
+Heavy 与正在开发的 Starship。S-1 披露 Falcon 任务成功率超过 99%，截至
+2026 年 3 月 31 日累计完成约 650 次轨道发射。FY2025 全年完成 170
+次发射、向轨道交付 2,213 吨有效载荷（mass to orbit），Q1'26 完成 40
+次发射、556 吨入轨。一个值得对比的现象是，Space 分部 FY2025 出现运营亏损
+$(657)M、Adj. EBITDA 仅 $653M，且 Q1'26 运营亏损扩大至 $(662)M、Adj.
+EBITDA 转负至 $(351)M——反映发射服务在 Starship
+高强度研发投入下短期盈利承压。[S-1]</p>
+<p><strong>（2）Connectivity 分部 —— 星链（FY2025 收入 $11,387M，占比
+61.0%）[S-1]</strong></p>
+<p>Connectivity 分部即 Starlink 卫星宽带业务，是 SpaceX
+当前最大的收入与利润来源。FY2025 收入 $11,387M，运营利润
+$4,423M（同比+120.4%），Adj. EBITDA
+$7,168M（同比+86.2%），是三大分部中唯一持续高盈利的板块。S-1 披露
+Starlink 订阅用户数 FY2025 末达 8.9M，Q1'26 进一步增至
+10.3M（同比+105%，Q1'25 为 5.0M）；服务已覆盖 164
+个国家与地区，在轨可机动卫星约 9,600 颗。[S-1]</p>
+<p>一个需要关注的结构性变化是 ARPU 下行：月均 ARPU 从 FY2023 的 $99 降至
+FY2024 的 $91、FY2025 的 $81，并在 Q1'26 进一步降至 $66（Q1'25 为
+$86）。这反映用户结构正从早期高 ARPU 的北美消费者，向 ARPU
+更低的国际市场与新兴国家下沉。用户规模高速扩张（同比翻倍以上）与人均收入下行并存，是判断
+Starlink 商业模式可持续性的关键观察点。[S-1]</p>
+<p><strong>（3）AI 分部 —— xAI 合并形成（FY2025 收入 $3,201M，占比
+17.1%）[S-1]</strong></p>
+<p>AI 分部由 SpaceX 收购 xAI 形成（S-1 明确定义），核心资产为前沿大模型
+Grok 系列与超大规模算力基础设施。S-1 披露该分部 FY2025 收入
+$3,201M，但运营亏损高达 $(6,355)M、Adj. EBITDA
+$(1,237)M，是全公司亏损的主要来源。Q1'26 该分部运营亏损进一步扩大至
+$(2,469)M、Adj. EBITDA $(609)M，收入 $818M。[S-1]</p>
+<p>AI 分部的算力基础设施以孟菲斯的 COLOSSUS 与 COLOSSUS II
+数据中心为代表：S-1 披露两座设施合计铭牌算力约 1.0 GW（Q1'26
+口径），其中 COLOSSUS 首簇在 122 天内上线、COLOSSUS II 仅用 91
+天，体现了公司在算力建设上的极致工程速度。Grok 模型自 2023 年 11 月的
+Grok-1 起已发布四个主版本，最新为 2026 年 4 月发布的 Grok-4.3；X
+平台（约 3.5 亿日发帖量）为 Grok 提供实时数据训练与应用场景。[S-1]</p>
+<p><strong>2.2 整体收入、毛利与净利润趋势</strong></p>
+<p>从合并损益表看，SpaceX 收入保持高速增长，但盈利波动极大：[S-1]</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>合并损益表（$
+百万）</strong></th>
+<th style="text-align: center;"><strong>FY2023</strong></th>
+<th style="text-align: center;"><strong>FY2024</strong></th>
+<th style="text-align: center;"><strong>FY2025</strong></th>
+<th style="text-align: center;"><strong>FY24→25 同比</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>总收入</strong></td>
+<td style="text-align: right;">10,387</td>
+<td style="text-align: right;">14,015</td>
+<td style="text-align: right;">18,674</td>
+<td style="text-align: right;">+33.2%</td>
+</tr>
+<tr>
+<td><strong>营业成本</strong></td>
+<td style="text-align: right;">6,110</td>
+<td style="text-align: right;">7,996</td>
+<td style="text-align: right;">9,451</td>
+<td style="text-align: right;">+18.2%</td>
+</tr>
+<tr>
+<td><strong>研发费用</strong></td>
+<td style="text-align: right;">2,105</td>
+<td style="text-align: right;">3,464</td>
+<td style="text-align: right;">8,643</td>
+<td style="text-align: right;">+149.6%</td>
+</tr>
+<tr>
+<td><strong>销售管理费用</strong></td>
+<td style="text-align: right;">1,665</td>
+<td style="text-align: right;">1,813</td>
+<td style="text-align: right;">2,644</td>
+<td style="text-align: right;">+45.8%</td>
+</tr>
+<tr>
+<td><strong>减值/重组等</strong></td>
+<td style="text-align: right;">4,012</td>
+<td style="text-align: right;">276</td>
+<td style="text-align: right;">525</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr>
+<td><strong>营业利润/(亏损)</strong></td>
+<td style="text-align: right;">(3,505)</td>
+<td style="text-align: right;">466</td>
+<td style="text-align: right;">(2,589)</td>
+<td style="text-align: right;">转亏</td>
+</tr>
+<tr>
+<td><strong>净利润/(净亏损)</strong></td>
+<td style="text-align: right;">(4,628)</td>
+<td style="text-align: right;">791</td>
+<td style="text-align: right;">(4,937)</td>
+<td style="text-align: right;">转亏</td>
+</tr>
+</tbody>
+</table>
+<p>关键解读：FY2024 是公司迄今唯一实现盈利的年度（净利润 $791M、营业利润
+$466M），主要得益于
+Connectivity（Starlink）利润放量与当年减值大幅下降（从 FY2023 的 $3,775M
+降至 $63M）。FY2025 收入虽继续增长 33%，但研发费用同比暴增 149.6%（从
+$3,464M 升至 $8,643M），叠加 AI 分部运营亏损 $(6,355)M，公司重新回到
+$(4,937)M 的净亏损。换言之，FY2025 的亏损本质上是一次「向 AI
+算力主动加杠杆」的结果，而非发射或连接主业恶化。[S-1]</p>
+<p>FY2023 的 $(4,628)M 净亏损则另有成因：当年有 $3,775M 大额减值，主要与
+X 平台商誉/资产减值相关。剔除该减值，FY2023 的经常性亏损约为
+$(853)M。因此三年盈利轨迹为：大额减值亏损（2023）→ 短暂盈利（2024）→ AI
+投入性亏损（2025）。这一轨迹是理解公司「主业造血、新业务烧钱」财务结构的关键线索。[S-1]</p>
+<p><strong>2.3 现金流、资本开支与成本结构</strong></p>
+<p><strong>（1）经营性现金流强劲，但被投资性现金流巨额吞噬。[S-1]</strong></p>
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>合并现金流（$
+百万）</strong></th>
+<th style="text-align: center;"><strong>FY2023</strong></th>
+<th style="text-align: center;"><strong>FY2024</strong></th>
+<th style="text-align: center;"><strong>FY2025</strong></th>
+<th style="text-align: center;"><strong>Q1'26</strong></th>
+<th style="text-align: center;"><strong>Q1'25</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>经营活动现金流</strong></td>
+<td style="text-align: right;">4,520</td>
+<td style="text-align: right;">5,776</td>
+<td style="text-align: right;">6,785</td>
+<td style="text-align: right;">1,047</td>
+<td style="text-align: right;">727</td>
+</tr>
+<tr>
+<td><strong>投资活动现金流</strong></td>
+<td style="text-align: right;">(4,867)</td>
+<td style="text-align: right;">(10,796)</td>
+<td style="text-align: right;">(19,575)</td>
+<td style="text-align: right;">(16,724)</td>
+<td style="text-align: right;">(4,170)</td>
+</tr>
+<tr>
+<td><strong>融资活动现金流</strong></td>
+<td style="text-align: right;">422</td>
+<td style="text-align: right;">11,830</td>
+<td style="text-align: right;">26,350</td>
+<td style="text-align: right;">7,125</td>
+<td style="text-align: right;">354</td>
+</tr>
+</tbody>
+</table>
+<p>SpaceX 的经营性现金流持续为正且稳步增长（FY2025 达
+$6,785M），反映发射与连接主业的真实造血能力。但投资活动现金流 FY2025
+净流出高达 $(19,575)M、Q1'26 单季即净流出 $(16,724)M，缺口主要由 AI
+算力基础设施建设填补。融资活动现金流 FY2025 净流入
+$26,350M，说明公司在二级/一级市场持续大额融资以支撑资本开支。[S-1]</p>
+<p><strong>（2）资本开支强度极高，且结构向 AI
+分部急剧倾斜。[S-1]</strong></p>
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>资本开支分部（$
+百万）</strong></th>
+<th style="text-align: center;"><strong>FY2023</strong></th>
+<th style="text-align: center;"><strong>FY2024</strong></th>
+<th style="text-align: center;"><strong>FY2025</strong></th>
+<th style="text-align: center;"><strong>Q1'26</strong></th>
+<th style="text-align: center;"><strong>Q1'25</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Space</strong></td>
+<td style="text-align: right;">1,497</td>
+<td style="text-align: right;">2,032</td>
+<td style="text-align: right;">3,832</td>
+<td style="text-align: right;">1,052</td>
+<td style="text-align: right;">759</td>
+</tr>
+<tr>
+<td><strong>Connectivity</strong></td>
+<td style="text-align: right;">2,455</td>
+<td style="text-align: right;">3,498</td>
+<td style="text-align: right;">4,178</td>
+<td style="text-align: right;">1,332</td>
+<td style="text-align: right;">814</td>
+</tr>
+<tr>
+<td><strong>AI</strong></td>
+<td style="text-align: right;">463</td>
+<td style="text-align: right;">5,633</td>
+<td style="text-align: right;">12,727</td>
+<td style="text-align: right;">7,723</td>
+<td style="text-align: right;">2,567</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td style="text-align: right;">4,415</td>
+<td style="text-align: right;">11,163</td>
+<td style="text-align: right;">20,737</td>
+<td style="text-align: right;">10,107</td>
+<td style="text-align: right;">4,140</td>
+</tr>
+</tbody>
+</table>
+<p>这是本次 S-1 最具冲击力的数据之一：AI 分部的资本开支从 FY2023 的
+$463M 暴增至 FY2025 的 $12,727M（两年增长 27 倍），Q1'26 单季即投入
+$7,723M，已超过 Q1'25 全季的 $2,567M
+三倍以上。这意味着公司现金流的绝大部分正在流向 AI
+算力（数据中心、芯片、能源基础设施）。与之相对，Space 与 Connectivity
+的资本开支虽也在增长，但增速温和得多。从财务结构看，SpaceX
+正在用「Starlink 利润 + 外部融资」双轮驱动「AI 算力军备竞赛」。[S-1]</p>
+<p><strong>（3）主要成本结构。[S-1]</strong></p>
+<p>从损益表看，FY2025 营业成本 $9,451M（占收入 50.6%）、研发费用
+$8,643M（占收入 46.3%）、销售管理费用 $2,644M（占收入
+14.2%）。研发费用占比从 FY2024 的 24.7% 跃升至 FY2025 的
+46.3%，是利润转亏的最直接驱动。资本结构层面，截至 2026 年 3 月 31
+日，公司长期债务 $29,111M（含 $20,000M 的 SpaceX Bridge Loan
+过桥贷款、$9,105M 其他融资），现金及等价物 $15,852M、短期有价证券
+$7,823M，资产负债表仍具弹性，但杠杆已不低。累积亏损（accumulated
+deficit）达 $41,311M。[S-1]</p>
+<p><strong>2.4 分部 Adj. EBITDA 与单位经济</strong></p>
+<p>将三大分部的盈利能力放在同一坐标系下，公司的「主业造血、AI
+烧钱」结构会更加清晰：[S-1]</p>
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>分部 Adj. EBITDA（$
+百万）</strong></th>
+<th style="text-align: center;"><strong>FY2023</strong></th>
+<th style="text-align: center;"><strong>FY2024</strong></th>
+<th style="text-align: center;"><strong>FY2025</strong></th>
+<th style="text-align: center;"><strong>Q1'26</strong></th>
+<th style="text-align: center;"><strong>Q1'25</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Space</strong></td>
+<td style="text-align: right;">997</td>
+<td style="text-align: right;">1,154</td>
+<td style="text-align: right;">653</td>
+<td style="text-align: right;">(351)</td>
+<td style="text-align: right;">224</td>
+</tr>
+<tr>
+<td><strong>Connectivity</strong></td>
+<td style="text-align: right;">1,602</td>
+<td style="text-align: right;">3,849</td>
+<td style="text-align: right;">7,168</td>
+<td style="text-align: right;">2,087</td>
+<td style="text-align: right;">1,618</td>
+</tr>
+<tr>
+<td><strong>AI</strong></td>
+<td style="text-align: right;">1,222</td>
+<td style="text-align: right;">347</td>
+<td style="text-align: right;">(1,237)</td>
+<td style="text-align: right;">(609)</td>
+<td style="text-align: right;">(112)</td>
+</tr>
+<tr>
+<td><strong>合并 Adj. EBITDA</strong></td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">6,584</td>
+<td style="text-align: right;">1,127</td>
+<td style="text-align: right;">—</td>
+</tr>
+</tbody>
+</table>
+<p>几点关键观察：第一，Connectivity 的 Adj. EBITDA 从 FY2023 的 $1,602M
+增长至 FY2025 的 $7,168M（两年 4.5
+倍），是公司唯一一条持续、快速放量的利润曲线，FY2025 Adj. EBITDA 率已达
+63%。第二，Space 分部的 Adj. EBITDA 反而在 FY2025 回落至 $653M、Q1'26
+转负，说明发射主业正承受Starship
+研发的成本压力，单位经济（每发射利润）被新项目稀释。第三，AI 分部从
+FY2023 的 +$1,222M Adj. EBITDA 转为 FY2025 的
+−$(1,237)M，这一由正转负的拐点直接对应算力资本开支的指数级放量——也印证了
+AI 分部是在 xAI 合并后才进入「烧钱期」的判断。合并层面，FY2025 Adj.
+EBITDA $6,584M 几乎全部由 Connectivity 贡献，剔除 Connectivity
+后其余两分部合计为负。[S-1]</p>
+<p><strong>2.5 核心运营指标拆解</strong></p>
+<p><strong>（1）Connectivity（Starlink）：规模高速扩张与 ARPU
+下行并存。[S-1]</strong></p>
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Starlink
+关键运营指标</strong></th>
+<th style="text-align: center;"><strong>FY2023</strong></th>
+<th style="text-align: center;"><strong>FY2024</strong></th>
+<th style="text-align: center;"><strong>FY2025</strong></th>
+<th style="text-align: center;"><strong>Q1'26</strong></th>
+<th style="text-align: center;"><strong>Q1'25</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>订阅用户数（百万）</strong></td>
+<td style="text-align: right;">2.3</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">8.9</td>
+<td style="text-align: right;">10.3</td>
+<td style="text-align: right;">5.0</td>
+</tr>
+<tr>
+<td><strong>月均 ARPU（美元）</strong></td>
+<td style="text-align: right;">99</td>
+<td style="text-align: right;">91</td>
+<td style="text-align: right;">81</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">86</td>
+</tr>
+</tbody>
+</table>
+<p>订阅用户两年增长约 3.9 倍（2.3M→8.9M），Q1'26
+同比再翻倍（5.0M→10.3M，+105%），增速未见放缓。但月均 ARPU 从 $99
+持续下行至 $66（Q1'26），两年累计降幅约
+33%。这一「量增价减」组合的财务含义是：收入仍在高增（Connectivity FY2025
+收入 $11,387M，同比约 +49.8%），但人均贡献下降意味着增长越来越依赖ARPU
+更低的国际/新兴市场用户。S-1 同时披露 FY2025 消费者订阅占 Connectivity
+收入 60% 以上，服务覆盖 164 个国家与地区，Starlink
+Mobile（直连手机）已有约 7.4M 月活设备、覆盖约 30 国。判断 Starlink
+长期价值，关键在于「规模经济能否跑赢 ARPU 下行」。[S-1]</p>
+<p><strong>（2）Space（发射）：吞吐量稳步提升，但盈利被研发摊薄。[S-1]</strong></p>
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>发射关键运营指标</strong></th>
+<th style="text-align: center;"><strong>FY2023</strong></th>
+<th style="text-align: center;"><strong>FY2024</strong></th>
+<th style="text-align: center;"><strong>FY2025</strong></th>
+<th style="text-align: center;"><strong>Q1'26</strong></th>
+<th style="text-align: center;"><strong>Q1'25</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>发射次数</strong></td>
+<td style="text-align: right;">98</td>
+<td style="text-align: right;">138</td>
+<td style="text-align: right;">170</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">38</td>
+</tr>
+<tr>
+<td><strong>入轨有效载荷（吨）</strong></td>
+<td style="text-align: right;">1,210</td>
+<td style="text-align: right;">1,699</td>
+<td style="text-align: right;">2,213</td>
+<td style="text-align: right;">556</td>
+<td style="text-align: right;">450</td>
+</tr>
+</tbody>
+</table>
+<p>年发射次数 FY2023→FY2025 增长 73%（98→170），入轨质量增长
+83%（1,210→2,213 吨），单次发射平均入轨质量从约 12.3 吨提升至约 13.0
+吨，反映 Falcon 系列的运力利用率持续优化。Falcon 任务成功率超过
+99%，截至 2026-03-31 累计完成约 650 次轨道发射。但正如 2.4 节所示，Space
+分部 Adj. EBITDA 同期反而回落，说明发射量增长带来的规模收益正被 Starship
+等新项目的研发成本吸收。[S-1]</p>
+<p><strong>（3）AI（算力 +
+Grok）：建设速度领先，商业化早期。[S-1]</strong></p>
+<p>AI 分部的核心运营资产是孟菲斯的 COLOSSUS 与 COLOSSUS II 数据中心：S-1
+披露两座设施合计铭牌算力约 1.0 GW（Q1'26 口径，FY2024 尚为 0.3
+GW、FY2025 升至 0.8 GW）。COLOSSUS 首簇仅用 122 天上线、COLOSSUS II
+更压缩至 91
+天，这一建设速度在超大规模算力领域属于行业领先水平。模型层面，Grok
+系列自 2023 年 11 月 Grok-1 起已发布四个主版本，最新 Grok-4.3 于 2026 年
+4 月发布；X 平台约 3.5 亿日发帖量为 Grok
+提供实时数据与应用场景。但需注意：AI 分部 FY2025 收入仅
+$3,201M，而运营亏损 $(6,355)M、资本开支
+$12,727M，单位算力的商业化变现仍处极早期，回报高度依赖 scaling law
+的持续性与 Grok 的市场竞争力。[S-1]</p>
+<p><strong>三、IPO 关键条款梳理</strong></p>
+<p><strong>3.1 发行规模、定价与募资用途</strong></p>
+<p><strong>必须首先强调：本 S-1 为初步招股书（SUBJECT TO
+COMPLETION），发行价、发行股数、募资总额等核心数字在封面均为空白占位符，文件本身未作披露。[未披露]</strong></p>
+<p>S-1 明确披露的发行机制条款如下：[S-1]</p>
+<p>• 发行标的：Class A 普通股（A 类普通股），面值
+$0.001/股；本次公开发行及公众持有的即为 A 类股。</p>
+<p>• 上市地点：Nasdaq（代码 SPCX）及新设立的 Nasdaq Texas 交易所。</p>
+<p>• 绿鞋机制：承销商享有招股书日后 30
+天内额外购买股份的选择权（具体股数未披露）。</p>
+<p>•
+分红政策：可预见未来不分红；公司信用协议的契约条款亦限制了分红能力。</p>
+<p>• 2026 年 5 月 4 日已实施 5:1 正向拆股（2026 Stock
+Split），所有历史股数已追溯调整。</p>
+<p><strong>募资用途（Use of Proceeds）：S-1
+明确列出本次发行净收益将用于以下方向（金额待定）：[S-1]</strong></p>
+<p>• AI 算力基础设施扩张（expansion of our AI compute
+infrastructure）</p>
+<p>• 发射基础设施与运载火箭升级（launch infrastructure and launch
+vehicles）</p>
+<p>• 卫星星座规模与容量提升（satellite constellations）</p>
+<p>• 一般企业用途（general corporate purposes）</p>
+<p>可见，募资核心去向是「AI 算力 +
+发射与卫星基础设施」，与公司当前资本开支结构高度一致——这与第二章揭示的「现金流主要流向
+AI」的财务画像相互印证。[S-1]</p>
+<p><strong>3.2 股权结构：双层股权与 Musk 的控制权</strong></p>
+<p>SpaceX 采用典型的双层股权（dual-class）结构，这是本次 IPO
+公司治理层面最关键的条款：[S-1]</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>类别</strong></th>
+<th style="text-align: center;"><strong>投票权</strong></th>
+<th style="text-align: center;"><strong>持有人/用途</strong></th>
+<th style="text-align: center;"><strong>截至 2026-03-31
+在外股数</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Class A 普通股</strong></td>
+<td style="text-align: right;">1 票/股</td>
+<td style="text-align: right;">本次公开发行；公众投资者持有</td>
+<td style="text-align: right;">2,882,444,444 股</td>
+</tr>
+<tr>
+<td><strong>Class B 普通股</strong></td>
+<td style="text-align: right;">10 票/股</td>
+<td style="text-align: right;">内部人/创始人；10 倍投票权</td>
+<td style="text-align: right;">2,421,276,530 股</td>
+</tr>
+<tr>
+<td><strong>Class C 普通股</strong></td>
+<td style="text-align: right;">（将重分类）</td>
+<td style="text-align: right;">重组后将转为 A/B</td>
+<td style="text-align: right;">494,026,445 股</td>
+</tr>
+<tr>
+<td><strong>可转换优先股</strong></td>
+<td style="text-align: right;">（将转换）</td>
+<td style="text-align: right;">Pro Forma 下转为 Class A</td>
+<td style="text-align: right;">134,451,267 股</td>
+</tr>
+</tbody>
+</table>
+<p>S-1 进一步披露：Class A 与 Class B
+在大多数事项上作为单一类别合并投票，但 Class B
+股东单独拥有选举董事会多数席位的权利。叠加 Musk 对 Class A 与 Class B
+的持股，其对公司投票权形成绝对控制。封面所列 Musk
+具体控制比例为空白占位符。[S-1]</p>
+<p>基于这一结构，SpaceX 明确表示上市后将援引 Nasdaq「controlled
+company」（受控公司）豁免条款，即多数董事可不由独立董事担任，相关治理要求可被豁免。这是潜在公众股东需重点评估的治理风险点。[S-1]</p>
+<p><strong>股本重组（Reorganization）背景。[S-1]</strong></p>
+<p>为配合本次发行，公司进行了系列股本重组：Pro Forma
+下，现有可转换优先股（134,451,267 股、账面价值 $7,049M）将转换为 Class A
+普通股，Class C 普通股（494,026,445 股）将重分类为 Class A 或 Class
+B。重组后预计 Class A 在外约 6,824,581,339 股、Class B 约 5,695,729,430
+股（发行后新增股数为空白）。此外，公司于 2022 年与 2026 年 5 月 4
+日各实施一次正向拆股，其中 2026 年为 5:1
+拆股，所有历史股数已追溯调整至拆股后口径。这意味着报告中所有股数（如
+Class A 2,882,444,444
+股）均为拆股后数字，与前几年市场流传的拆股前股数不可直接比较。[S-1]</p>
+<p><strong>3.3 资本结构、债务与战略交易</strong></p>
+<p>截至 2026 年 3 月 31 日，公司总资本（total capitalization）约
+$70,693M，其中：[S-1]</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>资本结构项（截至
+2026-03-31）</strong></th>
+<th style="text-align: center;"><strong>金额（$ 百万）</strong></th>
+<th style="text-align: center;"><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>现金及等价物</strong></td>
+<td style="text-align: right;">15,852</td>
+<td style="text-align: right;">流动性核心</td>
+</tr>
+<tr>
+<td><strong>短期有价证券</strong></td>
+<td style="text-align: right;">7,823</td>
+<td style="text-align: right;">可快速变现</td>
+</tr>
+<tr>
+<td><strong>长期债务（合计）</strong></td>
+<td style="text-align: right;">29,111</td>
+<td style="text-align: right;">含 Bridge Loan $20,000M</td>
+</tr>
+<tr>
+<td><strong>可转换优先股</strong></td>
+<td style="text-align: right;">7,049</td>
+<td style="text-align: right;">134,451,267 股</td>
+</tr>
+<tr>
+<td><strong>累积亏损</strong></td>
+<td style="text-align: right;">(41,311)</td>
+<td style="text-align: right;">反映历史累计净亏损</td>
+</tr>
+<tr>
+<td><strong>股东权益</strong></td>
+<td style="text-align: right;">34,533</td>
+<td style="text-align: right;">正权益</td>
+</tr>
+</tbody>
+</table>
+<p>债务结构要点：$20,000M 为无担保的 SpaceX Bridge
+Loan（过桥定期贷款，2027-09-02 到期，可延至 2028-03）；另有 $9,105M
+其他融资（部分对应 AI
+基础设施的售后回租义务）。信用协议的合并杠杆契约要求Consolidated
+Leverage Ratio 不超过 3.75x（合格并购后可临时升至 4.25x）。[S-1]</p>
+<p><strong>关键战略交易 —— EchoStar 频谱收购。[S-1]</strong></p>
+<p>2025 年 9 月 7 日，SpaceX 与 EchoStar 签订频谱许可购买协议（Spectrum
+License Purchase Agreement），总对价约 约 $196 亿（$19.6
+billion），其中股权部分以约 261.8M 股 Class A、固定作价 约 261.8M 股
+Class A，固定作价 $42.40/股（每股 $42.40）支付，现金部分最高 最高 $85
+亿（用于偿付指定 EchoStar 债务，不足部分以现金补足）（用于偿付指定
+EchoStar 债务）。该交易已于 2026 年 5 月 12 日获 FCC 批准，预计 2027 年
+11 月 30 日前后完成交割。</p>
+<table class="callout">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><em>【内部估值锚点】S-1 明确披露的
+$42.40/股（拆股后口径），是文件中为数不多的「内部股权作价锚点」。它对应的是与
+EchoStar 的频谱交易对价，而非 IPO
+发行价。该数字可作为理解公司内部对股权价值认知的参考，但与最终 IPO
+定价无直接关系。[S-1]</em></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p><strong>四、估值争议与风险</strong></p>
+<p><strong>4.1 发行价对应的估值水平（外部信息，谨慎参照）</strong></p>
+<p>如前所述，S-1
+本身未披露发行价与目标估值。以下为外部公开报道信息，仅作客观参照，不代表
+S-1 观点：[外部]</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>项目（外部报道）</strong></th>
+<th style="text-align: center;"><strong>数值</strong></th>
+<th style="text-align: center;"><strong>来源</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>报道发行价</strong></td>
+<td style="text-align: right;">$135/股</td>
+<td style="text-align: right;">Reuters/CNBC</td>
+</tr>
+<tr>
+<td><strong>报道发行股数</strong></td>
+<td style="text-align: right;">约 555–560 百万股</td>
+<td style="text-align: right;">Reuters</td>
+</tr>
+<tr>
+<td><strong>报道募资规模</strong></td>
+<td style="text-align: right;">约 $750 亿</td>
+<td style="text-align: right;">Reuters（史上最大 IPO 之一）</td>
+</tr>
+<tr>
+<td><strong>报道目标估值（含绿鞋）</strong></td>
+<td style="text-align: right;">约 $1.75 万亿</td>
+<td style="text-align: right;">Reuters；一度报道上修至 $2 万亿</td>
+</tr>
+<tr>
+<td><strong>Morningstar DCF 估值</strong></td>
+<td style="text-align: right;">$780 亿</td>
+<td style="text-align: right;">Morningstar</td>
+</tr>
+<tr>
+<td><strong>Morningstar 每股公允价</strong></td>
+<td style="text-align: right;">$63/股</td>
+<td style="text-align: right;">Forbes 引述</td>
+</tr>
+<tr>
+<td><strong>报道上市首日收盘</strong></td>
+<td style="text-align: right;">约 $161/股（市值约 $2.1 万亿）</td>
+<td style="text-align: right;">CNBC/Forbes（2026-06-12）</td>
+</tr>
+</tbody>
+</table>
+<p>从相对估值看，若以报道的 $1.75 万亿目标估值除以 FY2025 合并收入
+$18,674M，隐含的市销率（P/S）约 93 倍；除以 FY2025 经营性现金流
+$6,785M，隐含 P/CF 约 258 倍。由于公司当前处于净亏损（FY2025 净亏
+$(4,937)M），市盈率（P/E）不适用。这一估值倍数显著高于传统航天/国防承包商，更接近甚至超过部分超大规模
+AI/云公司的水平。这正是市场分歧的焦点所在。[推算，倍数基于外部估值与 S-1
+财务数据]</p>
+<p><strong>横向可比参照（仅列举，不构成估值结论）：[外部]</strong></p>
+<p>• 卫星通信：AST SpaceMobile (ASTS)、Iridium (IRDM)、Viasat
+(VSAT)、Globalstar (GSAT)——收入规模远小于 SpaceX 连接业务。</p>
+<p>• 航天/国防承包：Lockheed Martin (LMT)、RTX (RTX)、Boeing
+(BA)——传统龙头，但缺乏可复用火箭与卫星星座资产。</p>
+<p>• AI/超大规模算力：Nvidia (NVDA)、Microsoft (MSFT)、Alphabet
+(GOOGL)、Amazon (AMZN)——与 SpaceX AI 分部最具可比性。</p>
+<p>SpaceX 的独特之处在于：它同时横跨发射服务、卫星宽带、AI
+算力三条赛道，缺乏单一可比标的。这一「跨赛道」属性既是其估值溢价的来源（投资者难以找到直接对标来证伪），也是分歧的根源（不同分部适用不同估值体系）。[外部+推算]</p>
+<p><strong>4.2 S-1 风险因素：最关键的几条</strong></p>
+<p>S-1 风险章节分为两大类：业务相关风险、公司结构与股权/IPO
+相关风险。以下提炼最具实质性的几条：[S-1]</p>
+<p><strong>业务类核心风险：</strong></p>
+<p>• Starship 开发与发射节奏：公司增长战略高度依赖
+Starship；若无法实现规模化开发、测试、部署及所需的发射频次，将严重制约长期增长与新任务类别。轨道加注（微重力低温推进剂转移）等技术复杂度高。</p>
+<p>• 监管与牌照：发射服务受 FAA
+等广泛监管；通信频谱牌照需持续获取与维护；任何延迟或失败将扰乱业务。商业发射监管框架仍在演变。</p>
+<p>• 持续净亏损与巨额资本开支：FY2025 净亏损 $(4,937)M、FY2023
+$(4,628)M、Q1'26 $(4,276)M；截至 2026-03-31 累积亏损
+$41,311M。未来能否盈利存疑，且资本开支预计将持续大幅增长。</p>
+<p>• AI 分部早期高投入与回报不确定：AI
+分部新近成立、仍在整合，处于快速发展行业；scaling law
+能否持续存疑，投资回报不确定。</p>
+<p>•
+卫星星座与网络安全：卫星数量增长带来折旧与运营成本上升；服务中断将侵蚀用户信任。</p>
+<p>• 竞争与定价：发射与连接市场面临竞争对手；ARPU 下行趋势（FY2023 $99 →
+Q1'26 $66）。</p>
+<p><strong>公司结构类核心风险：</strong></p>
+<p>• Musk 绝对控制：双层股权 + Class B 单独选多数董事，Musk
+控制股东投票结果；'controlled company' 豁免将减少独立治理要求。</p>
+<p>• 关键人物依赖：高度依赖 Musk
+的持续服务与表现；其身故/丧失能力/减少参与将构成重大风险。</p>
+<p>• 关联方与利益冲突：Musk 及其关联公司（Tesla、X
+等）业务交叉，存在实际或潜在利益冲突；多公司任职的董事/员工。</p>
+<p>• 无分红：可预见未来不分红，回报仅依赖股价升值。</p>
+<p>其中，S-1 将「Starship
+开发与发射节奏」列为业务风险的首位，强调公司长期增长战略高度依赖
+Starship
+能否实现规模化；同时反复提示「持续净亏损与巨额资本开支」（累积亏损已达
+$41,311M）与「Musk 绝对控制」这两条结构性风险。这三条共同构成了理解
+SpaceX 风险画像的主线。[S-1]</p>
+<p><strong>4.2.1 关于 S-1 自述 TAM 的客观说明</strong></p>
+<p>SpaceX 在 S-1 中自述其「可量化的总可寻址市场」（quantifiable TAM）约
+$28.5 万亿，并称其为史上最大的可行动市场之一。S-1 进一步给出了三大分部的
+TAM 拆分（排除中国与俄罗斯）：[S-1]</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>分部</strong></th>
+<th style="text-align: center;"><strong>TAM（S-1 自述）</strong></th>
+<th style="text-align: center;"><strong>主要构成</strong></th>
+<th style="text-align: center;"><strong>占合计比 [推算]</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Space</strong></td>
+<td style="text-align: right;">$370B</td>
+<td style="text-align: right;">太空赋能方案</td>
+<td style="text-align: right;">1.3%</td>
+</tr>
+<tr>
+<td><strong>Connectivity</strong></td>
+<td style="text-align: right;">$1.6T</td>
+<td style="text-align: right;">Starlink 宽带 $870B + Mobile $740B +
+企政增量</td>
+<td style="text-align: right;">5.6%</td>
+</tr>
+<tr>
+<td><strong>AI</strong></td>
+<td style="text-align: right;">$26.5T</td>
+<td style="text-align: right;">AI 基础设施 $2.4T + 消费订阅 $760B +
+数字广告 $600B + 企业应用 $22.7T</td>
+<td style="text-align: right;">93.0%</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td style="text-align: right;">$28.5T</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">100.0%</td>
+</tr>
+</tbody>
+</table>
+<p>这一拆分揭示了公司战略逻辑的关键一环：AI 分部占据了自述 TAM 的约
+93%（$26.5T/$28.5T）。这从市场视角解释了为何公司不计代价地向 AI
+算力加杠杆——若管理层相信该 TAM
+的可实现性，则当前数千亿美元的资本开支只是长期市场扩张的早期投入。当然，TAM
+是「市场规模上限」概念，与公司实际可获取份额（SAM/SOM）、变现节奏无直接等号关系，企业应用
+$22.7T 这类远期数字尤其需要审慎看待。在估值讨论中，应将 TAM
+与已披露的实际收入、利润分开评估。[S-1 自述 + 一般研究常识]</p>
+<p><strong>4.3 估值分歧：看多逻辑 vs
+看空逻辑（客观并列，不站队）</strong></p>
+<p><strong>看多逻辑（Bull case）：</strong></p>
+<p>+ 主业造血能力已被验证：Connectivity（Starlink）FY2025 运营利润
+$4,443M、Adj. EBITDA
+$7,168M，是真实、可持续的利润来源，而非烧钱故事。</p>
+<p>+ 垄断性技术壁垒：可复用火箭（Falcon 成功率 &gt;99%、累计约 650
+次发射）+ 自有卫星星座（约 9,600
+颗在轨），全球几乎没有第二家能同时做到。</p>
+<p>+ TAM 自述极其庞大：S-1 自称可量化 TAM 约 $28.5 万亿（发射、连接、AI
+三大领域合计），为史上最大的可行动市场之一 [S-1 自述]。</p>
+<p>+ Starlink 用户高速增长：10.3M
+订阅（同比+105%），网络效应与规模经济仍在释放早期。</p>
+<p>+ AI 算力的工程执行力：COLOSSUS 首簇 122 天上线、COLOSSUS II 91
+天，1.0 GW 铭牌算力——建设速度在业内领先。</p>
+<p>+ Starship
+一旦成功，将开启轨道加注、深空运输、地月经济等全新任务类别，潜在市场无法用传统估值框架衡量。</p>
+<p><strong>看空逻辑（Bear case）：</strong></p>
+<p>− 估值倍数极端：报道 $1.75 万亿估值对应 P/S 约 93 倍、P/CF 约 258
+倍，而公司当前处于净亏损，缺乏盈利锚 [推算+外部]。</p>
+<p>− Morningstar DCF 仅 $780 亿（每股公允价 $63），约为报道目标估值的
+4–5%，卖方普遍认为高估 [外部]。</p>
+<p>− AI 分部是「吞金兽」：FY2025 运营亏损 $(6,355)M，资本开支 $12,727M
+且仍在指数级增长（Q1'26 单季 $7,723M），回报高度不确定 [S-1]。</p>
+<p>− ARPU 持续下行（$99→$66），Starlink 的国际化扩张是否能在低 ARPU
+下维持单位经济为正，存疑 [S-1]。</p>
+<p>− 治理风险突出：双层股权 + Musk 绝对控制 + controlled company
+豁免，公众股东话语权极弱 [S-1]。</p>
+<p>− 关键人物风险：高度依赖 Musk，其同时管理多家公司（Tesla、X
+等），存在利益冲突与精力分散风险 [S-1]。</p>
+<p>− Starship
+仍处开发阶段，技术复杂度极高（如轨道推进剂转移），任何重大失败都将打击长期叙事
+[S-1]。</p>
+<p><em>本文不对上述两类逻辑作倾向性判断，也不预测股价、不给目标价。两类逻辑都有其事实依据，差异主要源于：对公司所处生命周期阶段、AI
+投入回报率、以及「跨赛道」估值是否应该享受溢价的根本性判断分歧。</em></p>
+<p><strong>4.4 研究判断框架（中性，不含倾向）</strong></p>
+<p>综合前述财务、条款与风险，本节提供一个中性的研究判断框架，供读者自行评估。该框架只列「关键变量」，不给方向：</p>
+<p><strong>变量一：Starlink 的规模经济能否跑赢 ARPU 下行。</strong></p>
+<p>观察指标为 Connectivity 的 Adj. EBITDA 率与每用户现金贡献。当前 Adj.
+EBITDA 率已达 63%、用户同比+105%，但 ARPU 从 $99 降至
+$66。若规模经济持续跑赢，主业造血能力将进一步强化；反之则利润曲线可能见顶。[S-1+推算]</p>
+<p><strong>变量二：AI 资本开支的回报兑现节奏。</strong></p>
+<p>AI 分部资本开支已占全公司 61%（$12,727M/$20,737M），但收入仅
+$3,201M、运营亏损 $(6,355)M。关键变量是 Grok
+的市场竞争力与算力利用率的提升速度，以及 scaling law
+是否持续。这是公司未来 2–3 年现金流的最大不确定项。[S-1]</p>
+<p><strong>变量三：Starship 的商业化时间表。</strong></p>
+<p>Starship 关系到深空运输、轨道加注等全新任务类别，但 S-1
+将其开发风险列为业务风险首位。任何里程碑达成或重大失败，都会显著影响长期叙事。[S-1]</p>
+<p><strong>变量四：治理与关键人物风险如何定价。</strong></p>
+<p>双层股权、controlled company 豁免、Musk
+跨公司任职，构成持续的治理折价/溢价博弈。不同投资者对此的定价差异，是估值分歧的治理维度。[S-1]</p>
+<p><strong>变量五：外部宏观与流动性环境。</strong></p>
+<p>本次募资规模巨大，对市场流动性的吸附效应、以及利率/风险偏好环境，会影响发行定价与上市后表现。此变量超出
+S-1 范围，属外部因素。[外部]</p>
+<p><strong>五、本分析的数据来源诚实标注</strong></p>
+<p>为便于读者核查，本节系统列出本报告中各类数字的来源归属：[依据用户要求]</p>
+<p><strong>1. S-1 实际披露的数字 [S-1]</strong></p>
+<p>✓ 三大分部收入/利润/EBITDA（FY2023–FY2025、Q1'26/Q1'25）</p>
+<p>✓
+合并损益表三年（收入、成本、R&amp;D、SG&amp;A、减值、营业利润/亏损、净利/净亏）</p>
+<p>✓ 合并现金流三年 + 两个 Q1（经营/投资/融资）</p>
+<p>✓ 资本开支分部明细</p>
+<p>✓ Starlink 订阅者数、ARPU、发射次数、入轨质量、在轨卫星数</p>
+<p>✓ 股权结构（A/B/C 股数、可转换优先股、累积亏损、长期债务）</p>
+<p>✓ 双层投票权（1:10）、controlled company、Musk 控制</p>
+<p>✓ Use of Proceeds 用途、不分红政策</p>
+<p>✓ EchoStar 频谱交易条款（$19.6B、$42.40/股、FCC 批准、交割日期）</p>
+<p>✓ 承销商、股票代码、注册地、风险因素条款</p>
+<p><strong>2. 本文推算/换算的数字 [推算]</strong></p>
+<p>→ FY2025 三分部收入占比（Space 21.9% / Connectivity 61.0% / AI
+17.1%）—— 由 S-1 分部收入除以合并收入</p>
+<p>→ 收入同比增速（如 Connectivity +49.8%）—— S-1 已给出，列为披露值</p>
+<p>→ 毛利率等派生指标（若报告引用）—— 由损益表项目计算</p>
+<p><strong>3. 外部来源补充的数字 [外部]</strong></p>
+<p>◇ 发行价 $135、募资 ~$750 亿、目标估值 ~$1.75 万亿 —— 外部报道，S-1
+未披露</p>
+<p>◇ 上市首日表现（开盘 ~$150、收 ~$161、市值 ~$2.1 万亿）——
+外部报道</p>
+<p>◇ Morningstar DCF $780B / 公允价 $63/股 —— 外部分析</p>
+<p>◇ 私有市场估值轨迹 —— 外部报道</p>
+<p>◇ 可比公司名单 —— 外部市场常识</p>
+<p><strong>4. S-1 未披露、本分析无法获取的数字 [未披露]</strong></p>
+<p>✗ 封面发行价、发行股数、募资总额、绿鞋股数（均为空白占位符）</p>
+<p>✗ 发行后精确总股数与 Musk 控制百分比（封面占位符）</p>
+<p>✗ Net tangible book value（空白）</p>
+<p>✗ S-1 不提供 IPO 当下的发行估值；任何'发行估值'均来自外部</p>
+<p>✗ 目标价/股价预测 —— 本分析依用户要求一律不提供</p>
+<p>—— 报告完 ——</p>
+<p><em>数据基准：SpaceX S-1（2026-05-20 SEC
+备案）。外部信息来源见文末引用清单。本报告仅供研究参考，不构成投资建议。</em></p>
+</article></body></html>

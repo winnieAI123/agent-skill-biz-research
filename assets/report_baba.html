@@ -1,0 +1,1383 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>
+*{box-sizing:border-box}
+body{margin:0;background:#fbfaf7;color:#22262c;
+  font-family:"PingFang SC","Helvetica Neue",-apple-system,"Segoe UI",sans-serif;
+  font-size:15px;line-height:1.78;-webkit-font-smoothing:antialiased}
+.report{max-width:860px;margin:0 auto;padding:38px 46px 80px}
+.report>p:first-child{font-size:1.5rem;font-weight:700;color:#13283e;line-height:1.3;margin:0 0 .2em}
+.report>p:first-child+p strong{font-size:1.05rem;color:#3a6186}
+h1,h2,h3,h4,h5{color:#13283e;line-height:1.3;font-weight:700}
+h1{font-size:1.5rem;margin:1.7em 0 .7em;padding-bottom:.34em;border-bottom:2px solid #13283e}
+h2{font-size:1.22rem;margin:1.9em 0 .7em;padding:.18em 0 .18em .7em;border-left:4px solid #C8923D;color:#16314c;
+  background:linear-gradient(90deg,rgba(200,146,61,.08),transparent)}
+h3{font-size:1.06rem;margin:1.4em 0 .5em;color:#1c4063;
+  padding-left:.6em;border-left:3px solid #9fb9d0}
+h4{font-size:.98rem;margin:1.1em 0 .4em;color:#3f4a57}
+p{margin:.6em 0}
+strong{color:#13283e;font-weight:600}
+em{color:#8a5a1c;font-style:normal;background:rgba(200,146,61,.14);padding:0 .25em;border-radius:2px}
+a{color:#1c4063;text-decoration:none;border-bottom:1px solid rgba(28,64,99,.3)}
+ul,ol{margin:.5em 0 .9em;padding-left:1.5em}
+li{margin:.28em 0}
+hr{border:0;border-top:1px solid #e6e0d4;margin:1.6em 0}
+table{width:100%;border-collapse:collapse;margin:1.1em 0;font-size:.9rem;
+  box-shadow:0 1px 0 #e6e0d4;background:#fff}
+thead th{background:#f1ece1;color:#13283e;font-weight:700;text-align:left;padding:9px 12px;border:1px solid #e7e1d5;
+  border-bottom:2px solid #cfc7b6;font-size:.88rem;letter-spacing:.01em}
+thead th *{color:#13283e !important;background:transparent !important;font-weight:700 !important}
+tbody td{border:1px solid #e7e1d5;padding:8px 12px;vertical-align:top}
+tbody tr:nth-child(even) td{background:#faf8f3}
+tbody td:first-child{font-weight:600;color:#16314c;background:#f4f1ea}
+/* 单列"特别提示/醒目标注"表 -> 还原成高亮提示框 */
+table.callout{background:#fff7e8;box-shadow:none;border-left:4px solid #C8923D;margin:1.2em 0}
+table.callout thead{display:none}
+table.callout td,table.callout th{border:0;padding:12px 16px;background:transparent !important;
+  font-weight:500 !important;color:#5a4216 !important}
+table.callout em{background:transparent;color:#8a5a1c}
+/* 文字色块（KPI 等）保持可读 */
+::selection{background:#cfe0ef}
+</style></head><body><article class="report"><h2 id="季度经营分析报告">季度经营分析报告</h2>
+<h2 id="executive-summary">Executive Summary</h2>
+<p><strong>▌ 财务快照</strong></p>
+<p>阿里巴巴 FY26 Q4（三月季度）总营收 RMB 2,433.8 亿（US$352.8
+亿），报告口径同比仅 +3%，但剔除已剥离的高鑫零售（Sun
+Art）与银泰（Intime）后，同口径 LFL 增长 +11%；营收略低于 FactSet
+一致预期的 RMB 2,465 亿，构成小幅 Miss。本季最刺眼的是盈利塌方：经调整
+EBITA 仅 RMB 51.0 亿（同比<strong>−84%</strong>），经调整 EBITA
+利润率从去年同期的 14% 压缩到 2%；更出现自 2021 年以来首次经营亏损 RMB
+8.48 亿；Non-GAAP 净利润几乎归零，仅 RMB 0.86 亿（US$12
+百万，同比<strong>−100%</strong>），Non-GAAP 每 ADS 收益从 RMB 12.52
+跌至 RMB 0.62（同比 −95%），远低于市场约 US$0.89/ADS
+的预期。利润崩塌源于两条战线的主动投入：即时零售（淘宝闪购）补贴与 Qwen
+app 用户获取推高销售费用，叠加云与 AI 基础设施开支。亮点集中在 AI +
+云：云智能集团收入 RMB 416.3
+亿（+38%），<strong>外部商业化收入增速加速至 40%</strong>，AI
+相关产品收入 RMB 89.7 亿、连续 11 个季度三位数增长。本季资本开支 RMB
+268.9 亿，自由现金流转为净流出 RMB 173.0 亿。管理层未给出 FY27
+量化营收指引，但明确指引云增速将"持续超过 40%"、云 EBITA
+利润率未来两季升至"双位数（teens）"。整体基调 Confident（进攻型）。</p>
+<p><strong>▌ Transcript 核心叙事</strong></p>
+<p>业绩会核心叙事可概括为三条主线：（1）<strong>AI +
+云的商业化拐点已经到来</strong>，CEO
+吴泳铭首次披露模型与应用服务（含百炼 MaaS 平台）年化 ARR 已超 RMB 80
+亿，"高度确信（highly certain）"6 月季度突破 RMB 100 亿、年底冲 RMB 300
+亿，且 AI
+收入毛利率高于传统云；（2）<strong>亏损是"主动战略选择"</strong>，CFO
+徐宏强调负自由现金流"完全源于过去一年对 AI
+的坚决投入"，并以"两座工厂（训练厂 +
+推理厂）"类比资本开支，称"服务器上没有一张闲置的卡"；（3）<strong>资本纪律与供给约束并存</strong>，管理层确认大概率"超出原定
+RMB 3,800 亿"三年 CapEx
+计划，但部署单台服务器成本同比已翻倍（&gt;100%），稀缺环境反而赋予阿里云对新老客户的定价权。最需警惕的信号是核心电商货币化：CMR
+报告口径仅 +1%（剔除会计重分类 LFL
++8%），即时零售单位经济虽改善但仍在亏损。</p>
+<h2 id="一核心-kpi-速览">一、核心 KPI 速览</h2>
+<p>以下为本季度核心财务与运营指标，与上年同期及上一季对比（三月季度为阿里全年营收季节性低点，QoQ
+与十二月双 11 旺季对比天然回落，利润类指标 QoQ
+受季节与一次性因素影响较大，标 n.m.）：</p>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 21%" />
+<col style="width: 15%" />
+<col style="width: 14%" />
+<col style="width: 13%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>指标</strong></th>
+<th style="text-align: center;"><strong>本季实际</strong></th>
+<th style="text-align: center;"><strong>YoY变化</strong></th>
+<th style="text-align: center;"><strong>QoQ变化</strong></th>
+<th style="text-align: center;"><strong>市场预期</strong></th>
+<th style="text-align: center;"><strong>Beat/Miss</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>总营收</td>
+<td style="text-align: right;">RMB 2,433.8亿 (US$352.8亿)</td>
+<td style="text-align: right;">+3%（LFL +11%）</td>
+<td style="text-align: center;">−14.6%（季节性）</td>
+<td style="text-align: center;">RMB 2,465亿</td>
+<td style="text-align: right;">Miss 约 1.3%</td>
+</tr>
+<tr>
+<td>经调整 EBITA</td>
+<td style="text-align: right;">RMB 51.0亿 (US$740M)</td>
+<td style="text-align: right;">−84%</td>
+<td style="text-align: center;">n.m.</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: right;">大幅低于预期</td>
+</tr>
+<tr>
+<td>经调整 EBITA 利润率</td>
+<td style="text-align: right;">2%</td>
+<td style="text-align: right;">−12pp</td>
+<td style="text-align: center;">n.m.</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: right;">Miss</td>
+</tr>
+<tr>
+<td>GAAP 净利润</td>
+<td style="text-align: right;">RMB 235.0亿 (US$34.1亿)</td>
+<td style="text-align: right;">+96%</td>
+<td style="text-align: center;">n.m.</td>
+<td style="text-align: center;">RMB 111.6亿</td>
+<td style="text-align: right;">Beat（投资公允价值收益驱动）</td>
+</tr>
+<tr>
+<td>Non-GAAP 净利润</td>
+<td style="text-align: right;">RMB 0.86亿 (US$12M)</td>
+<td style="text-align: right;">−100%</td>
+<td style="text-align: center;">n.m.</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: right;">大幅 Miss</td>
+</tr>
+<tr>
+<td>Non-GAAP 每ADS收益</td>
+<td style="text-align: right;">RMB 0.62 (US$0.09)</td>
+<td style="text-align: right;">−95%</td>
+<td style="text-align: center;">n.m.</td>
+<td style="text-align: center;">约 US$0.89</td>
+<td style="text-align: right;">大幅 Miss</td>
+</tr>
+<tr>
+<td>云智能外部收入增速</td>
+<td style="text-align: right;">+40%</td>
+<td style="text-align: right;">加速</td>
+<td style="text-align: center;">加速</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: right;">Beat</td>
+</tr>
+<tr>
+<td>AI 相关产品收入</td>
+<td style="text-align: right;">RMB 89.7亿</td>
+<td style="text-align: right;">三位数（连续11季）</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: right;">Beat</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>数据来源: 阿里巴巴 FY2026 Q4 业绩公告（2026-05-13）; 一致预期来自
+FactSet（IG，2026-05-12）及 Zacks/Bloomberg。注：GAAP
+净利润大增主因股权投资按市值计价收益及去年同期高鑫/银泰处置亏损的低基数，并非主营盈利改善。</p>
+</blockquote>
+<h2 id="二key-takeaways">二、Key Takeaways</h2>
+<h3 id="本季定性判断">2.1 本季定性判断</h3>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 31%" />
+<col style="width: 47%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>判断维度</strong></th>
+<th style="text-align: center;"><strong>结论</strong></th>
+<th style="text-align: center;"><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>本季是否超预期？</td>
+<td style="text-align: center;">不及预期</td>
+<td style="text-align: center;">营收小幅 Miss，Non-GAAP
+盈利近乎归零、远低于一致预期</td>
+</tr>
+<tr>
+<td>核心增长引擎是否持续？</td>
+<td style="text-align: center;">持续强化（云/AI）</td>
+<td style="text-align: center;">云外部收入加速至 +40%，AI 收入连续 11
+季三位数增长</td>
+</tr>
+<tr>
+<td>利润质量是否可持续？</td>
+<td style="text-align: center;">存疑（主动投入压制）</td>
+<td
+style="text-align: center;">经营层面首现亏损，但属战略性投入而非结构性恶化</td>
+</tr>
+<tr>
+<td>下季度增速判断</td>
+<td style="text-align: center;">云增速 &gt;40% 持续；集团 LFL
+双位数</td>
+<td
+style="text-align: center;">信心水平：中高（管理层明确指引云加速）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="核心要点-top-4-takeaways">2.2 核心要点 (Top 4 Takeaways)</h3>
+<h3 id="云外部收入加速至-40ai-商业化拐点首次被量化">1. 云外部收入加速至
++40%，AI 商业化拐点首次被量化</h3>
+<p>云智能集团本季收入 RMB 416.3 亿（US$60.4
+亿，+38%），其中<strong>外部商业化收入增速加速至
+40%</strong>，为多个季度以来最快。AI 相关产品收入首次单独披露，达 RMB
+89.7 亿，连续 11 个季度三位数同比增长，占云外部收入比重升至 30%。CEO
+吴泳铭给出明确路标：年化 AI 产品收入已超 RMB 358 亿（US$53
+亿运行率），预计约一年内 AI 收入占比将突破
+50%、成为云收入增长的主引擎，云外部增速也将"在未来几个季度继续超过当前
+40%
+的水平"。这是本季最具确定性的亮点，也是支撑卖方维持"强力买入"的核心。（来源:
+FY26 Q4 业绩公告; Earnings Call 吴泳铭开场陈述）</p>
+<h3 id="盈利塌方-84自-2021-年来首现经营亏损是主动选择">2. 盈利塌方
+−84%，自 2021 年来首现经营亏损，是"主动选择"</h3>
+<p>经调整 EBITA 同比暴跌 84% 至 RMB 51.0 亿，经营层面录得 RMB 8.48
+亿亏损（去年同期为盈利 RMB 284.7 亿），为 2021
+年以来首次。压力来自两端：销售及市场费用占收入比从 15.3%
+飙升至<strong>21.9%</strong>（即时零售补贴 + Qwen app 拉新），以及"All
+others"分部因自研基础模型与 Qwen 消费级 app 投入，EBITA 亏损扩大至 RMB
+211.6 亿。CFO 徐宏将此定性为对"历史性 AI
+机遇"的坚决投入，并强调"未来两年同样坚决"。投资者需理解：这是用当期利润换长期算力与份额的主动权衡。（来源:
+FY26 Q4 业绩公告 P1/P8; Earnings Call 徐宏 Q&amp;A）</p>
+<h3 id="自由现金流转负-rmb-173-亿capex-或超-rmb-3800-亿三年计划">3.
+自由现金流转负 RMB 173 亿，CapEx 或超 RMB 3,800 亿三年计划</h3>
+<p>本季经营性现金流 RMB 94.1 亿（同比 −66%），资本开支 RMB 268.9
+亿，自由现金流由去年同期净流入 RMB 37.4 亿转为<strong>净流出 RMB 173.0
+亿</strong>；全财年自由现金流净流出 RMB 466.1 亿。在 CapEx
+问题上，管理层（云智能集团）明确表示"很可能超出原定 RMB 3,800
+亿的三年资本开支计划"，但同时通过 OpEx 租赁算力、自研 T-Head
+芯片对外销售等方式分散投入；并提示在芯片/内存物理产能受限下，部署单台服务器的成本同比已翻倍（&gt;100%），这一重置成本上升反而赋予阿里云定价权。资产负债表是底气来源：截至
+3 月底净现金约 US$380 亿、剔除 5 年期以上债务后约 US$590 亿。（来源:
+FY26 Q4 业绩公告; Earnings Call 徐宏/Gary Yu 提问）</p>
+<h3 id="核心电商-cmr-报告口径仅-1即时零售高增但仍亏损">4. 核心电商 CMR
+报告口径仅 +1%，即时零售高增但仍亏损</h3>
+<p>中国电商集团收入 RMB 1,222.2
+亿（+6%），但客户管理收入（CMR）报告口径仅
++1%；公司对部分商家的新商业发展计划下的补贴从"销售费用"重分类为 CMR
+的冲减项（contra revenue），剔除该会计影响后 CMR 同口径增长
++8%。即时零售（淘宝闪购 + 饿了么）收入 RMB 199.9
+亿（+57%），订单量为去年同期 2.7 倍、非食品类 3
+倍，单位经济（UE）与客单价（AOV）环比改善，但仍处亏损投入期，管理层确信
+FY27 末 UE 转正。中国电商集团经调整 EBITA RMB 240.1
+亿（−40%），剔除即时零售亏损后基本同比持平。核心货币化能力的真实修复（+8%
+LFL）与即时零售的亏损节奏，是后续两季最关键的观察点。（来源: FY26 Q4
+业绩公告 P3; Earnings Call Thomas Chong 提问）</p>
+<h2 id="三战略专项分析-ai-云">三、战略专项分析 — AI + 云</h2>
+<blockquote>
+<p>关键发现：本季阿里把"AI +
+云"从投入叙事推进到商业化兑现的拐点，云外部增速加速至 40%、AI 收入连续
+11 季三位数增长，并首次量化 MaaS/应用服务 ARR 路标（6 月季度 &gt;RMB 100
+亿、年底 RMB 300 亿）。</p>
+</blockquote>
+<h3 id="ai-云进展">3.1 AI + 云进展</h3>
+<p>本季阿里在 AI +
+云方向的核心信息是"从投入期进入规模化商业化"。云智能集团收入 RMB 416.3
+亿、外部收入加速至 +40%，AI 相关产品收入 RMB 89.7 亿首次单独披露，AI
+占云外部收入
+30%。管理层在业绩会上把云的增长引擎描述为"从传统算力/存储全面转向模型、AI
+算力与智能体服务"。</p>
+<p><strong>关键进展指标：</strong></p>
+<ul>
+<li><p>云智能集团收入: RMB 416.3 亿（US$60.4 亿），同比 +38%，外部收入
++40%（来源: 业绩公告）</p></li>
+<li><p>AI 相关产品收入: RMB 89.7 亿，连续 11 季三位数增长，占云外部收入
+30%（来源: 业绩公告）</p></li>
+<li><p>年化 AI 产品收入运行率: 已超 RMB 358 亿（US$53 亿）（来源:
+Earnings Call 吴泳铭/徐宏）</p></li>
+<li><p>模型与应用服务 ARR: 已超 RMB 80 亿，指引 6 月季度 &gt;RMB 100
+亿、年底 RMB 300 亿（来源: Earnings Call 吴泳铭）</p></li>
+<li><p>云经调整 EBITA: RMB 38.0 亿（+57%），EBITA 利润率 9.1%（来源:
+业绩公告）</p></li>
+<li><p>Model Studio（百炼）客户数: 同比增长 8 倍（来源:
+业绩公告）</p></li>
+<li><p>T-Head 自研芯片: 已实现规模化 MaaS 投产，超 60%
+算力服务外部客户（来源: Earnings Call 吴泳铭）</p></li>
+</ul>
+<h3 id="earnings-call-关键表述摘录">3.2 Earnings Call 关键表述摘录</h3>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 53%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>发言人</strong></th>
+<th style="text-align: center;"><strong>关键表述摘要</strong></th>
+<th style="text-align: center;"><strong>分析解读</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>吴泳铭（CEO）</td>
+<td style="text-align: center;">"我们正处在从对话式聊天机器人向自主 AI
+智能体演进的关键拐点（pivotal inflection
+point），这直接驱动训练、推理、智能体编排三大工作负载的爆发式增长。"</td>
+<td style="text-align: center;">AI 需求结构正从对话向高算力的 agentic
+推理迁移，利好推理算力消耗与单 token 价值</td>
+</tr>
+<tr>
+<td>吴泳铭（CEO）</td>
+<td style="text-align: center;">"预计约一年内，AI 相关产品收入将突破 50%
+门槛，成为驱动云业务收入增长的主引擎；云外部增速将在未来几个季度继续超过当前
+40% 的水平。"</td>
+<td
+style="text-align: center;">给出了云加速的明确路标，是支撑估值的核心前瞻锚点</td>
+</tr>
+<tr>
+<td>徐宏（CFO）</td>
+<td style="text-align: center;">"负的自由现金流主要源于过去一年我们在 AI
+上的重大投入，我们对此极为坚决（extremely
+resolute）；未来两年我们同样会坚决投入。"</td>
+<td
+style="text-align: center;">把亏损定性为主动战略选择，管理预期、避免市场误读为经营恶化</td>
+</tr>
+<tr>
+<td>徐宏（CFO）</td>
+<td
+style="text-align: center;">"淘宝天猫贡献了集团最主要、最稳定的经营现金流；未来两年即时零售亏损将大幅收窄、AIDC
+将由亏转盈。"</td>
+<td style="text-align: center;">用现金流"稳定器 + 减亏路径"对冲 AI
+高投入对集团现金流的拖累</td>
+</tr>
+<tr>
+<td>吴泳铭（CEO，Q&amp;A）</td>
+<td style="text-align: center;">"今天我们的服务器上没有一张闲置的卡（not
+a single card idle），未来 3 至 5 年的投资回报路径非常清晰。"</td>
+<td style="text-align: center;">以满载利用率回应 ROI
+质疑，暗示供给仍是瓶颈而非需求</td>
+</tr>
+<tr>
+<td>管理层（云智能集团，Q&amp;A）</td>
+<td style="text-align: center;">"我们 11 月到次年 5
+月在百炼平台上的增长超过 10 倍（higher than 10x），ARR 已超 RMB 80
+亿，本季度高度确信（highly certain）能实现超 RMB 100 亿 ARR。"</td>
+<td style="text-align: center;">首次给出 MaaS
+增长斜率的量化锚点，可信度由具体数字支撑</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>来源: 阿里巴巴 FY2026 Q4 Earnings Call
+Transcript（earnings-call-transcripts1 / 公司 IR） ⚠️
+引用以实际原文为准，翻译保留管理层表态强度；部分 Q&amp;A 回答在
+transcript 中记为 "Unknown
+Executive"，本报告按发言内容归属至最可能的业务条线（AI/云 → CEO
+吴泳铭；即时零售 → 电商集团）。</p>
+</blockquote>
+<h3 id="竞争格局比较">3.3 竞争格局比较</h3>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 29%" />
+<col style="width: 32%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>竞争者</strong></th>
+<th
+style="text-align: center;"><strong>本季相关业务表现（实际披露）</strong></th>
+<th style="text-align: center;"><strong>AI/云 进展</strong></th>
+<th style="text-align: center;"><strong>相对优劣势</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>阿里巴巴</td>
+<td style="text-align: right;">云收入 RMB 416.3 亿（+38%，外部
++40%）；AI 收入 RMB 89.7 亿</td>
+<td style="text-align: center;">全栈 AI（模型 Qwen3.6 + IaaS + MaaS 百炼
++ T-Head 自研芯片）；ARR 6 月季冲 RMB 100 亿</td>
+<td style="text-align: center;">中国唯一可规模交付自研 AI
+芯片的云厂商，全栈闭环；短板是当期盈利与现金流承压</td>
+</tr>
+<tr>
+<td>腾讯</td>
+<td style="text-align: right;">腾讯云 2025 年调整后经营利润达 RMB 50
+亿（从前一年亏损转正）</td>
+<td style="text-align: center;">AI
+投入加大，R&amp;D/营销费用大幅提升；以混元模型 + 微信生态分发</td>
+<td
+style="text-align: center;">现金流与盈利更稳健，社交分发场景强；云规模与外部商业化披露度低于阿里</td>
+</tr>
+<tr>
+<td>美团（即时零售对标）</td>
+<td style="text-align: right;">Q1 2026 收入 RMB 910
+亿（+5.6%），经营亏损收窄至 RMB 65 亿</td>
+<td style="text-align: center;">即时零售防御战，核心本地商业经营亏损仅
+RMB 20 亿（优于预期）</td>
+<td
+style="text-align: center;">即时配送密度与高客单壁垒强；面临阿里淘宝闪购高补贴冲击</td>
+</tr>
+<tr>
+<td>百度</td>
+<td style="text-align: right;">智能云持续受益
+AI，但规模与增速低于阿里云外部 +40%</td>
+<td style="text-align: center;">文心模型 + 千帆平台</td>
+<td style="text-align: center;">模型起步早，但 To B
+云外部商业化体量与生态广度弱于阿里</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>来源: 阿里 FY26 Q4 业绩公告; 美团 Q1 2026
+业绩（2026-06-02，富途/36氪）; 腾讯 2025 年报及 Q1 2026
+预览（IG）。竞品数据均为各公司实际披露口径，非估算。</p>
+</blockquote>
+<h3 id="earnings-call-summary-电话会议摘要">3.4 Earnings Call Summary
+电话会议摘要</h3>
+<h3 id="管理层核心发言-management-key-remarks">管理层核心发言
+(Management Key Remarks)</h3>
+<p><strong>吴泳铭（CEO）：</strong>过去一个季度，阿里在"AI +
+云"和"消费"两大战略优先级上的高强度投入正快速转化为实际业务成果，集团收入同比增长
+11%（LFL）。</p>
+<p><strong>吴泳铭（CEO）：</strong>AI
+基础设施是全技术栈的支撑、构成持久护城河；T-Head 自研 GPU
+芯片已实现规模化 MaaS 投产，超 60%
+算力服务于互联网、金融、自动驾驶等外部客户。</p>
+<p><strong>吴泳铭（CEO）：</strong>消费侧 5 月 7 日 Qwen app
+已全面接入淘宝天猫的电商服务能力，深度嵌入淘宝、支付宝、高德、飞猪生态，成为中国首个打通生活、生产力与学习的一体化个人助手。</p>
+<p><strong>徐宏（CFO）：</strong>合并口径总收入 RMB 2,433.8
+亿，剔除高鑫/银泰后 LFL 增长 11%；经调整 EBITA 下降
+84%，主因技术业务、即时零售与用户体验的战略投入，部分被 CMR
+与云业务增长及降本增效抵消。</p>
+<p><strong>徐宏（CFO）：</strong>经营现金流净流入 RMB 94.1
+亿，自由现金流净流出 RMB 173.0 亿；截至 3 月底净现金约 US$380 亿，剔除 5
+年期以上债务后约 US$590 亿，资产负债表强劲支撑增长投资。董事会批准 FY26
+年度股息 US$1.05/ADS。</p>
+<h3 id="核心qa-key-questions-answers">核心Q&amp;A (Key Questions &amp;
+Answers)</h3>
+<h3
+id="q1高盛-ronald-keung-maas应用服务-arr-中自研模型-vs-第三方模型占比涨价对云利润率影响">Q1：高盛
+Ronald Keung — MaaS/应用服务 ARR 中自研模型 vs
+第三方模型占比？涨价对云利润率影响？</h3>
+<ul>
+<li><p>管理层回应（云智能集团）: ARR 主要由两块构成，百炼平台上的 MaaS
+API 调用收入与 AI
+软件订阅收入，目前<strong>大部分来自自研模型</strong>（Qwen
+等）。过去几个月 AI 从对话式聊天机器人转向 agentic
+能力，复杂推理需求激增，客户对更高单 token
+价格接受度提升、需求持续高增，"供给甚至跟不上需求，仍有大量客户在排队"。MaaS
+天然毛利高于 IaaS。</p></li>
+<li><p>信号解读: 涨价 + 推理优化 + 自研芯片三重因素，指向云毛利率未来 1
+至 2 季"显著改善"。需求侧排队意味着瓶颈在供给而非需求。</p></li>
+</ul>
+<h3
+id="q2ubs-kenneth-fong-如何评估-ai-投资回报管理层平衡激进投入与盈利稳定的框架">Q2：UBS
+Kenneth Fong — 如何评估 AI
+投资回报？管理层平衡激进投入与盈利稳定的框架？</h3>
+<ul>
+<li><p>徐宏（CFO）回应: 负自由现金流主要源于过去一年对 AI
+的重大投入，未来两年同样坚决；现金流框架无大变化，淘宝天猫贡献稳定经营现金流，即时零售亏损将大幅收窄、AIDC
+将由亏转盈，云/AI 投入将同时提升收入与毛利率。</p></li>
+<li><p>吴泳铭（CEO）补充: 最好的类比是制造业，今天投资建两座工厂（AI
+训练厂 + 推理厂），由 AI 数据中心供能；通过 2B 的 IaaS/MaaS 与 AI
+原生应用变现，"未来 3 至 5 年 ROI
+非常清晰，目前没有一张卡闲置"。</p></li>
+<li><p>信号解读: 管理层用"工厂/满载"框架把 CapEx
+重构为可见回报的产能投资，意在缓解市场对烧钱的担忧。</p></li>
+</ul>
+<h3
+id="q3jefferies-thomas-chong-即时零售-ue-改善的驱动因素未来三年-ue-展望是否有更新">Q3：Jefferies
+Thomas Chong — 即时零售 UE 改善的驱动因素？未来三年 UE
+展望是否有更新？</h3>
+<ul>
+<li><p>管理层回应（电商集团）:
+大规模投入带来根本性市场地位转变，订单量为去年同期 2.7 倍、非食品类 3
+倍；4 月起在维持订单量的同时，通过履约物流效率与订单结构优化持续改善
+UE，<strong>确信 FY27 末 UE
+转正</strong>，并在新规模与份额下实现整体盈利。即时零售与传统电商在获客、用户活跃、履约基建上产生协同，推动
+3 月季度 GMV 与 CMR 强劲增长。</p></li>
+<li><p>信号解读: 即时零售从"纯烧钱抢份额"转向"边打边优化
+UE"，且被定位为电商主站的引流与协同引擎，而非独立亏损黑洞。</p></li>
+</ul>
+<h3
+id="q4nomura-jialong-shi-阿里-maas-相对其他平台创业公司的优势中国-ai-coding-何时爆发saas-付费意愿低是否限制商业化">Q4：Nomura
+Jialong Shi — 阿里 MaaS 相对其他平台/创业公司的优势？中国 AI coding
+何时爆发？SaaS 付费意愿低是否限制商业化？</h3>
+<ul>
+<li><p>管理层回应（云智能集团）:
+百炼定位为开放推理平台，相比聚焦垂直赛道的创业公司，阿里投入规模更大、模型种类更全（编码、图像
+Wanxiang/HappyHorse、世界模型、语音），创业公司是 MaaS
+的伙伴而非对手。中国 AI coding"其实已经到来"，11 月至次年 5
+月利用率增长主要由编码能力升级驱动。中国 SaaS
+付费意愿低的局面"将随模型能力增强而改变"，"当 token
+提供的价值超过其成本，需求将趋于无限"。</p></li>
+<li><p>信号解读: 把开放平台 +
+全模型矩阵作为对抗垂类创业公司的护城河，并对中国 AGI 商业化（尤其
+coding）给出 2 至 3 年的乐观窗口。</p></li>
+</ul>
+<h3
+id="q5macquarie-ellie-jiang-在基础设施模型云qwen-app-多线投入下如何在-2b-与-2c-间分配资源是否会把资源从-qwen-app-转向云maas">Q5：Macquarie
+Ellie Jiang — 在基础设施/模型/云/Qwen app 多线投入下，如何在 2B 与 2C
+间分配资源？是否会把资源从 Qwen app 转向云/MaaS？</h3>
+<ul>
+<li><p>管理层回应（云智能集团）: 本质是计算范式的迁移，2B 与 2C
+的内核都是"用 AI 帮用户完成任务"。当前 2B 付费意愿更高、ROI
+更易论证，因此大部分基础设施资源现阶段投向 2B；但 AI
+终将像在美国一样在中国出现 2C 个人付费模式，预计 1 至 2
+年内到来。</p></li>
+<li><p>信号解读: 短期资源向 2B 倾斜（确定性更高），但坚持 2C
+长期布局，Qwen app 是卡位入口而非短期变现工具。</p></li>
+</ul>
+<h3
+id="q6bank-of-america-joyce-ju-云业务未来几个季度-ebita-利润率展望能否对标国际同行">Q6：Bank
+of America Joyce Ju — 云业务未来几个季度 EBITA
+利润率展望？能否对标国际同行？</h3>
+<ul>
+<li><p>管理层回应（云智能集团）: 当前 AI
+渗透仍处早期，首要目标是增长与抢占 token
+消费份额、巩固绝对市场领导地位，"利润率仍是次要的"。但因新服务器重置成本同比翻倍带来的定价权、MaaS
+高毛利占比提升、推理技术优化提升单卡产出、以及 T-Head
+高性价比芯片放量，"未来 2 至 3 年阿里云毛利率将显著提升，并在未来 1 至 2
+个季度开始显现"。</p></li>
+<li><p>信号解读:
+管理层把"份额优先于利润"摆在明面，但给出了毛利率改善的多重结构性来源与时间表，呼应
+Morningstar"两季内 EBITA 利润率升至双位数"的解读。</p></li>
+</ul>
+<h3
+id="q7morgan-stanley-gary-yu-满足-maas-与长期云需求所需的-capex-量级t-head-当前渗透率与毛利提升空间">Q7：Morgan
+Stanley Gary Yu — 满足 MaaS 与长期云需求所需的 CapEx 量级？T-Head
+当前渗透率与毛利提升空间？</h3>
+<ul>
+<li><p>管理层回应（云智能集团）: 对比 2022 年，预计 2033
+年算力基础设施需求将达 10 倍；获取算力可走 CapEx 也可走 OpEx，目前已用
+OpEx 获取相当一部分算力，故<strong>很可能超出原定 RMB 3,800 亿
+CapEx</strong>，同时可通过自研 T-Head 芯片对外售卖 AI
+服务器或共建算力中心。T-Head 目前在 AI
+基础设施中占比仍较低（受国内产能限制），但随放量将"非常显著地推动毛利率扩张"；参照全球领先
+AI 芯片厂商 60% 至 80% 的毛利率，国产芯片性价比仍有很大空间。</p></li>
+<li><p>信号解读: CapEx 上不封顶但方式多元化（CapEx + OpEx +
+自研芯片外销），T-Head 是未来毛利率弹性的关键变量。</p></li>
+</ul>
+<h3 id="语气与态度评估">语气与态度评估</h3>
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 28%" />
+<col style="width: 57%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>维度</strong></th>
+<th style="text-align: center;"><strong>评估</strong></th>
+<th style="text-align: center;"><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>整体基调</td>
+<td style="text-align: center;">Confident（进攻型）</td>
+<td style="text-align: center;">反复强调"历史性机遇""坚决投入""ROI
+清晰"</td>
+</tr>
+<tr>
+<td>最自信话题</td>
+<td style="text-align: center;">AI + 云商业化</td>
+<td style="text-align: center;">首次量化 ARR
+路标，给出云加速与毛利改善时间表</td>
+</tr>
+<tr>
+<td>最回避话题</td>
+<td style="text-align: center;">当期盈利与 FY27 利润指引</td>
+<td
+style="text-align: center;">未给集团层面利润/营收量化指引，刻意淡化短期
+EPS</td>
+</tr>
+<tr>
+<td>与上季度对比</td>
+<td style="text-align: center;">更积极（云叙事）</td>
+<td style="text-align: center;">上季营收/利润双 Miss，本季用云加速与 ARR
+量化扭转叙事</td>
+</tr>
+</tbody>
+</table>
+<h3 id="客户与运营指标">3.5 客户与运营指标</h3>
+<h3 id="客户结构分析">3.5.1 客户结构分析</h3>
+<blockquote>
+<p>关键发现：云客户结构正从传统算力/存储客户向 AI 原生与 agentic
+工作负载客户迁移，Model Studio 客户数同比增长 8 倍。</p>
+</blockquote>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 25%" />
+<col style="width: 21%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>客户分类</strong></th>
+<th style="text-align: center;"><strong>本季趋势</strong></th>
+<th style="text-align: center;"><strong>付费金额趋势</strong></th>
+<th style="text-align: center;"><strong>战略意义</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI/Agent 工作负载客户（2B）</td>
+<td style="text-align: center;">快速增长，需求排队</td>
+<td style="text-align: center;">单 token 价格上调，付费意愿提升</td>
+<td style="text-align: center;">推理需求爆发是云加速的核心引擎，毛利高于
+IaaS</td>
+</tr>
+<tr>
+<td>互联网/金融/自动驾驶外部客户</td>
+<td style="text-align: center;">超 60% T-Head 算力服务于此类</td>
+<td style="text-align: center;">随算力消耗增长</td>
+<td
+style="text-align: center;">验证自研芯片的外部可商用性，分散供给风险</td>
+</tr>
+<tr>
+<td>传统云（CPU/存储/容器）客户</td>
+<td style="text-align: center;">因 agent 工作负载激增而被升级改造</td>
+<td style="text-align: center;">向 agent 时代基础设施迁移</td>
+<td style="text-align: center;">存量客户向 AI 升级，提升 ARPU</td>
+</tr>
+<tr>
+<td>Qwen app 消费者（2C）</td>
+<td style="text-align: center;">Qwen app 接入淘天电商服务，生态拉新</td>
+<td style="text-align: center;">当前付费意愿低</td>
+<td style="text-align: center;">长期 2C 入口卡位，1 至 2
+年内探索个人付费</td>
+</tr>
+</tbody>
+</table>
+<h3 id="运营深度指标">3.5.2 运营深度指标</h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 13%" />
+<col style="width: 27%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>指标名称</strong></th>
+<th style="text-align: center;"><strong>本季值</strong></th>
+<th style="text-align: center;"><strong>变化趋势</strong></th>
+<th style="text-align: center;"><strong>分析意义</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>即时零售订单量</td>
+<td style="text-align: right;">去年同期 2.7 倍</td>
+<td style="text-align: right;">非食品类 3 倍</td>
+<td style="text-align: center;">淘宝闪购规模化抢份额成效显著</td>
+</tr>
+<tr>
+<td>Model Studio（百炼）客户数</td>
+<td style="text-align: right;">同比 +8 倍</td>
+<td style="text-align: right;">高速扩张</td>
+<td style="text-align: center;">MaaS 平台采用度快速放大</td>
+</tr>
+<tr>
+<td>AI 产品收入占云外部比</td>
+<td style="text-align: right;">30%</td>
+<td style="text-align: right;">持续上升，约一年内冲 50%</td>
+<td style="text-align: center;">AI 成为云增长主引擎的进度条</td>
+</tr>
+<tr>
+<td>88VIP 会员数</td>
+<td style="text-align: right;">超 6,200 万</td>
+<td style="text-align: right;">持续增长</td>
+<td style="text-align: center;">高价值用户基本盘，支撑电商货币化（来源:
+36氪援引阿里数据）</td>
+</tr>
+<tr>
+<td>模型/应用服务 ARR</td>
+<td style="text-align: right;">已超 RMB 80 亿</td>
+<td style="text-align: right;">6 月季 &gt;RMB 100 亿，年底 RMB 300
+亿</td>
+<td style="text-align: center;">高毛利经常性收入的增长斜率</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>来源: 财报运营数据 + Earnings Call 披露; 阿里未单独披露集团 DAU/MAU
+与电商 ARPU，相关指标标注为公司长期不披露。</p>
+</blockquote>
+<h2 id="四收入分析">四、收入分析</h2>
+<blockquote>
+<p>关键发现：报告口径 +3% 被两项失真压制（高鑫/银泰剥离 + CMR
+会计重分类），还原后 LFL 增长约 11% 至
+13%；云与即时零售是增长主引擎，"All
+others"因剥离与菜鸟收入下滑成为最大拖累。</p>
+</blockquote>
+<h3 id="营收总览与趋势">4.1 营收总览与趋势</h3>
+<p>本季合并总营收 RMB 2,433.8 亿，报告口径同比
++3%，但剔除已剥离的高鑫/银泰后 LFL 增长 +11%；若进一步还原 CMR
+补贴的会计冲减，部分卖方（DeepValue Capital）测算"纯同口径"顶线增速约
+13.25%。表观低增速主要是结构性失真而非经营失速。环比看，三月季营收较十二月双
+11 旺季回落 14.6%，属典型季节性，并非经营走弱。</p>
+<table>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 22%" />
+<col style="width: 14%" />
+<col style="width: 9%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>季度</strong></th>
+<th style="text-align: center;"><strong>营收</strong></th>
+<th
+style="text-align: center;"><strong>YoY增速（报告口径）</strong></th>
+<th style="text-align: center;"><strong>LFL增速</strong></th>
+<th style="text-align: center;"><strong>QoQ</strong></th>
+<th style="text-align: center;"><strong>口径说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FY26 Q1（6月季，2025/6）</td>
+<td style="text-align: center;">RMB 2,476.5亿 (US$345.7亿)</td>
+<td style="text-align: right;">+2%</td>
+<td style="text-align: right;">+10%</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">完成淘天/饿了么/飞猪整合</td>
+</tr>
+<tr>
+<td>FY26 Q2（9月季，2025/9）</td>
+<td style="text-align: center;">RMB 2,477.9亿 (US$348.1亿)</td>
+<td style="text-align: right;">+5%</td>
+<td style="text-align: right;">+15%</td>
+<td style="text-align: right;">+0.1%</td>
+<td style="text-align: right;">云 +34%，AI 投入加大</td>
+</tr>
+<tr>
+<td>FY26 Q3（12月季，2025/12）</td>
+<td style="text-align: center;">RMB 2,848.4亿 (US$407.3亿)</td>
+<td style="text-align: right;">+2%</td>
+<td style="text-align: right;">+9%</td>
+<td style="text-align: right;">+15.0%</td>
+<td style="text-align: right;">双11旺季，营收/利润双 Miss</td>
+</tr>
+<tr>
+<td>FY26 Q4（3月季，2026/3）</td>
+<td style="text-align: center;">RMB 2,433.8亿 (US$352.8亿)</td>
+<td style="text-align: right;">+3%</td>
+<td style="text-align: right;">+11%</td>
+<td style="text-align: right;">−14.6%</td>
+<td style="text-align: right;">季节性低点，云加速至 +40%</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>来源: 阿里巴巴各季业绩公告（June 2025 / Sept 2025 / Dec 2025 / March
+2026 Business Wire &amp; SEC 6-K）。四季营收加总 RMB 10,236.7
+亿与全财年披露一致。三月季为全年季节性低点，QoQ 回落属正常。</p>
+</blockquote>
+<h3 id="收入结构分解">4.2 收入结构分解</h3>
+<p>按新报告架构（FY26 Q1
+起，淘天/饿了么/飞猪合并为"中国电商集团"，菜鸟/高德/数娱重分类至"All
+others"）：</p>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 14%" />
+<col style="width: 18%" />
+<col style="width: 11%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>收入分类</strong></th>
+<th style="text-align: center;"><strong>本季收入</strong></th>
+<th style="text-align: center;"><strong>YoY增速</strong></th>
+<th style="text-align: center;"><strong>占总收入比</strong></th>
+<th style="text-align: center;"><strong>分析评价</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中国电商集团</td>
+<td style="text-align: center;">RMB 1,222.2亿</td>
+<td style="text-align: right;">+6%</td>
+<td style="text-align: right;">50.2%</td>
+<td style="text-align: center;">CMR +1%（LFL +8%），即时零售 +57% 拉动
+★★★</td>
+</tr>
+<tr>
+<td>· 客户管理收入 CMR</td>
+<td style="text-align: center;">RMB 730.2亿</td>
+<td style="text-align: right;">+1%（LFL +8%）</td>
+<td style="text-align: right;">30.0%</td>
+<td
+style="text-align: center;">会计重分类压制报告值，真实货币化修复</td>
+</tr>
+<tr>
+<td>· 直营/物流及其他</td>
+<td style="text-align: center;">RMB 232.7亿</td>
+<td style="text-align: right;">−6%</td>
+<td style="text-align: right;">9.6%</td>
+<td style="text-align: center;">直营收缩</td>
+</tr>
+<tr>
+<td>· 即时零售</td>
+<td style="text-align: center;">RMB 199.9亿</td>
+<td style="text-align: right;">+57%</td>
+<td style="text-align: right;">8.2%</td>
+<td style="text-align: center;">淘宝闪购 + 饿了么，订单量 2.7 倍
+★★★</td>
+</tr>
+<tr>
+<td>· 中国批发</td>
+<td style="text-align: center;">RMB 59.4亿</td>
+<td style="text-align: right;">+3%</td>
+<td style="text-align: right;">2.4%</td>
+<td style="text-align: center;">平稳</td>
+</tr>
+<tr>
+<td>阿里国际数字商业 AIDC</td>
+<td style="text-align: center;">RMB 354.3亿</td>
+<td style="text-align: right;">+6%</td>
+<td style="text-align: right;">14.6%</td>
+<td style="text-align: center;">国际零售 +5%、批发 +9%，亏损大幅收窄
+★★</td>
+</tr>
+<tr>
+<td>云智能集团</td>
+<td style="text-align: center;">RMB 416.3亿</td>
+<td style="text-align: right;">+38%（外部 +40%）</td>
+<td style="text-align: right;">17.1%</td>
+<td style="text-align: center;">AI 收入 RMB 89.7亿，核心增长引擎
+★★★★</td>
+</tr>
+<tr>
+<td>All others</td>
+<td style="text-align: center;">RMB 654.6亿</td>
+<td style="text-align: right;">−21%</td>
+<td style="text-align: right;">26.9%</td>
+<td style="text-align: center;">高鑫/银泰剥离 + 菜鸟下滑拖累，含 Qwen
+投入</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>来源: 阿里巴巴 FY2026 Q4
+业绩公告分部收入表（P8）。占比未扣除分部间抵销 RMB 220.0
+亿，故各分部加总大于 100%。</p>
+</blockquote>
+<h3 id="分地区收入">4.3 分地区收入</h3>
+<p>阿里以业务分部而非地区披露，国际业务（AIDC）为主要海外口径：</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 49%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>地区/业务</strong></th>
+<th style="text-align: center;"><strong>本季收入</strong></th>
+<th style="text-align: center;"><strong>YoY增速</strong></th>
+<th style="text-align: center;"><strong>趋势</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中国市场（电商 + 云 + All others 主体）</td>
+<td style="text-align: center;">约 RMB 2,079亿</td>
+<td style="text-align: right;">报告口径低个位数</td>
+<td style="text-align: center;">云与即时零售驱动，受剥离拖累</td>
+</tr>
+<tr>
+<td>国际（AIDC：国际零售 + 批发）</td>
+<td style="text-align: center;">RMB 354.3亿</td>
+<td style="text-align: right;">+6%</td>
+<td style="text-align: center;">AliExpress Choice 单位经济持续改善，AIDC
+经调整 EBITA 亏损收窄至 RMB 1.4 亿、逼近盈亏平衡</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>来源: 阿里巴巴 FY2026 Q4 业绩公告。</p>
+</blockquote>
+<h2 id="五盈利能力深度分析">五、盈利能力深度分析</h2>
+<blockquote>
+<p>关键发现：经调整 EBITA 利润率从 14% 压缩到 2%，经营层面自 2021
+年来首现亏损；压力集中在销售费用（占比 15.3% → 21.9%）与 All others
+分部（自研模型 + Qwen app 投入），属主动战略性投入。</p>
+</blockquote>
+<h3 id="利润率追踪">5.1 利润率追踪</h3>
+<p>本季经调整 EBITA RMB 51.0 亿，同比 −84%，利润率仅 2%（去年同期
+14%）；经调整 EBITDA RMB 164.4 亿（−61%），EBITDA 利润率从 18% 降至
+7%。经营层面录得 RMB 8.48 亿亏损，为 2021
+年以来首次。分部看，云是唯一利润率改善的主力（EBITA +57%、利润率
+9.1%），中国电商受即时零售拖累 EBITA −40%，All others
+亏损扩大是最大拖累项。</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 17%" />
+<col style="width: 18%" />
+<col style="width: 39%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>分部</strong></th>
+<th style="text-align: center;"><strong>经调整 EBITA</strong></th>
+<th style="text-align: center;"><strong>YoY变化</strong></th>
+<th style="text-align: center;"><strong>主要驱动因素</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中国电商集团</td>
+<td style="text-align: center;">RMB 240.1亿</td>
+<td style="text-align: right;">−40%</td>
+<td style="text-align: right;">即时零售投入；剔除后基本同比持平</td>
+</tr>
+<tr>
+<td>阿里国际数字商业 AIDC</td>
+<td style="text-align: center;">−RMB 1.4亿</td>
+<td style="text-align: right;">+96%（减亏）</td>
+<td style="text-align: right;">物流优化与效率提升，逼近盈亏平衡</td>
+</tr>
+<tr>
+<td>云智能集团</td>
+<td style="text-align: center;">RMB 38.0亿</td>
+<td style="text-align: right;">+57%</td>
+<td style="text-align: right;">AI/公有云规模效应，利润率 9.1%</td>
+</tr>
+<tr>
+<td>All others</td>
+<td style="text-align: center;">−RMB 211.6亿</td>
+<td style="text-align: right;">−520%（扩亏）</td>
+<td style="text-align: right;">自研基础模型 + Qwen 消费级 app 投入</td>
+</tr>
+<tr>
+<td>未分配</td>
+<td style="text-align: center;">−RMB 7.9亿</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">公司职能成本</td>
+</tr>
+<tr>
+<td>合并经调整 EBITA</td>
+<td style="text-align: center;">RMB 51.0亿</td>
+<td style="text-align: right;">−84%</td>
+<td style="text-align: right;">技术 + 即时零售 + 用户体验三线投入</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>来源: 阿里巴巴 FY2026 Q4 业绩公告分部 EBITA 表（P8）。</p>
+</blockquote>
+<h3 id="费用结构分析">5.2 费用结构分析</h3>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 15%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>费用科目</strong></th>
+<th style="text-align: center;"><strong>本季规模</strong></th>
+<th style="text-align: center;"><strong>占收入比</strong></th>
+<th style="text-align: center;"><strong>YoY趋势</strong></th>
+<th style="text-align: center;"><strong>备注</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>营业成本 (COGS)</td>
+<td style="text-align: center;">RMB 1,593.9亿</td>
+<td style="text-align: right;">65.5%</td>
+<td style="text-align: right;">+3.9pp（去年 61.6%）</td>
+<td style="text-align: center;">云/AI 基础设施成本、即时零售履约</td>
+</tr>
+<tr>
+<td>产品研发费用</td>
+<td style="text-align: center;">RMB 189.6亿</td>
+<td style="text-align: right;">7.8%</td>
+<td style="text-align: right;">+1.5pp</td>
+<td style="text-align: center;">基础模型 Qwen、AI 产品投入</td>
+</tr>
+<tr>
+<td>销售及市场费用</td>
+<td style="text-align: center;">RMB 534.2亿</td>
+<td style="text-align: right;">21.9%</td>
+<td style="text-align: right;">+6.6pp（去年 15.3%）</td>
+<td style="text-align: center;">即时零售补贴 + Qwen app
+拉新，最大压制项</td>
+</tr>
+<tr>
+<td>一般及行政费用</td>
+<td style="text-align: center;">RMB 99.5亿</td>
+<td style="text-align: right;">4.1%</td>
+<td style="text-align: right;">−0.3pp（去年 4.4%）</td>
+<td style="text-align: center;">逆势微降，体现费用纪律</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>来源: 阿里巴巴 FY2026 Q4
+业绩公告合并利润表（P9）。对比鲜明：销售费用占比飙升 6.6pp
+是本季利润塌方的最直接会计来源，而 G&amp;A 占比反而压降
+0.3pp，说明亏损来自"主动进攻性投入"（即时零售 + AI
+拉新）而非管理失控。</p>
+</blockquote>
+<h2 id="六前瞻性分析与风险评估">六、前瞻性分析与风险评估</h2>
+<h3 id="下季度展望与管理层指引">6.1 下季度展望与管理层指引</h3>
+<p>管理层未给出集团层面的营收/利润量化指引，但在云、即时零售、现金流三条线给出了明确前瞻信号：</p>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 47%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>维度</strong></th>
+<th style="text-align: center;"><strong>管理层表态/指引</strong></th>
+<th style="text-align: center;"><strong>分析解读</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>云收入增速</td>
+<td style="text-align: right;">外部增速"将继续超过当前 40%"；AI
+收入约一年内占云外部 &gt;50%</td>
+<td style="text-align: center;">可信度高，已有 11 季三位数 AI 增长与 ARR
+路标支撑</td>
+</tr>
+<tr>
+<td>模型/应用 ARR</td>
+<td style="text-align: right;">6 月季度 &gt;RMB 100 亿，年底 RMB 300
+亿（"highly certain"）</td>
+<td style="text-align: center;">高毛利经常性收入，斜率陡峭</td>
+</tr>
+<tr>
+<td>云 EBITA 利润率</td>
+<td
+style="text-align: right;">未来两季升至"双位数（teens）"（Morningstar
+解读）</td>
+<td style="text-align: center;">重置成本定价权 + MaaS 高毛利 + T-Head
+放量</td>
+</tr>
+<tr>
+<td>即时零售 UE</td>
+<td style="text-align: right;">FY27 末（2027 年 3 月）UE 转正</td>
+<td style="text-align: center;">减亏路径明确，是集团现金流改善关键</td>
+</tr>
+<tr>
+<td>AIDC</td>
+<td style="text-align: right;">未来两年由亏转盈</td>
+<td style="text-align: center;">本季已逼近盈亏平衡（EBITA −RMB 1.4
+亿）</td>
+</tr>
+<tr>
+<td>CapEx</td>
+<td style="text-align: right;">很可能超出原定 RMB 3,800
+亿三年计划，CapEx + OpEx 并用</td>
+<td
+style="text-align: center;">投入不封顶，但方式多元化分散现金流压力</td>
+</tr>
+</tbody>
+</table>
+<h3 id="机会与风险矩阵">6.2 机会与风险矩阵</h3>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 38%" />
+<col style="width: 39%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>维度</strong></th>
+<th style="text-align: center;"><strong>核心机会</strong></th>
+<th style="text-align: center;"><strong>主要风险</strong></th>
+<th style="text-align: center;"><strong>综合评级</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>收入增长</td>
+<td style="text-align: center;">云外部 +40% 加速、AI ARR 陡升</td>
+<td style="text-align: center;">核心电商 CMR 货币化修复偏慢（报告口径
++1%）</td>
+<td style="text-align: center;">★★★★</td>
+</tr>
+<tr>
+<td>盈利能力</td>
+<td style="text-align: center;">云毛利率结构性改善、即时零售减亏</td>
+<td style="text-align: center;">经营首现亏损，Non-GAAP 利润近乎归零</td>
+<td style="text-align: center;">★★</td>
+</tr>
+<tr>
+<td>市场竞争</td>
+<td style="text-align: center;">即时零售订单量 2.7 倍抢份额</td>
+<td style="text-align: center;">美团高客单壁垒 +
+监管对补贴的"理性竞争"引导</td>
+<td style="text-align: center;">★★★</td>
+</tr>
+<tr>
+<td>政策监管</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">中美博弈、对 Nvidia
+芯片走私的审查、补贴监管</td>
+<td style="text-align: center;">★★</td>
+</tr>
+<tr>
+<td>国际化</td>
+<td style="text-align: center;">AIDC 逼近盈亏平衡、AliExpress Choice
+改善</td>
+<td style="text-align: center;">海外地缘与合规不确定性</td>
+<td style="text-align: center;">★★★</td>
+</tr>
+<tr>
+<td>技术护城河</td>
+<td style="text-align: center;">全栈 AI + 自研 T-Head
+芯片，国产算力自主</td>
+<td style="text-align: center;">国产芯片能效/产能落后海外，产能受限</td>
+<td style="text-align: center;">★★★★</td>
+</tr>
+</tbody>
+</table>
+<h2 id="七估值与预测更新">七、估值与预测更新</h2>
+<h3 id="预测更新">7.1 预测更新</h3>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 27%" />
+<col style="width: 38%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>指标</strong></th>
+<th style="text-align: center;"><strong>FY26 实际</strong></th>
+<th style="text-align: center;"><strong>FY27 市场预期方向</strong></th>
+<th style="text-align: center;"><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>总营收</td>
+<td style="text-align: right;">RMB 10,236.7亿（+3%，LFL +11%）</td>
+<td style="text-align: right;">恢复双位数（Simply Wall St：营收
++9.8%/年）</td>
+<td style="text-align: center;">剔除剥离失真后增速回升</td>
+</tr>
+<tr>
+<td>云外部增速</td>
+<td style="text-align: right;">+40%（Q4）</td>
+<td style="text-align: right;">持续 &gt;40%</td>
+<td style="text-align: center;">管理层明确指引加速</td>
+</tr>
+<tr>
+<td>经调整 EBITA</td>
+<td style="text-align: right;">RMB 764.2亿（−56%）</td>
+<td style="text-align: right;">季度 EBITDA 回升至约 RMB 350 亿（6/9
+月季，TIKR）</td>
+<td style="text-align: center;">投入高峰后利润修复</td>
+</tr>
+<tr>
+<td>Non-GAAP 净利润</td>
+<td style="text-align: right;">RMB 606.6亿（−62%）</td>
+<td style="text-align: right;">随云毛利改善与减亏回升</td>
+<td style="text-align: center;">FY26 为利润低点</td>
+</tr>
+<tr>
+<td>Non-GAAP 每ADS</td>
+<td style="text-align: right;">FY26 RMB 26.80（−59%）</td>
+<td style="text-align: right;">Zacks FY27 EPS 共识 US$7.43/ADS（同比约
++91%）</td>
+<td style="text-align: center;">利润低基数下大幅反弹</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注: FY26 为投入高峰、利润低点；FY27
+修复幅度取决于即时零售减亏与云毛利率兑现节奏。Zacks FY27 EPS 共识
+US$7.43，过去 30 天小幅下调 4.6%，反映投入持续超预期。Simply Wall
+St（2026-06-02）预测未来三年盈利 +16.3%/年、EPS +18.1%/年、ROE 回升至约
+12.8%。</p>
+</blockquote>
+<h3 id="估值参考">7.2 估值参考</h3>
+<p>最新市场数据（截至 2026 年 6 月初）：</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 40%" />
+<col style="width: 39%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>估值/市场指标</strong></th>
+<th style="text-align: center;"><strong>数值</strong></th>
+<th style="text-align: center;"><strong>来源/口径</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最新股价</td>
+<td style="text-align: center;">约 US$125（6/1）– US$132（6/2
+收盘）</td>
+<td style="text-align: right;">Morningstar / Investing.com</td>
+</tr>
+<tr>
+<td>Forward P/E（NTM）</td>
+<td style="text-align: center;">约 19.9x</td>
+<td style="text-align: right;">Yahoo Finance（2026-06）</td>
+</tr>
+<tr>
+<td>Trailing P/E（TTM）</td>
+<td style="text-align: center;">约 19–40x（口径差异大）</td>
+<td style="text-align: right;">Yahoo 19.2x；Zacks TTM 40.4x（TTM
+利润已塌方）</td>
+</tr>
+<tr>
+<td>P/S (TTM)</td>
+<td style="text-align: center;">约 2.0x</td>
+<td style="text-align: right;">Yahoo Finance</td>
+</tr>
+<tr>
+<td>P/B (MRQ)</td>
+<td style="text-align: center;">约 1.9x</td>
+<td style="text-align: right;">Yahoo Finance</td>
+</tr>
+<tr>
+<td>EV/EBITDA (NTM)</td>
+<td style="text-align: center;">约 12.9x</td>
+<td style="text-align: right;">TIKR</td>
+</tr>
+<tr>
+<td>卖方共识目标价</td>
+<td style="text-align: center;">US$188.76（高 US$225 / 低 US$135）</td>
+<td style="text-align: right;">MarketBeat，23
+家分析师（2026-06-03）</td>
+</tr>
+<tr>
+<td>共识评级</td>
+<td style="text-align: center;">增持（Moderate Buy）：2 强买 / 16 买入 /
+4 持有 / 1 卖出</td>
+<td style="text-align: right;">MarketBeat（2026-06-03）</td>
+</tr>
+<tr>
+<td>隐含上行空间</td>
+<td style="text-align: center;">约 +44%（对当前股价 US$131）</td>
+<td style="text-align: right;">MarketBeat</td>
+</tr>
+<tr>
+<td>股息</td>
+<td style="text-align: center;">US$1.05/ADS（年度，合计约 US$25
+亿），除息日 6/11</td>
+<td style="text-align: right;">MarketWatch，股息率约 0.79%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>业绩后卖方评级与目标价调整（2026-05-14 至
+15）：清一色上调，无下调：</strong></p>
+<ul>
+<li><p>摩根大通：增持，US$200 → US$205</p></li>
+<li><p>摩根士丹利：增持，US$180 → US$190</p></li>
+<li><p>巴克莱：增持，US$186 → US$195</p></li>
+<li><p>瑞穗：跑赢大盘，US$190 → US$195</p></li>
+<li><p>野村：买入，US$200 → US$207</p></li>
+<li><p>Susquehanna：正面，US$170 → US$185</p></li>
+<li><p>汇丰：US$172 → US$180</p></li>
+</ul>
+<p><strong>第三方估值观点（最新）：</strong>Simply Wall
+St（2026-06-02）模型显示 BABA 较公允价值"低估约 20%"，5
+年情景公允价值区间 US$254–318；Morningstar 公允价值 US$288（不确定性
+High）。共识均一致指向当前股价显著低于内在价值，分歧在于"云/AI
+兑现节奏"而非方向。</p>
+<blockquote>
+<p>股价反应（基于逐日行情）：业绩日（5/13）股价一度冲高至约
+US$146，次日（5/14）回落 3.2% 至
+US$141.12；此后随获利了结与中概股震荡，月底回落至 US$124–127；6
+月初反弹至约
+US$132。业绩公布至今股价净变化大致持平略降，反映市场对"云加速（利好）"与"利润塌方
++
+现金流转负（利空）"两条线索尚未形成统一定价，这正是当前估值分歧的核心。来源:
+Financhill 逐日行情、Investing.com、MarketBeat、Morningstar、Simply Wall
+St（2026-05/06）。</p>
+</blockquote>
+<h2 id="数据来源与声明">数据来源与声明</h2>
+<h3 id="数据来源">数据来源</h3>
+<table>
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 34%" />
+<col style="width: 16%" />
+<col style="width: 44%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>序号</strong></th>
+<th style="text-align: center;"><strong>材料</strong></th>
+<th style="text-align: center;"><strong>日期</strong></th>
+<th style="text-align: center;"><strong>链接/来源</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align: center;">阿里巴巴 FY2026 Q4 及全年业绩公告（官方
+PDF）</td>
+<td style="text-align: right;">2026-05-13</td>
+<td
+style="text-align: center;">data.alibabagroup.com（用户提供原件）</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align: center;">阿里巴巴 FY2026 Q4 Earnings Call
+Transcript（全文 35,605 字符）</td>
+<td style="text-align: right;">2026-05-13</td>
+<td style="text-align: center;">earnings-call-transcripts1 (RapidAPI) /
+公司 IR</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align: center;">阿里巴巴 6-K 现报（SEC EDGAR）</td>
+<td style="text-align: right;">2026-05-13</td>
+<td style="text-align: center;">sec.gov / stocktitan.net</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align: center;">FactSet/Zacks 一致预期</td>
+<td style="text-align: right;">2026-05-12</td>
+<td style="text-align: center;">IG、Zacks（业绩前）</td>
+</tr>
+<tr>
+<td>5</td>
+<td style="text-align: center;">业绩后卖方评级与目标价</td>
+<td style="text-align: right;">2026-05-14/15</td>
+<td style="text-align: center;">MarketBeat、TIKR、24/7 Wall St.</td>
+</tr>
+<tr>
+<td>6</td>
+<td style="text-align: center;">竞品数据：美团 Q1 2026、腾讯云 2025</td>
+<td style="text-align: right;">2026-06-02 / 2026</td>
+<td style="text-align: center;">富途资讯、36氪、IG</td>
+</tr>
+<tr>
+<td>7</td>
+<td
+style="text-align: center;">阿里前三季业绩公告（6月/9月/12月季营收）</td>
+<td style="text-align: right;">2025-08 / 11 / 2026-03</td>
+<td style="text-align: center;">Business Wire、SEC EDGAR</td>
+</tr>
+<tr>
+<td>8</td>
+<td
+style="text-align: center;">最新股价与估值（P/E、目标价、评级、股息率）</td>
+<td style="text-align: right;">2026-06-01/02/03</td>
+<td style="text-align: center;">Morningstar、Yahoo
+Finance、MarketBeat、MarketWatch、Simply Wall St</td>
+</tr>
+</tbody>
+</table>
+<h3 id="声明">声明</h3>
+<p>本报告所有财务数据以阿里巴巴官方业绩公告与 Earnings Call
+实录为准；标注"估""约"等字样的数据为基于公开信息的推算。币种已显式标注
+RMB 与 US$（公告汇率约 6.9 RMB/US$）。部分 Q&amp;A 发言人在 transcript
+中记为 "Unknown
+Executive"，本报告按发言内容归属至最可能的业务条线并已注明，不臆造具体人名。GAAP
+净利润同比 +96%
+主因股权投资按市值计价收益及去年低基数，非主营盈利改善，使用时请注意区分口径。</p>
+<p><strong>— END OF REPORT —</strong></p>
+</article></body></html>

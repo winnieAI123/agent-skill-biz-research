@@ -1,0 +1,1204 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>
+*{box-sizing:border-box}
+body{margin:0;background:#fbfaf7;color:#22262c;
+  font-family:"PingFang SC","Helvetica Neue",-apple-system,"Segoe UI",sans-serif;
+  font-size:15px;line-height:1.78;-webkit-font-smoothing:antialiased}
+.report{max-width:860px;margin:0 auto;padding:38px 46px 80px}
+.report>p:first-child{font-size:1.5rem;font-weight:700;color:#13283e;line-height:1.3;margin:0 0 .2em}
+.report>p:first-child+p strong{font-size:1.05rem;color:#3a6186}
+h1,h2,h3,h4,h5{color:#13283e;line-height:1.3;font-weight:700}
+h1{font-size:1.5rem;margin:1.7em 0 .7em;padding-bottom:.34em;border-bottom:2px solid #13283e}
+h2{font-size:1.22rem;margin:1.9em 0 .7em;padding:.18em 0 .18em .7em;border-left:4px solid #C8923D;color:#16314c;
+  background:linear-gradient(90deg,rgba(200,146,61,.08),transparent)}
+h3{font-size:1.06rem;margin:1.4em 0 .5em;color:#1c4063;
+  padding-left:.6em;border-left:3px solid #9fb9d0}
+h4{font-size:.98rem;margin:1.1em 0 .4em;color:#3f4a57}
+p{margin:.6em 0}
+strong{color:#13283e;font-weight:600}
+em{color:#8a5a1c;font-style:normal;background:rgba(200,146,61,.14);padding:0 .25em;border-radius:2px}
+a{color:#1c4063;text-decoration:none;border-bottom:1px solid rgba(28,64,99,.3)}
+ul,ol{margin:.5em 0 .9em;padding-left:1.5em}
+li{margin:.28em 0}
+hr{border:0;border-top:1px solid #e6e0d4;margin:1.6em 0}
+table{width:100%;border-collapse:collapse;margin:1.1em 0;font-size:.9rem;
+  box-shadow:0 1px 0 #e6e0d4;background:#fff}
+thead th{background:#f1ece1;color:#13283e;font-weight:700;text-align:left;padding:9px 12px;border:1px solid #e7e1d5;
+  border-bottom:2px solid #cfc7b6;font-size:.88rem;letter-spacing:.01em}
+thead th *{color:#13283e !important;background:transparent !important;font-weight:700 !important}
+tbody td{border:1px solid #e7e1d5;padding:8px 12px;vertical-align:top}
+tbody tr:nth-child(even) td{background:#faf8f3}
+tbody td:first-child{font-weight:600;color:#16314c;background:#f4f1ea}
+/* 单列"特别提示/醒目标注"表 -> 还原成高亮提示框 */
+table.callout{background:#fff7e8;box-shadow:none;border-left:4px solid #C8923D;margin:1.2em 0}
+table.callout thead{display:none}
+table.callout td,table.callout th{border:0;padding:12px 16px;background:transparent !important;
+  font-weight:500 !important;color:#5a4216 !important}
+table.callout em{background:transparent;color:#8a5a1c}
+/* 文字色块（KPI 等）保持可读 */
+::selection{background:#cfe0ef}
+</style></head><body><article class="report"><h2 id="季度经营分析报告"><strong>季度经营分析报告</strong></h2>
+<p><strong>报告期</strong>: FY2026 Q4 ｜
+3月—5月（2026自然年），财年截至2026年5月31日<strong>数据来源</strong>:
+Oracle FY2026 Q4 财报新闻稿 &amp; Earnings Call
+实录（2026年6月10日）<strong>报告生成日期</strong>: 2026年6月11日
+｜<strong>分析师</strong>: AI Research Assistant</p>
+<h2 id="executive-summary"><strong>Executive Summary</strong></h2>
+<p><strong>▌ 财务快照</strong></p>
+<p>甲骨文 FY2026 Q4 总营收<strong>$19.18B</strong>（约192亿美元），同比
++21%（固定汇率 +20%），小幅超出 LSEG 一致预期的 $19.09B；non-GAAP EPS
+$2.11，同比 +24%，大幅超出预期的 $1.96（Beat 约7.7%，剔除出售 Ampere
+芯片业务与 Bloom Energy 认股权证的一次性投资收益后为
+$2.03，+20%）。增长引擎高度集中于云基础设施：OCI（IaaS）收入 $5.79B 同比
++93%，连续四个季度加速（FY26 四个季度增速分别为
+55%/68%/84%/93%）；云应用（SaaS）+10% 相对平稳；传统软件收入 -2%
+持续萎缩。最大亮点是剩余履约义务（RPO）单季暴增 $85B
+至<strong>$638B</strong>（同比 +363%）。代价同样醒目：FY2026 全年 CapEx
+达 $55.7B（超出 $50B 指引），自由现金流 -$23.7B，公司计划 FY2027
+再融资约 $40B（含已宣布的 $20B ATM 增发）。管理层确认 FY2027 营收 $90B
+指引（固定汇率 +34%）并上调 non-GAAP EPS 指引至 $8.05。整体基调
+Confident，但市场用脚投票：财报后盘后股价下跌约 10%（从收盘 $201.26
+最低跌至 $180 下方）。</p>
+<p><strong>▌ Transcript 核心叙事</strong></p>
+<p>业绩会叙事有三条主线：（1）<strong>需求可见性压倒一切</strong>：新
+CFO Hilary Maxson 强调 $638B RPO
+"提供了前所未有的未来收入可见性"，并完全重申 2030 财年 +31% 营收 / +28%
+EPS CAGR 长期目标；（2）<strong>资本强度的辩护</strong>：联席 CEO
+Clayton Magouyrk 披露本季签下 $67B AI
+基础设施合同，其中多数为客户自带硬件（BYOH）或预付，此类合同累计
+$75B，"利润率不降反升"，GPU 全球利用率高达 97.5%；（3）<strong>AI
+货币化新模式</strong>：联席 CEO Mike Sicilia
+推出按结果计费（outcome-based pricing）与 token 套餐包，Q4 已有 33
+家客户试用。风险信号在现金流报表而非利润表：FY27 净 CapEx 指引
+$70B（报告口径还要再高 $20-25B），FCF 转正时点仍未给出。</p>
+<h2 id="一核心-kpi-速览"><strong>一、核心 KPI 速览</strong></h2>
+<p>以下为本季度核心财务与运营指标，与上年同期及上季对比：</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>指标</strong></th>
+<th style="text-align: center;"><strong>本季实际</strong></th>
+<th style="text-align: center;"><strong>YoY变化</strong></th>
+<th style="text-align: center;"><strong>QoQ变化</strong></th>
+<th style="text-align: center;"><strong>市场预期</strong></th>
+<th style="text-align: center;"><strong>Beat/Miss</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">总营收</td>
+<td style="text-align: right;">$19.18B</td>
+<td style="text-align: right;">+21%</td>
+<td style="text-align: right;">+11.6%（vs Q3 $17.19B）</td>
+<td style="text-align: right;">$19.09B (LSEG)</td>
+<td style="text-align: right;">Beat +0.5%</td>
+</tr>
+<tr>
+<td style="text-align: left;">总云收入（IaaS+SaaS）</td>
+<td style="text-align: right;">$9.91B</td>
+<td style="text-align: right;">+47%</td>
+<td style="text-align: right;">+11.2%</td>
+<td style="text-align: right;">约$9.99B (Bloomberg)</td>
+<td style="text-align: right;">略Miss -0.8%</td>
+</tr>
+<tr>
+<td style="text-align: left;">云基础设施 IaaS</td>
+<td style="text-align: right;">$5.79B</td>
+<td style="text-align: right;">+93%</td>
+<td style="text-align: right;">+18.3%</td>
+<td style="text-align: right;">约$5.72B</td>
+<td style="text-align: right;">Beat +1.2%</td>
+</tr>
+<tr>
+<td style="text-align: left;">云应用 SaaS</td>
+<td style="text-align: right;">$4.12B</td>
+<td style="text-align: right;">+10%</td>
+<td style="text-align: right;">+2.5%</td>
+<td style="text-align: right;">约$4.16B</td>
+<td style="text-align: right;">略Miss</td>
+</tr>
+<tr>
+<td style="text-align: left;">GAAP 营业利润</td>
+<td style="text-align: right;">$6.13B</td>
+<td style="text-align: right;">+20%</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">利润率32%持平</td>
+</tr>
+<tr>
+<td style="text-align: left;">Non-GAAP 营业利润</td>
+<td style="text-align: right;">$8.59B</td>
+<td style="text-align: right;">+22%</td>
+<td style="text-align: right;">+16%（vs Q3 $7.4B）</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">利润率45%</td>
+</tr>
+<tr>
+<td style="text-align: left;">Non-GAAP EPS</td>
+<td style="text-align: right;">$2.11</td>
+<td style="text-align: right;">+24%</td>
+<td style="text-align: right;">+17.9%（vs Q3 $1.79）</td>
+<td style="text-align: right;">$1.96 (LSEG)</td>
+<td style="text-align: right;">Beat +7.7%</td>
+</tr>
+<tr>
+<td style="text-align: left;">GAAP EPS</td>
+<td style="text-align: right;">$1.45</td>
+<td style="text-align: right;">+21%</td>
+<td style="text-align: right;">+14.2%（vs Q3 $1.27）</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;">RPO 剩余履约义务</td>
+<td style="text-align: right;">$638B</td>
+<td style="text-align: right;">+363%</td>
+<td style="text-align: right;">+$85B（vs Q3 $553B）</td>
+<td style="text-align: right;">约$589.5B</td>
+<td style="text-align: right;">Beat +8.2%</td>
+</tr>
+<tr>
+<td style="text-align: left;">FY26 自由现金流</td>
+<td style="text-align: right;">-$23.7B</td>
+<td style="text-align: right;">由正转负（FY25 -$0.4B）</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">核心担忧点</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>数据来源: Oracle FY2026 Q4 Earnings
+Release（2026-06-10）；共识预期来自 LSEG（经 TheStreet 引用）及
+Bloomberg（经 Yahoo Finance 引用，2026-06-10）。注：non-GAAP EPS $2.11
+含一次性投资收益约 $0.08，剔除后为 $2.03（+20%），仍 Beat 共识。</p>
+</blockquote>
+<h2 id="二核心要点-top-4-takeaways"><strong>二、核心要点 (Top 4
+Takeaways)</strong></h2>
+<h3 id="rpo-单季再增-85b-至-638bbofa-估计超半数来自-openai"><strong>1.
+RPO 单季再增 $85B 至 $638B，BofA 估计超半数来自 OpenAI</strong></h3>
+<p>RPO 从 Q3 末的 $553B 增至 $638B，同比 +363%（上年同期仅 $138B）。CFO
+Hilary Maxson 在业绩会上披露，预计其中 12% 在未来 12
+个月内确认为收入（约 $77B），另有 34% 在 13-36
+个月内确认，且"这两个比例都会在未来几个季度加速（"expected to
+accelerate"）"。这是 FY27 营收 $90B（+34%）指引的底气所在。但据 Bank of
+America 分析师在财报后点评，超过 50% 的 RPO 来自 OpenAI
+单一客户，客户集中度是这串天文数字背后最大的折价因素。管理层对此的回应是"多元化"证据：本季有
+4 家客户各自签约超 $8B。（来源：Oracle Q4 FY26 PR；Earnings Call
+Transcript；CNBC 2026-06-10）</p>
+<h3 id="现金流是这份财报的另一面fcf--23.7bfy27-还要融资-40b"><strong>2.
+现金流是这份财报的"另一面"：FCF -$23.7B，FY27 还要融资
+$40B</strong></h3>
+<p>FY2026 经营现金流 $32.0B（+54%）创纪录，但 CapEx 高达
+$55.7B，明显超出公司 3 月给出的 $50B 全年指引，全年 FCF
+为<strong>-$23.7B</strong>（FY25 为 -$0.4B）。公司 FY26 已融资
+$48B（债务 $43B + 优先股 $5B），FY27 计划再融资约 $40B（含 $20B ATM
+增发），并指引 FY27 净现金 CapEx 约 $70B（报告口径 CapEx
+还要加上客户预付与时间差的 $20-25B，即约
+$90-95B）。资产负债表一年间的变化触目惊心：PP&amp;E 从 $43.5B 翻倍至
+$100.0B，总借款达 $129.5B（净债务约 $97.6B），利息费用同比
++47%。这正是盘后抛售的直接导火索：TheStreet 实时报道称 $40B
+融资计划公布后"股价应声下挫 9%"。（来源：Oracle Q4 FY26 PR
+现金流量表及资产负债表；TheStreet Live Blog 2026-06-10）</p>
+<h3
+id="客户出资新模式75b-byoh预付合同-按结果计费重塑资本叙事"><strong>3.
+"客户出资"新模式：$75B BYOH/预付合同 +
+按结果计费，重塑资本叙事</strong></h3>
+<p>针对"AI 基建烧钱"的质疑，管理层本季给出了结构性回应。其一，Clayton
+Magouyrk 披露本季签约的 $67B AI
+基础设施合同中，多数为客户自带硬件（bring-your-own-hardware）或预付 GPU
+款，此类合同累计已达 $75B，且"利润率与其他合同相比没有任何劣化（"no
+degradation in margin"）"，新闻稿明确表示这"大幅减少了 Oracle 必须为 AI
+数据中心融资的资本"。其二，公司首次引入"净现金 CapEx"披露口径（FY26 为
+$48B vs 报告口径 $55.7B）。其三，CFO 给出项目级稳态 ROIC "高于 25%（"in
+the high 20s"）"的量化锚点。其四，应用侧推出 token
+套餐与按结果计费（如按面试筛选人数、按酒店升舱成交比例计价），Q4 已有 33
+家客户试点。这套组合拳能否说服市场，取决于未来几个季度净 CapEx 与 RPO
+转化的实际兑现。（来源：Earnings Call Transcript；Oracle Q4 FY26
+PR）</p>
+<h3
+id="增长与利润率的赛跑毛利率全年--5pp靠裁员与销售费用收缩对冲"><strong>4.
+增长与利润率的赛跑：毛利率全年
+-5pp，靠裁员与销售费用收缩对冲</strong></h3>
+<p>云基础设施放量直接压缩毛利率：Q4 "Cloud and software" 营业成本同比
++56%（收入仅 +21%），全年毛利率下滑约 5 个百分点，折旧近乎翻倍（$7.6B vs
+$3.9B）。对冲手段是激进的费用纪律：Q4 销售与市场费用 -10%、研发费用
+-2%、行政费用 -5%，Q4 重组费用 $823M（上年同期仅 $83M，全年 $1.84B），与
+3 月底媒体报道的 2-3 万人裁员相印证（TD Cowen 当时估计每年可释放 $8-10B
+现金流）。结果是 Q4 GAAP 营业利润率守住 32%、non-GAAP
+45%，甚至环比微升。CFO 指引 FY27
+毛利率将继续因数据中心爬坡而下台阶，但"基础设施利润率会随合同收入满产而快速改善"，运营费用绝对额同比微降。OCI
+30%-40% 的目标利润率区间被再次确认。（来源：Oracle Q4 FY26 PR
+损益表；Earnings Call Transcript；TIKR/TD Cowen 2026年3月报道）</p>
+<h2
+id="三战略专项分析-ai-基础设施-全栈-ai-货币化"><strong>三、战略专项分析
+— AI 基础设施 + 全栈 AI 货币化</strong></h2>
+<blockquote>
+<p>关键发现：Oracle 正在从"软件公司"加速转型为"AI 基础设施公司"。本季
+$67B 新签 AI 合同、1.2 吉瓦年度交付量、97.5% GPU
+利用率构成需求侧铁证；而
+BYOH/预付模式（$75B）与按结果计费则是公司对"资本强度质疑"的正面回应。市场分歧不在需求，而在融资路径与
+FCF 转正时点。</p>
+</blockquote>
+<h3 id="ai-基础设施进展"><strong>3.1 AI 基础设施进展</strong></h3>
+<p>本季是 Oracle AI 基建叙事数据最密集的一个季度。需求侧，RPO 净增 $85B
+至 $638B；供给侧，FY2026 全年向客户交付超过 1.2
+吉瓦算力容量，而管理层披露 FY27 Q1 单季交付量将接近 1
+吉瓦，"几乎等于过去四个季度交付量的总和"，供给瓶颈正在快速打开。</p>
+<p><strong>关键进展指标：</strong></p>
+<ul>
+<li><p>本季新签 AI 基础设施合同<strong>$67B</strong>，多数为 BYOH
+或预付结构（来源: Earnings Call, Clayton Magouyrk）</p></li>
+<li><p>BYOH/预付合同累计 $75B，约占 RPO 的
+12%，利润率不低于普通合同（来源: Earnings Call; PR）</p></li>
+<li><p>全球 GPU 利用率 97.5%；Q4 到期续约的 59 家客户/3.5万块 GPU
+中，49% 的客户续约了 92% 的 GPU，未续约部分大多当季转售其他客户（来源:
+Earnings Call）</p></li>
+<li><p>FY26 交付 &gt;1.2 吉瓦，FY27 Q1 单季交付接近 1 吉瓦（来源:
+Earnings Call）</p></li>
+<li><p>五大在建站点进度：Abilene, TX 已交付 42% 容量、未来90天再交付
+35%；Shackleford, TX 已上线 115 兆瓦（提前1个月+）；新墨西哥 Doña
+Ana、密歇根 Saline、威斯康星 Port Washington 均按期或提前，2027
+自然年起陆续交付（来源: Earnings Call）</p></li>
+<li><p>多云数据库（Multicloud AI Database）收入同比 +404%，订单
++325%，为"Oracle 史上增长最快的业务"（来源: PR; Earnings Call）</p></li>
+<li><p>应用侧 AI：过去一年交付 1,000+ AI agents；token 套餐 Q4
+限量推出获 33 家客户，Aon 与 Liberty Energy 预购（来源: Earnings Call,
+Mike Sicilia）</p></li>
+</ul>
+<h3 id="earnings-call-关键表述摘录"><strong>3.2 Earnings Call
+关键表述摘录</strong></h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>发言人</strong></th>
+<th style="text-align: center;"><strong>关键表述摘要</strong></th>
+<th style="text-align: center;"><strong>分析解读</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Hilary Maxson（CFO）</td>
+<td style="text-align: center;">"RPO 达到
+$638B，+363%，这种前所未有的水平为未来收入增长提供了卓越的可见性（"exceptional
+visibility"）……12% 将在未来12个月确认、34%
+在13-36个月确认，且这两个比例都将在未来几个季度加速"</td>
+<td style="text-align: center;">把 FY27 +34%
+的指引锚定在已签约合同上，弱化"画饼"质疑；12%×$638B≈$77B 与 FY27 $90B
+总营收指引可互相验证</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hilary Maxson（CFO）</td>
+<td style="text-align: center;">"我对长期目标完全重申（"full
+reconfirmation"）：到 FY2030 营收 CAGR +31%、EPS CAGR
++28%……基础设施业务稳态项目级 ROIC 在 25%-30% 区间（"in the high
+20s"）"</td>
+<td style="text-align: center;">新 CFO
+上任仅两个月即背书激进长期目标，消除"换 CFO 改口径"担忧；首次给出 ROIC
+量化框架，回应"AI 基建不赚钱"质疑</td>
+</tr>
+<tr>
+<td style="text-align: left;">Clayton Magouyrk（联席CEO）</td>
+<td style="text-align: center;">"本季签下 $67B AI
+基础设施合同，多数为客户自带硬件或预付……这类合同利润率没有任何劣化（"no
+degradation in margin"）。客户即便自己出资本，依然选择 OCI
+来交付基础设施"</td>
+<td
+style="text-align: center;">把"融资压力"重新框定为"商业模式创新"：客户分担
+CapEx 说明 OCI 的价值在工程与运营能力，而非单纯资本中介</td>
+</tr>
+<tr>
+<td style="text-align: left;">Clayton Magouyrk（联席CEO）</td>
+<td style="text-align: center;">"AI
+基础设施让现有云市场显得渺小，我们看到的市场规模是每年数万亿美元（"trillions
+of dollars per year"），叠加此前给出的 30%-40% 利润率框架"</td>
+<td style="text-align: center;">TAM 叙事再升级；30-40% 利润率区间是判断
+OCI 长期盈利能力的关键锚点</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mike Sicilia（联席CEO）</td>
+<td style="text-align: center;">"客户已经越过 AI 实验阶段（"moved past
+the experiment stage"），准备部署企业级智能体方案……最快、最便宜的消费 AI
+的方式就是继续用 Oracle 的应用"</td>
+<td style="text-align: center;">SaaS 业务的 AI 防御逻辑：AI
+功能随季度更新内置免费，将 AI 转化为存量应用的留存武器而非颠覆威胁</td>
+</tr>
+<tr>
+<td style="text-align: left;">Q&amp;A（Guggenheim 问内存涨价）</td>
+<td
+style="text-align: center;">Magouyrk："当我们锁定了成本（空间、电力、人力、元器件）才签固定价合同；锁不住的，合同里有成本传导机制（"passed
+through"）……Oracle 不会坐视利润率被侵蚀"</td>
+<td style="text-align: center;">直接回应 2026 年内存/SSD 涨价对 AI
+数据中心成本的冲击，合同结构设计是利润率的第一道防线</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>来源: Oracle FY2026 Q4 Earnings Call Transcript（The Motley Fool
+转录，2026-06-10） ⚠️ 引用以实际原文为准，翻译保留管理层表态强度</p>
+</blockquote>
+<h3 id="earnings-call-summary-电话会议摘要"><strong>3.3 Earnings Call
+Summary 电话会议摘要</strong></h3>
+<p>本次业绩会阵容有重大变化：由两位联席 CEO（Mike Sicilia
+主管应用与数据库、Clayton Magouyrk 主管 OCI）+ 新任 CFO Hilary
+Maxson（2026年4月6日就任，来自 Schneider
+Electric，入职约两个月后首次主持业绩会）出席，创始人 Larry Ellison
+未参加本次电话会发言，公司同时首次引入业绩演示幻灯片。</p>
+<h3 id="管理层核心发言-management-key-remarks"><strong>管理层核心发言
+(Management Key Remarks)</strong></h3>
+<ul>
+<li><p><strong>Hilary
+Maxson（CFO）</strong>：开场自我介绍称入职约两个月，所见"强化了我对公司战略、执行和机会的信心"；承诺"恪守纪律性资本配置、保持强健资产负债表、保住投资级信用评级（"preserving
+our investment grade credit rating"）"</p></li>
+<li><p><strong>Hilary Maxson（CFO）</strong>：FY26 全年营收首次突破
+$67B，经营现金流 $32B（+54%）；净现金 CapEx $48B（剔除预付与时间差约
+$8B）</p></li>
+<li><p><strong>Hilary Maxson（CFO）</strong>：FY27 指引营收
++34%（固定汇率）；净现金 CapEx 约 $70B；融资约 $40B（含 $20B ATM
+增发），2026 自然年内不再发新债；non-GAAP EPS $8.05（剔除一次性收益口径
++18%）</p></li>
+<li><p><strong>Mike Sicilia（联席CEO，应用/数据库）</strong>：云应用收入
+$4.1B（+10%），SaaS 递延收入
++16%，"递延增速快于当季收入增速，给了我们信心"；本季数千家客户上线，仅
+Fusion 就超 300 家</p></li>
+<li><p><strong>Mike
+Sicilia（联席CEO，应用/数据库）</strong>：美国退伍军人事务部（VA）电子病历推进，Q4
+新增密歇根 4 家医疗中心、6月初再增俄亥俄 4 家，累计 14 家、覆盖 2.9
+万临床医生与 50
+万退伍军人；美国人事管理局（OPM）于财报当日宣布全机构采用 Fusion
+HCM</p></li>
+<li><p><strong>Mike Sicilia（联席CEO，应用/数据库）</strong>：回应"SaaS
+末日论"（"SaaS
+apocalypse"）称几个季度前确有客户决策延迟，但"客户已经看穿了这一点"，关键任务系统领域
+AI 内置的企业软件依然是必选项</p></li>
+<li><p><strong>Clayton Magouyrk（联席CEO，OCI）</strong>："OCI
+是任何地方最安全、最高性能、最灵活、最低成本的基础设施"；自研 Acceleron
+网络技术提供最高性能/最低成本网络</p></li>
+<li><p><strong>Clayton Magouyrk（联席CEO，OCI）</strong>：AI
+价值兑现最清晰的场景是智能体编程（"agentic coding"），"它彻底改变了
+Oracle 自己的运营方式，我们自己的需求都看不到放缓"</p></li>
+<li><p><strong>Clayton
+Magouyrk（联席CEO，OCI）</strong>：逐一展示五大站点施工进度（见3.1），强调组织能力本身是最大护城河，"真正的差异化是组织"</p></li>
+</ul>
+<h3 id="核心qa-key-questions-answers"><strong>核心Q&amp;A (Key Questions
+&amp; Answers)</strong></h3>
+<h3
+id="q1guggenheimjohn-difucci-本季-capex-超预期与内存等元器件涨价长期合同如何保护利润率"><strong>Q1：Guggenheim（John
+DiFucci）— 本季 CapEx
+超预期与内存等元器件涨价，长期合同如何保护利润率？</strong></h3>
+<ul>
+<li><p><strong>回应（Magouyrk）</strong>：Q4 CapEx
+超支主要是时间因素而非元器件涨价，"我的工作就是想办法加速 CapEx
+以更早确认收入"；成本可锁定时签固定价合同，锁不住时合同含成本传导条款</p></li>
+<li><p><strong>回应（Maxson，追问长期目标）</strong>：对 FY2030
++31%/+28% CAGR 长期目标"从我的角度完全重申"</p></li>
+<li><p><strong>信号解读</strong>：新 CFO
+不仅没有收缩前任承诺，反而主动背书，打消"管理层换届下修指引"的担忧；成本传导条款是
+2026 年存储涨价周期中很关键但易被忽略的合同细节</p></li>
+</ul>
+<h3
+id="q2deutsche-bankbrad-zelnick-投资者该用什么框架评估重投入期的回报"><strong>Q2：Deutsche
+Bank（Brad Zelnick）—
+投资者该用什么框架评估重投入期的回报？</strong></h3>
+<ul>
+<li><p><strong>回应（Maxson）</strong>：用项目级
+ROIC：税后营业利润加回折旧、除以项目总投资，稳态下"在 25%-30%
+区间（"high 20s"）"；BYOH 类结构的 ROIC 还会更高</p></li>
+<li><p><strong>信号解读</strong>：这是 Oracle 首次给出 AI
+基建的量化回报框架，方便卖方建模，也是对"烧钱无回报"叙事的正面回击；但注意该口径加回了折旧，与
+FCF 口径的差距正是争议所在</p></li>
+</ul>
+<h3
+id="q3bernsteinmark-moerdler-neocloudspacex-等大量新玩家涌入如何保住续约新客户与利润率"><strong>Q3：Bernstein（Mark
+Moerdler）— Neocloud、SpaceX
+等大量新玩家涌入，如何保住续约、新客户与利润率？</strong></h3>
+<ul>
+<li><p><strong>回应（Magouyrk）</strong>：需求仍大幅超过供给；续约的本质是数年服务关系，"认为这些集群买来就能自己跑的人非常糊涂（"very
+confused"）"；GPU 利用率 97.5%、到期 GPU
+当季即被消化是客户满意度的硬证据</p></li>
+<li><p><strong>信号解读</strong>：管理层把竞争问题转化为运营能力问题，回避了价格战风险的直接讨论；97.5%
+利用率与续约数据是本场最有说服力的反"产能过剩"论据</p></li>
+</ul>
+<h3
+id="q4bmokeith-bachman-为什么推按结果计费和-token-套餐影响哪些产品线对增长有何意义"><strong>Q4：BMO（Keith
+Bachman）— 为什么推按结果计费和 token
+套餐？影响哪些产品线、对增长有何意义？</strong></h3>
+<ul>
+<li><p><strong>回应（Sicilia）</strong>：按结果计费在建筑（按管理合同额）、酒店（按升舱成交）、医疗（按患者吞吐量）已有实践，现推广到全应用线（含
+Fusion）；客户最关心"AI 预算花多少、ROI 怎么算"，全栈布局让 Oracle
+能直接计量结果</p></li>
+<li><p><strong>信号解读</strong>：应用侧 AI
+货币化从"内置免费保留存"走向"增量收费"，若跑通将打开 SaaS
+第二增长曲线；当前 33 家客户规模尚小，FY27 需观察放量</p></li>
+</ul>
+<h3
+id="q5barclaysraimo-lenschow-撇开-ai经典-oracle-业务数据库应用现状如何"><strong>Q5：Barclays（Raimo
+Lenschow）— 撇开 AI，经典 Oracle
+业务（数据库、应用）现状如何？</strong></h3>
+<ul>
+<li><p><strong>回应（Sicilia）</strong>：应用 $4.1B 体量上 +10%
+"相当不错"；云数据库 +29%，多云收入 4 倍、订单 3.25
+倍增长，"多云数据库还在极早期（"very early days"）"</p></li>
+<li><p><strong>信号解读</strong>：数据库的"数据引力"（data
+gravity）逻辑在 AI
+时代被强化：企业要对自有数据做推理，数据在哪、算力就去哪，这是 Oracle
+区别于纯算力出租商（Neocloud）的根本</p></li>
+</ul>
+<h3
+id="q6evercore-isikirk-materne-byoh预付占-rpo-约12这个比例会走向哪里70b-capex-口径怎么理解"><strong>Q6：Evercore
+ISI（Kirk Materne）— BYOH/预付占 RPO 约12%，这个比例会走向哪里？$70B
+CapEx 口径怎么理解？</strong></h3>
+<ul>
+<li><p><strong>回应（Magouyrk）</strong>：无法预测最终比例，模式还在演化；客户买的不是资本，而是"建数据中心、设计网络、装云、配套通用算力/存储/安全/身份服务"的端到端能力</p></li>
+<li><p><strong>回应（Maxson）</strong>：FY27 净现金 CapEx 约 $70B，另有
+$20-25B 客户预付/时间差（合计为报告口径
+CapEx）；预付前置收款改善回报，"不是供应商融资（"not vendor
+financing"），只是第三方制造商安排"</p></li>
+<li><p><strong>信号解读</strong>：报告口径 FY27 CapEx 实际上看到 $90-95B
+量级，远超市场此前预期，这是盘后股价承压的核心数字；但净口径与预付结构确实实质性降低了融资缺口</p></li>
+</ul>
+<h3 id="客户与运营指标"><strong>3.4 客户与运营指标</strong></h3>
+<h3 id="客户结构分析"><strong>3.4.1 客户结构分析</strong></h3>
+<p>Oracle 的客户结构正在形成"AI 巨头 + 传统企业"的杠铃形态：</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>客户分类</strong></th>
+<th style="text-align: center;"><strong>本季趋势</strong></th>
+<th style="text-align: center;"><strong>付费金额趋势</strong></th>
+<th style="text-align: center;"><strong>战略意义</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">AI 实验室/超大客户（OpenAI等）</td>
+<td style="text-align: right;">4 家大客户单季各自签约超 $8B</td>
+<td style="text-align: right;">BofA 估计 OpenAI 占 RPO 超50%</td>
+<td
+style="text-align: center;">收入可见性的来源，也是最大集中度风险</td>
+</tr>
+<tr>
+<td
+style="text-align: left;">企业多云数据库客户（Vodafone、Claro等）</td>
+<td style="text-align: right;">多云收入 +404%</td>
+<td style="text-align: right;">快速放量</td>
+<td
+style="text-align: center;">"数据引力"变现，绑定三大云生态而非对抗</td>
+</tr>
+<tr>
+<td style="text-align: left;">SaaS 企业客户（Fusion等）</td>
+<td style="text-align: right;">单季 300+ Fusion 上线；OPM
+全机构采购</td>
+<td style="text-align: right;">SaaS 递延收入 +16%</td>
+<td style="text-align: center;">现金牛与 AI agent 货币化的分发渠道</td>
+</tr>
+<tr>
+<td style="text-align: left;">政府/医疗（VA、NHS等）</td>
+<td style="text-align: right;">VA 累计14家医疗中心上线</td>
+<td style="text-align: right;">稳步扩展</td>
+<td style="text-align: center;">Oracle Health 重启增长的关键验证场</td>
+</tr>
+</tbody>
+</table>
+<h3 id="运营深度指标"><strong>3.4.2 运营深度指标</strong></h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>指标名称</strong></th>
+<th style="text-align: center;"><strong>本季值</strong></th>
+<th style="text-align: center;"><strong>变化趋势</strong></th>
+<th style="text-align: center;"><strong>分析意义</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">GPU 全球利用率</td>
+<td style="text-align: right;">97.5%</td>
+<td style="text-align: center;">高位</td>
+<td style="text-align: center;">直接反驳"产能过剩"叙事</td>
+</tr>
+<tr>
+<td style="text-align: left;">GPU 续约行为</td>
+<td style="text-align: right;">49%客户续约92%GPU（3.5万块/59客户）</td>
+<td style="text-align: center;">未续约当季转售</td>
+<td style="text-align: center;">多租户架构下资产周转健康</td>
+</tr>
+<tr>
+<td style="text-align: left;">算力交付量</td>
+<td style="text-align: right;">FY26 &gt;1.2吉瓦；FY27Q1 接近1吉瓦</td>
+<td style="text-align: center;">急剧加速</td>
+<td style="text-align: center;">收入确认的物理前提</td>
+</tr>
+<tr>
+<td style="text-align: left;">RPO 12个月内确认比例</td>
+<td style="text-align: right;">12%（约$77B）</td>
+<td style="text-align: center;">未来数季将提升</td>
+<td style="text-align: center;">短期收入弹药充足</td>
+</tr>
+<tr>
+<td style="text-align: left;">SaaS 递延收入</td>
+<td style="text-align: right;">+16%</td>
+<td style="text-align: center;">快于当季收入(+10%)</td>
+<td style="text-align: center;">SaaS 动能领先指标健康</td>
+</tr>
+<tr>
+<td style="text-align: left;">AI agents 交付</td>
+<td style="text-align: right;">累计1,000+；token套餐33家客户</td>
+<td style="text-align: center;">早期</td>
+<td style="text-align: center;">应用侧 AI 货币化萌芽</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>来源: Oracle FY2026 Q4 Earnings Call、PR。Oracle 不披露 DAU/MAU
+类指标。</p>
+</blockquote>
+<h2 id="四收入分析"><strong>四、收入分析</strong></h2>
+<blockquote>
+<p>关键发现：FY26 四个季度总营收增速
+12%→14%→22%→21%，重回高增长的拉动力几乎全部来自 OCI（IaaS 增速
+55%→68%→84%→93%）；传统软件（占收入36%）继续缓慢失血，SaaS
+维持双位数低档。收入结构已质变：云收入占比从上年同期 43% 升至 52%。</p>
+</blockquote>
+<h3 id="收入结构分解"><strong>4.1 收入结构分解</strong></h3>
+<p>本季总营收 $19.18B，同比 +21%（固定汇率
++20%），高于公司自身指引区间（+19%~21% USD）上沿附近，小幅超出 LSEG 共识
+$19.09B。结构上，云基础设施是唯一的超高速引擎，SaaS
+稳健，软件license/support 与硬件构成"现金牛拖车"：</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>收入分类</strong></th>
+<th style="text-align: center;"><strong>本季收入</strong></th>
+<th style="text-align: center;"><strong>YoY增速</strong></th>
+<th style="text-align: center;"><strong>占总收入比</strong></th>
+<th style="text-align: center;"><strong>分析评价</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">云基础设施 IaaS（OCI）</td>
+<td style="text-align: right;">$5.79B</td>
+<td style="text-align: right;">+93%</td>
+<td style="text-align: right;">30%</td>
+<td style="text-align: center;">连续四季加速，年化运行率已超 $23B
+★★★</td>
+</tr>
+<tr>
+<td style="text-align: left;">云应用 SaaS</td>
+<td style="text-align: right;">$4.12B</td>
+<td style="text-align: right;">+10%</td>
+<td style="text-align: right;">21%</td>
+<td
+style="text-align: center;">略低于共识$4.16B；递延收入+16%预示动能尚可</td>
+</tr>
+<tr>
+<td style="text-align: left;">软件支持 Software support</td>
+<td style="text-align: right;">$4.94B</td>
+<td style="text-align: right;">约持平</td>
+<td style="text-align: right;">26%</td>
+<td style="text-align: center;">高毛利现金牛，被云迁移缓慢侵蚀</td>
+</tr>
+<tr>
+<td style="text-align: left;">软件许可 Software license</td>
+<td style="text-align: right;">$1.88B</td>
+<td style="text-align: right;">-6%</td>
+<td style="text-align: right;">10%</td>
+<td
+style="text-align: center;">低于共识$1.93B，本季最明显的瑕疵之一</td>
+</tr>
+<tr>
+<td style="text-align: left;">服务 Services</td>
+<td style="text-align: right;">$1.52B</td>
+<td style="text-align: right;">+13%</td>
+<td style="text-align: right;">8%</td>
+<td style="text-align: center;">云实施需求带动回暖</td>
+</tr>
+<tr>
+<td style="text-align: left;">硬件 Hardware</td>
+<td style="text-align: right;">$0.92B</td>
+<td style="text-align: right;">+9%</td>
+<td style="text-align: right;">5%</td>
+<td style="text-align: center;">Exadata 等随云需求企稳</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>来源: Oracle Q4 FY26 PR 补充收入分析表；软件许可共识来自 Yahoo
+Finance 财报速评（2026-06-10）</p>
+</blockquote>
+<p>FY26 全年口径：云收入 $34.0B（+39%，其中 IaaS $18.1B +77%、SaaS
+$15.9B +11%）、软件 $24.5B（-1%）、硬件 $3.1B（+5%）、服务
+$5.7B（+10%）。</p>
+<h3 id="分地区收入"><strong>4.2 分地区收入</strong></h3>
+<p>美洲区是 AI 基建收入的绝对主场，增速远高于国际市场：</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>地区</strong></th>
+<th style="text-align: center;"><strong>本季收入</strong></th>
+<th style="text-align: center;"><strong>YoY增速</strong></th>
+<th style="text-align: center;"><strong>占比</strong></th>
+<th style="text-align: center;"><strong>趋势</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">美洲 Americas</td>
+<td style="text-align: right;">$12.99B</td>
+<td style="text-align: right;">+29%</td>
+<td style="text-align: right;">68%</td>
+<td style="text-align: center;">AI
+数据中心集中于美国（德州/新墨西哥/密歇根/威斯康星），占比持续提升</td>
+</tr>
+<tr>
+<td style="text-align: left;">EMEA + 亚太（合并）</td>
+<td style="text-align: right;">$6.20B</td>
+<td style="text-align: right;">+5.6%</td>
+<td style="text-align: right;">32%</td>
+<td
+style="text-align: center;">国际业务以传统软件与SaaS为主，增长平缓；多云区域扩张是潜在催化剂</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>来源: Oracle Q4 FY26 PR
+地区收入表（美洲为官方披露；EMEA+亚太为总收入减美洲推算，PR 未单独披露
+Q4 两区拆分时本表采用合并口径）。FY26 全年美洲收入 $44.5B（+22%）。</p>
+</blockquote>
+<h2 id="五盈利能力深度分析"><strong>五、盈利能力深度分析</strong></h2>
+<blockquote>
+<p>关键发现：Q4 营业利润率（GAAP 32% / non-GAAP
+45%）在毛利率承压背景下守住甚至微升，靠的是销售费用
+-10%、裁员重组带来的费用纪律。利润表质量的真正变化在更深处：折旧全年近翻倍、利息费用
++47%、重组费用
+$1.84B，"软件公司利润结构"正在让位于"基建公司利润结构"。</p>
+</blockquote>
+<h3 id="利润率追踪"><strong>5.1 利润率追踪</strong></h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>季度</strong></th>
+<th style="text-align: center;"><strong>Non-GAAP 营业利润</strong></th>
+<th style="text-align: center;"><strong>利润率</strong></th>
+<th style="text-align: center;"><strong>YoY变化</strong></th>
+<th style="text-align: center;"><strong>主要驱动因素</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">FY25 Q4（基期）</td>
+<td style="text-align: right;">约$7.04B</td>
+<td style="text-align: right;">约44%</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: center;">传统软件高毛利结构</td>
+</tr>
+<tr>
+<td style="text-align: left;">FY26 Q3</td>
+<td style="text-align: right;">$7.4B</td>
+<td style="text-align: right;">43%</td>
+<td style="text-align: right;">+19%</td>
+<td style="text-align: center;">IaaS放量稀释毛利，费用控制对冲</td>
+</tr>
+<tr>
+<td style="text-align: left;">FY26 Q4</td>
+<td style="text-align: right;">$8.59B</td>
+<td style="text-align: right;">45%</td>
+<td style="text-align: right;">+22%</td>
+<td style="text-align: center;">数据中心爬坡压毛利 +
+销售/行政费用大幅收缩，利润率"环比微升"（CFO 原话 "increased
+slightly"）</td>
+</tr>
+<tr>
+<td style="text-align: left;">FY26 全年</td>
+<td style="text-align: right;">$28.9B</td>
+<td style="text-align: right;">43%</td>
+<td style="text-align: right;">+16%</td>
+<td style="text-align: center;">全年毛利率约
+-5pp，被运营杠杆大部分抵消</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>来源: Oracle Q4/Q3 FY26 PR；FY25 Q4 non-GAAP 营业利润由本季 +22%
+增速反推（标"约"）。GAAP 口径：Q4 营业利润 $6.13B（利润率
+32%，与上年同期持平）；FY26 $20.6B（31%）。</p>
+</blockquote>
+<p>利润率下方的暗流更值得注意：FY26 GAAP 净利润 $17.1B（+37%）中包含出售
+Ampere 与 Bloom Energy 认股权证的一次性投资收益（全年非经营性收益净额
+$3.5B，上年同期仅 $0.06B）；同时 OBBBA 税法带来一次性税费
+$933M。剔除一次性投资收益后，FY26 non-GAAP EPS 为
+$6.83（+13%），比表观的 $7.63（+27%）更能反映经营性盈利能力。</p>
+<h3 id="费用结构分析"><strong>5.2 费用结构分析</strong></h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>费用科目</strong></th>
+<th style="text-align: center;"><strong>本季规模</strong></th>
+<th style="text-align: center;"><strong>占收入比</strong></th>
+<th style="text-align: center;"><strong>YoY趋势</strong></th>
+<th style="text-align: center;"><strong>备注</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">云与软件营业成本</td>
+<td style="text-align: right;">$5.22B</td>
+<td style="text-align: right;">27%</td>
+<td style="text-align: right;">+56%</td>
+<td
+style="text-align: center;">数据中心折旧/电力/运维，远超收入增速，毛利率压力源头</td>
+</tr>
+<tr>
+<td style="text-align: left;">销售及市场费用</td>
+<td style="text-align: right;">$2.07B</td>
+<td style="text-align: right;">11%</td>
+<td style="text-align: right;">-10%</td>
+<td
+style="text-align: center;">"效率行动"重点科目，绝对额罕见负增长</td>
+</tr>
+<tr>
+<td style="text-align: left;">研发费用</td>
+<td style="text-align: right;">$2.61B</td>
+<td style="text-align: right;">14%</td>
+<td style="text-align: right;">-2%</td>
+<td style="text-align: center;">AI
+编程工具提效；3月PR曾披露"AI代码生成让我们用更少的人更快造软件"</td>
+</tr>
+<tr>
+<td style="text-align: left;">一般及行政费用</td>
+<td style="text-align: right;">$0.44B</td>
+<td style="text-align: right;">2%</td>
+<td style="text-align: right;">-5%</td>
+<td style="text-align: center;">同步收缩</td>
+</tr>
+<tr>
+<td style="text-align: left;">无形资产摊销</td>
+<td style="text-align: right;">$0.43B</td>
+<td style="text-align: right;">2%</td>
+<td style="text-align: right;">-21%</td>
+<td style="text-align: center;">Cerner 摊销逐年递减</td>
+</tr>
+<tr>
+<td style="text-align: left;">重组及其他</td>
+<td style="text-align: right;">$0.82B</td>
+<td style="text-align: right;">4%</td>
+<td style="text-align: right;">+899%</td>
+<td
+style="text-align: center;">全年$1.84B，对应3月底报道的大规模裁员（媒体估2-3万人）</td>
+</tr>
+<tr>
+<td style="text-align: left;">利息费用</td>
+<td style="text-align: right;">$1.44B</td>
+<td style="text-align: right;">8%</td>
+<td style="text-align: right;">+47%</td>
+<td style="text-align: center;">总借款$129.5B的代价，FY26全年$4.6B</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>来源: Oracle Q4 FY26 PR 损益表；裁员规模来自
+TIKR/媒体报道（2026年3月，非公司官方披露，标"估"）。Q4 股权激励费用
+$1.20B（non-GAAP 已剔除）。</p>
+</blockquote>
+<p>现金流视角的盈利质量：FY26 经营现金流
+$32.0B（净利润的约1.9倍，质量很高），但 CapEx $55.7B
+吞掉全部经营现金流后仍缺口 $23.7B；其中 Q4 单季 CapEx 约
+$15.9B（媒体口径）。新引入的"净现金
+CapEx"口径（扣除客户预付与第三方制造商时间差）FY26 为 $48B，FY27 指引约
+$70B。折旧 FY26 $7.6B 仅为 CapEx 的
+14%，意味着未来数年折旧将持续高速攀升、结构性压制 GAAP
+利润率，这是看多者必须接受的会计现实。</p>
+<h2
+id="六前瞻性分析与风险评估"><strong>六、前瞻性分析与风险评估</strong></h2>
+<blockquote>
+<p>关键发现：FY27 指引（营收 $90B、+34% cc）已由 RPO
+合同背书，确定性较高；真正的不确定性集中在融资端（$40B
+债+股）与客户端（OpenAI
+集中度）。下半财年是关键观察窗口：管理层明示"收入和利润将在下半年加速"。</p>
+</blockquote>
+<h3 id="下季度展望与管理层指引"><strong>6.1
+下季度展望与管理层指引</strong></h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>维度</strong></th>
+<th style="text-align: center;"><strong>管理层表态/指引</strong></th>
+<th style="text-align: center;"><strong>分析解读</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Q1 FY27 收入</td>
+<td style="text-align: center;">总收入 +27%~29%（USD与cc同），云收入
++58%~64%（USD）</td>
+<td style="text-align: right;">较 Q4 的 +21% 再提速；隐含约
+$19.0-19.3B，环比持平因 Q4 是季节性高点</td>
+</tr>
+<tr>
+<td style="text-align: left;">Q1 FY27 EPS</td>
+<td style="text-align: center;">Non-GAAP $1.72~$1.76（+17%~20%
+USD）</td>
+<td style="text-align: right;">高于财报前街上共识 $1.69；但低于 Q4 的
+$2.11（Q4 含一次性收益且为季节性大季）</td>
+</tr>
+<tr>
+<td style="text-align: left;">FY27 全年</td>
+<td style="text-align: center;">营收确认 $90B（+34% cc）；non-GAAP EPS
+上调至 $8.05（剔除一次性收益口径 +18%）</td>
+<td style="text-align: right;">$90B 与 3
+月指引一致并未上调，这正是部分多头失望、盘后承压的原因之一</td>
+</tr>
+<tr>
+<td style="text-align: left;">CapEx 投入</td>
+<td style="text-align: center;">FY27 净现金 CapEx 约 $70B；报告口径另加
+$20-25B 预付/时间差</td>
+<td style="text-align: right;">报告口径约 $90-95B，FCF
+转正继续后移；管理层未给 FCF 转正时间表</td>
+</tr>
+<tr>
+<td style="text-align: left;">融资计划</td>
+<td style="text-align: center;">FY27 融资约 $40B（债+股，含 $20B
+ATM）；2026 自然年内不发新债</td>
+<td style="text-align: right;">股权稀释 +
+利息负担双重成本；"不发新债"承诺意在安抚信用市场</td>
+</tr>
+<tr>
+<td style="text-align: left;">长期目标</td>
+<td style="text-align: center;">重申 FY2030：营收 CAGR +31%、EPS CAGR
++28%；隐含 FY30 营收约 $225B</td>
+<td style="text-align: right;">新 CFO "full reconfirmation"；FY27 +34%
+高于五年 CAGR，前置兑现</td>
+</tr>
+<tr>
+<td style="text-align: left;">节奏提示</td>
+<td
+style="text-align: center;">"收入和利润将在财年下半年加速（"accelerate
+in the second half"）"，随更多兆瓦上线</td>
+<td style="text-align: right;">FY27 H2 与 10月28日 Investor
+Day（拉斯维加斯 AI World）是下两个催化节点</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>来源: Oracle Q4 FY26 PR 指引部分；Earnings Call（Hilary Maxson）。Q1
+FY27 财报定于 2026年9月10日。</p>
+</blockquote>
+<h3 id="风险提示"><strong>6.2 风险提示</strong></h3>
+<p>按重要性排序：</p>
+<ol type="1">
+<li><p><strong>自由现金流与融资风险</strong>：FY27 报告口径 CapEx 约
+$90-95B，若 AI 需求或资本市场任一端收紧，公司将面临"高杠杆 + 负FCF +
+大额再融资"三重挤压；Moody's/S&amp;P 评级动向需密切跟踪。</p></li>
+<li><p><strong>客户集中度风险</strong>：RPO 过半系于 OpenAI 一家（BofA
+估算口径），后者本身依赖持续外部融资；任何 OpenAI
+付款节奏变化都会直接冲击 Oracle 收入确认与股价。</p></li>
+<li><p><strong>会计利润与现金回报的剪刀差</strong>：ROIC
+框架加回折旧，而折旧正是未来五年最大的利润表科目之一；若 GPU
+实际经济寿命短于折旧假设，利润率框架需要重估。</p></li>
+<li><p><strong>供给过剩风险</strong>：管理层承认"会有很多赢家"，2027
+年起 Neocloud、自建数据中心产能集中释放，GPU 租金价格曲线是 OCI 30-40%
+利润率假设的最大外部变量。</p></li>
+<li><p><strong>传统业务失血</strong>：软件许可 -6%、支持业务零增长，若
+AI
+时代数据库迁移成本下降快于预期，现金牛萎缩将削弱内生融资能力。</p></li>
+</ol>
+<h2 id="七估值与预测更新"><strong>七、估值与预测更新</strong></h2>
+<blockquote>
+<p>关键发现：以盘后约 $180 计，Oracle 对 FY27 指引 EPS $8.05 的前瞻 P/E
+仅约 22 倍，低于其 AI 叙事巅峰期（2025年9月股价
+$345.72）的一半估值；市场实际上在用"基建公司"而非"软件公司"的框架给它定价。多空分歧的本质是：你信不信
+$638B RPO 能以可接受的资本成本变成现金。</p>
+</blockquote>
+<h3 id="预测更新"><strong>7.1 预测更新</strong></h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>指标</strong></th>
+<th style="text-align: center;"><strong>FY27 指引（3月版）</strong></th>
+<th style="text-align: center;"><strong>FY27
+指引（本次更新）</strong></th>
+<th style="text-align: center;"><strong>变化</strong></th>
+<th style="text-align: center;"><strong>长期锚点</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">总营收</td>
+<td style="text-align: right;">$90B</td>
+<td style="text-align: right;">$90B（确认，cc +34%）</td>
+<td style="text-align: center;">不变</td>
+<td style="text-align: right;">FY2030 营收 CAGR +31%（隐含约$225B）</td>
+</tr>
+<tr>
+<td style="text-align: left;">Non-GAAP EPS</td>
+<td style="text-align: right;">未给出明确数字</td>
+<td style="text-align: right;">$8.05（剔除一次性收益口径 +18%）</td>
+<td style="text-align: center;">上调/首次明确</td>
+<td style="text-align: right;">FY2030 EPS CAGR +28%</td>
+</tr>
+<tr>
+<td style="text-align: left;">净现金 CapEx</td>
+<td style="text-align: right;">FY26 为 $50B（报告口径指引）</td>
+<td style="text-align: right;">FY27 约 $70B（净口径），报告口径约
+$90-95B</td>
+<td style="text-align: center;">大幅上调</td>
+<td style="text-align: right;">未给长期 CapEx 曲线</td>
+</tr>
+<tr>
+<td style="text-align: left;">融资</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">约 $40B（债+股）</td>
+<td style="text-align: center;">新增披露</td>
+<td style="text-align: right;">2026 自然年不发新债</td>
+</tr>
+<tr>
+<td style="text-align: left;">Q1 FY27</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">收入 +27%~29%；EPS $1.72-1.76</td>
+<td style="text-align: center;">高于街上共识 $1.69</td>
+<td style="text-align: right;">—</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注: 财报前卖方对 FY27 EPS 的共识约 $6.96（MarketBeat
+汇总，样本较小），公司 $8.05
+指引显著高于该值；差异部分源于共识未充分计入 RPO 转化节奏。</p>
+</blockquote>
+<h3 id="估值参考"><strong>7.2 估值参考</strong></h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>估值方法</strong></th>
+<th style="text-align: center;"><strong>参数</strong></th>
+<th style="text-align: center;"><strong>结果</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">前瞻 P/E（FY27指引）</td>
+<td style="text-align: right;">盘后价约$180 ÷ $8.05</td>
+<td style="text-align: right;">约 22.4x（收盘价$201.26 对应 25.0x）</td>
+</tr>
+<tr>
+<td style="text-align: left;">TTM P/E（non-GAAP）</td>
+<td style="text-align: right;">$180 ÷ $7.63（含一次性收益）/
+$6.83（剔除）</td>
+<td style="text-align: right;">23.6x / 26.4x</td>
+</tr>
+<tr>
+<td style="text-align: left;">P/S（FY27指引营收）</td>
+<td style="text-align: right;">市值约$518B（盘后口径）÷ $90B</td>
+<td style="text-align: right;">约 5.8x</td>
+</tr>
+<tr>
+<td style="text-align: left;">EV/S（FY27）</td>
+<td style="text-align: right;">EV ≈ 市值$518B + 净债务$97.6B =
+$616B</td>
+<td style="text-align: right;">约 6.8x</td>
+</tr>
+<tr>
+<td style="text-align: left;">股价位置</td>
+<td style="text-align: right;">52周区间 $134.57 - $345.72</td>
+<td
+style="text-align: right;">现价较2025年9月峰值回撤约48%；财报前一周已下跌约19%（$248→$201）</td>
+</tr>
+</tbody>
+</table>
+<p>市场观点光谱（注意各时点）：</p>
+<ul>
+<li><p><strong>财报前一周看多预热（2026年6月上旬）</strong>：UBS
+$285（6/2）、TD Cowen $250→$300（6/8）、Oppenheimer
+$235→$275（6/8）、Cantor Fitzgerald $229→$284（6/5）、BofA
+$200→$240（6/9）、Evercore 重申 Outperform $245（6/8）。</p></li>
+<li><p><strong>财报后即时反应（6/10盘后）</strong>：股价从收盘 $201.26
+跌至约 $180（约 -10%），TheStreet 称 $40B 融资计划是"砸盘"导火索；BofA
+点出 OpenAI 占 RPO 超50% 的集中度问题。</p></li>
+<li><p><strong>空方框架（2026年3月，Melius
+降级时点，供参考）</strong>：“一只 2030
+年代前都没有自由现金流的股票该值多少钱？”，主张按基建公司而非软件公司估值（当时
+PT $160）。</p></li>
+<li><p><strong>多方现金流路径（财报前 Mizuho 框架）</strong>：预测 FCF
+于 2029 年转正、2030 年达
+$36B，届时"增长自我造血，融资担忧消散"。</p></li>
+</ul>
+<p>简言之：当前估值已不贵（22x 前瞻 P/E 对 +34% 营收增长，PEG
+显著低于1），但这是一只"现金流期权"，估值修复需要等待净 CapEx 见顶、FCF
+路径清晰化，最近的验证窗口是 10月28日 Investor Day 与 FY27 H2
+的收入加速兑现。</p>
+<h2 id="数据来源与声明"><strong>数据来源与声明</strong></h2>
+<h3 id="数据来源"><strong>数据来源</strong></h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>序号</strong></th>
+<th style="text-align: center;"><strong>材料</strong></th>
+<th style="text-align: center;"><strong>日期</strong></th>
+<th style="text-align: center;"><strong>链接/出处</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: center;">Oracle Q4 &amp; FY2026 Earnings
+Release（用户提供PDF，与 investor.oracle.com 原文一致）</td>
+<td style="text-align: right;">2026-06-10</td>
+<td style="text-align: center;">investor.oracle.com / PRNewswire
+302797201</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: center;">Oracle Q4 FY2026 Earnings Call
+Transcript</td>
+<td style="text-align: right;">2026-06-10</td>
+<td style="text-align: center;">The Motley Fool（经 The Globe and Mail
+转载）</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: center;">Oracle Q3 FY2026 Earnings
+Release（QoQ与指引对照）</td>
+<td style="text-align: right;">2026-03-10</td>
+<td style="text-align: center;">investor.oracle.com</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: center;">共识预期：LSEG（营收$19.093B / EPS
+$1.96）；Bloomberg（云收入$9.99B等）</td>
+<td style="text-align: right;">2026-06-10</td>
+<td style="text-align: center;">TheStreet Live Blog；Yahoo Finance</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: center;">财报后市场反应与分析师点评（BofA
+等）</td>
+<td style="text-align: right;">2026-06-10/11</td>
+<td
+style="text-align: center;">CNBC、TheStreet、TradingKey、247wallst</td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: center;">财报前评级与目标价（UBS/TD
+Cowen/Oppenheimer/Cantor/BofA/Evercore）</td>
+<td style="text-align: right;">2026-06-02 至 06-09</td>
+<td style="text-align: center;">MarketBeat 评级数据库</td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td
+style="text-align: center;">股价数据（日线、盘后15分钟线、52周区间）</td>
+<td style="text-align: right;">截至 2026-06-11</td>
+<td style="text-align: center;">Yahoo Finance (yfinance)</td>
+</tr>
+<tr>
+<td style="text-align: left;">8</td>
+<td style="text-align: center;">背景材料：3月裁员与 TD Cowen
+测算、Mizuho FCF 路径、Melius 3月降级观点</td>
+<td style="text-align: right;">2026-03 至 06</td>
+<td style="text-align: center;">TIKR、The Globe and Mail、Yahoo
+Finance</td>
+</tr>
+<tr>
+<td style="text-align: left;">9</td>
+<td
+style="text-align: center;">业绩会中文对照实录（用于交叉核验引文与归属）</td>
+<td style="text-align: right;">2026-06-11</td>
+<td style="text-align: center;">华尔街见闻（invest wallstreet
+公众号），用户提供</td>
+</tr>
+<tr>
+<td style="text-align: left;">10</td>
+<td style="text-align: center;">CFO 任命公告（Hilary Maxson，2026-04-06
+就任）</td>
+<td style="text-align: right;">2026-04-06</td>
+<td style="text-align: center;">Oracle 官方新闻稿、CFO Dive</td>
+</tr>
+</tbody>
+</table>
+<h3 id="声明"><strong>声明</strong></h3>
+<p>本报告中标注"估""约""推算"等字样的数据，均为基于公开信息的推算，非官方披露数字。Oracle
+未单独披露 Q4 的 EMEA/亚太地区收入拆分（本报告采用合并口径推算）、Q4
+单季 CapEx（采用媒体口径约 $15.9B）。"OpenAI 占 RPO 超50%"为 Bank of
+America 分析师估算，非公司官方口径。Earnings Call 引文译自 The Motley
+Fool
+机器转录稿，并与华尔街见闻中文实录逐项交叉核验；个别转录错误已按官方资料校正（如发言人姓名拼写、CFO
+任职时长：Motley Fool 误录为 "2 weeks"，实际 Maxson 于
+2026年4月6日就任、入职约两个月）。本报告不构成投资建议，使用时请以官方财报为最终依据。</p>
+<p><strong>— END OF REPORT —</strong></p>
+</article></body></html>

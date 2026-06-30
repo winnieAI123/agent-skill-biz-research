@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent × Skill 赋能商业分析 · 研究与数据自动化最佳实践</title>
+<style>
+:root{
+  --ink:#05080A; --ink-2:#0A0F11; --ink-3:#0F161A;
+  --ivory:#DCEFDC; --muted:#7FA98C; --faint:#4C6A56;
+  --gold:#5FE08A; --gold-dim:rgba(95,224,138,.42);
+  --bright:#EAFBE9;
+  --slate:#6FB6C9; --line:rgba(120,255,140,.085); --line-2:rgba(120,255,140,.18);
+  --paper:#f6f4ef;
+  --serif:"Source Han Serif SC","Songti SC","Noto Serif SC",Spectral,Georgia,serif;
+  --sans:"PingFang SC","Helvetica Neue",-apple-system,"Segoe UI",sans-serif;
+  --mono:"SF Mono","JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:var(--ink);color:var(--ivory);font-family:var(--sans);
+  -webkit-font-smoothing:antialiased;overflow:hidden}
+body{position:relative}
+
+/* ---------- deck / slide ---------- */
+.deck{position:fixed;inset:0}
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
+  padding:6.2vh 7.4vw;opacity:0;visibility:hidden;transform:translateY(14px);
+  transition:opacity .62s cubic-bezier(.22,.61,.36,1),transform .62s cubic-bezier(.22,.61,.36,1),visibility 0s linear .62s;
+  overflow:hidden}
+.slide.is-active{opacity:1;visibility:visible;transform:none;transition-delay:0s,0s,0s;z-index:2}
+.slide.is-prev{transform:translateY(-14px)}
+
+/* subtle grid texture */
+.deck::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:64px 64px;opacity:.5;mask-image:radial-gradient(ellipse 90% 80% at 50% 45%,#000 30%,transparent 95%)}
+/* phosphor scanlines + ambient glow */
+.deck::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:3;
+  background:repeating-linear-gradient(0deg,rgba(120,255,140,.028) 0 1px,transparent 1px 3px)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse 70% 60% at 28% 42%,rgba(64,255,128,.06),transparent 72%)}
+h1,h2{text-shadow:0 0 26px rgba(64,255,128,.14)}
+
+/* ---------- staggered enter ---------- */
+[data-anim]{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,.61,.36,1)}
+.is-active [data-anim]{opacity:1;transform:none}
+.is-active [data-anim]{transition-delay:calc(.12s + var(--d,0)*.085s)}
+
+/* ---------- typography ---------- */
+.kicker{font-family:var(--mono);font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--gold);font-weight:500}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.6rem,5.6vw,5.1rem);line-height:1.04;letter-spacing:.01em}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.9rem,3.5vw,3.1rem);line-height:1.1}
+h3{font-family:var(--serif);font-weight:600;font-size:1.5rem;line-height:1.2}
+.lead{font-size:clamp(1rem,1.45vw,1.32rem);color:var(--muted);line-height:1.7;font-weight:300;max-width:46ch}
+.sec-no{font-family:var(--mono);color:var(--gold);font-size:.8rem;letter-spacing:.2em}
+.hair{height:1px;background:linear-gradient(90deg,var(--gold),transparent);border:0}
+
+/* ---------- chrome (progress / index / rail) ---------- */
+.progress{position:fixed;top:0;left:0;height:2px;background:var(--gold);width:0;z-index:50;
+  transition:width .5s cubic-bezier(.22,.61,.36,1);box-shadow:0 0 12px var(--gold-dim)}
+.counter{position:fixed;right:7.4vw;bottom:5vh;font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;
+  color:var(--faint);z-index:40}
+.counter b{color:var(--ivory);font-weight:500}
+.brandmark{position:fixed;left:7.4vw;bottom:5vh;font-family:var(--mono);font-size:.7rem;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--faint);z-index:40}
+.rail{position:fixed;right:2.4vw;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:11px;z-index:40}
+.rail button{width:7px;height:7px;border-radius:50%;border:1px solid var(--line-2);background:transparent;cursor:pointer;padding:0;
+  transition:.3s}
+.rail button.on{background:var(--gold);border-color:var(--gold);box-shadow:0 0 9px var(--gold-dim)}
+.rail button:hover{border-color:var(--gold)}
+.hint{position:fixed;left:50%;bottom:4.4vh;transform:translateX(-50%);font-family:var(--mono);font-size:.66rem;
+  letter-spacing:.2em;color:var(--faint);z-index:40;opacity:.0;animation:fade 1s ease 1.4s forwards}
+@keyframes fade{to{opacity:.7}}
+
+/* ---------- cover ---------- */
+.cover{justify-content:center}
+.cover .radar{position:absolute;right:-8vw;top:50%;transform:translateY(-50%);width:62vh;height:62vh;opacity:.5;pointer-events:none}
+.cover .radar circle{fill:none;stroke:var(--line-2);stroke-width:1}
+.cover .radar .sweep{transform-origin:center;animation:spin 8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.cover .dot{fill:var(--gold)}
+.cover-meta{display:flex;gap:2.4rem;margin-top:2.6rem;flex-wrap:wrap}
+.cover-meta div{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;color:var(--muted)}
+.cover-meta.angles{gap:2rem}
+.cover-meta.angles div{font-family:var(--mono);font-size:1rem;letter-spacing:.04em;color:var(--ivory);position:relative;padding-left:1.2rem}
+.cover-meta.angles div::before{content:"▸";position:absolute;left:0;color:var(--gold)}
+.statusbar{display:flex;gap:1.6rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);border-bottom:1px solid var(--line-2);padding-bottom:.7rem;width:fit-content}
+.statusbar .live{display:flex;align-items:center;gap:.5rem}
+.statusbar .live i{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold);animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.3}}
+.term-cursor{display:inline-block;width:.55ch;height:1.02em;background:var(--gold);vertical-align:-2px;margin-left:3px;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.cover-meta b{display:block;font-family:var(--serif);font-size:1.7rem;color:var(--ivory);font-weight:600;margin-bottom:.2rem}
+
+/* ---------- pain grid ---------- */
+.grid-pain{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:2.4rem;max-width:1040px}
+.pain{border:1px solid var(--line);border-left:2px solid var(--gold-dim);padding:1.5rem 1.7rem;background:linear-gradient(180deg,var(--ink-2),transparent)}
+.pain .n{font-family:var(--mono);color:var(--gold);font-size:.78rem;letter-spacing:.2em}
+.pain h3{font-size:1.22rem;margin:.5rem 0 .5rem}
+.pain p{color:var(--muted);font-size:.95rem;line-height:1.6;font-weight:300}
+
+/* ---------- concept diagram ---------- */
+.concept{display:flex;align-items:center;gap:2.4vw;margin-top:3vh;flex-wrap:wrap}
+.cbox{flex:1;min-width:210px;border:1px solid var(--line-2);border-radius:3px;padding:1.7rem 1.5rem;background:var(--ink-2);position:relative}
+.cbox .tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;color:var(--gold)}
+.cbox h3{margin:.6rem 0 .55rem;font-size:1.3rem}
+.cbox p{color:var(--muted);font-size:.92rem;line-height:1.6;font-weight:300}
+.carrow{font-family:var(--serif);color:var(--gold);font-size:2rem;flex:0 0 auto}
+.concept-foot{margin-top:3vh;color:var(--muted);font-size:1.02rem;line-height:1.8;font-weight:300;max-width:none}
+.concept-foot b{color:var(--ivory);font-weight:500}
+
+/* ---------- panorama ---------- */
+.pano{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem 1rem;margin-top:1.4rem}
+.pano .group-label{grid-column:1/-1;font-family:var(--mono);font-size:.7rem;letter-spacing:.24em;color:var(--gold);
+  margin-top:.15rem;display:flex;align-items:center;gap:.9rem}
+.pano .group-label::after{content:"";flex:1;height:1px;background:var(--line)}
+.case{border:1px solid var(--line);padding:.85rem 1.05rem;background:var(--ink-2);position:relative;
+  transition:.34s;cursor:default}
+.case:hover{background:var(--ink-3);border-color:var(--gold-dim);transform:translateY(-3px)}
+.case .ci{font-family:var(--mono);font-size:.64rem;color:var(--faint);letter-spacing:.16em}
+.case h3{font-size:1rem;margin:.28rem 0 .26rem;font-family:var(--sans);font-weight:600}
+.case p{color:var(--muted);font-size:.8rem;line-height:1.45;font-weight:300}
+.case .skill{margin-top:.45rem;font-family:var(--mono);font-size:.63rem;color:var(--slate);letter-spacing:.04em}
+
+/* ---------- case slide layout ---------- */
+.case-wrap{display:grid;grid-template-columns:0.92fr 1.08fr;gap:3.2vw;align-items:center;height:100%}
+.case-left{display:flex;flex-direction:column;justify-content:center}
+.case-left .lead{margin-top:1.3rem}
+.figure{border:1px solid var(--line-2);background:var(--ink-2);border-radius:4px;overflow:hidden;
+  box-shadow:0 30px 80px -40px rgba(0,0,0,.8);position:relative}
+.figure img{width:100%;display:block}
+.figure .cap{position:absolute;left:0;bottom:0;right:0;font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;
+  color:var(--ivory);background:linear-gradient(0deg,rgba(8,10,14,.92),transparent);padding:1.3rem .9rem .6rem}
+.metrics{display:flex;gap:2.2rem;margin-top:1.7rem;flex-wrap:wrap}
+.metric .v{font-family:var(--serif);font-size:2.5rem;font-weight:600;color:var(--ivory);line-height:1}
+.metric .v small{font-size:1rem;color:var(--gold);margin-left:.15rem}
+.metric .k{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;color:var(--muted);margin-top:.45rem;text-transform:uppercase}
+.painline{font-size:.92rem;color:var(--gold);font-family:var(--mono);letter-spacing:.02em;margin-top:1.4rem;
+  border-left:2px solid var(--gold-dim);padding-left:.9rem;line-height:1.6}
+ul.feat{list-style:none;margin-top:1.5rem;display:flex;flex-direction:column;gap:.7rem}
+ul.feat li{padding-left:1.4rem;position:relative;color:var(--muted);font-size:.98rem;line-height:1.55;font-weight:300}
+ul.feat li::before{content:"§";position:absolute;left:0;color:var(--gold);font-family:var(--serif)}
+ul.feat b{color:var(--ivory);font-weight:500}
+
+/* deliverable chips */
+.chips{display:flex;gap:.7rem;margin-top:1.6rem;flex-wrap:wrap}
+.chip{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;border:1px solid var(--line-2);
+  padding:.5rem .8rem;color:var(--ivory);background:var(--ink-2)}
+.chip span{color:var(--gold)}
+
+/* 10 templates grid */
+.tpl-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem;margin:1.9rem 0 1.5rem}
+.tpl{border:1px solid var(--line);background:var(--ink-2);padding:.95rem 1rem;transition:.3s}
+.tpl:hover{border-color:var(--gold-dim);background:var(--ink-3);transform:translateY(-3px)}
+.tpl .i{font-family:var(--mono);font-size:.7rem;color:var(--gold);letter-spacing:.12em}
+.tpl b{display:block;margin:.4rem 0 .28rem;font-size:.97rem;font-weight:600;color:var(--bright)}
+.tpl em{font-style:normal;color:var(--muted);font-size:.73rem;line-height:1.4;display:block;font-family:var(--mono)}
+
+/* report viewer */
+.report-frame{width:100%;height:100%;border:0;background:var(--paper);border-radius:3px}
+.viewer{border:1px solid var(--line-2);border-radius:6px;overflow:hidden;height:78vh;background:var(--paper);
+  box-shadow:0 36px 90px -44px rgba(0,0,0,.85);position:relative}
+.viewer .bar{position:absolute;top:0;left:0;right:0;height:34px;background:#e7e3da;display:flex;align-items:center;
+  padding:0 12px;gap:7px;z-index:3;border-bottom:1px solid #d6d1c6}
+.viewer .bar i{width:10px;height:10px;border-radius:50%;background:#c9c3b6;display:inline-block}
+.viewer .bar .t{font-family:var(--mono);font-size:.66rem;color:#7c766a;margin-left:8px;letter-spacing:.05em}
+.viewer .scrollwrap{position:absolute;top:34px;left:0;right:0;bottom:0;overflow:auto}
+.viewer iframe{width:100%;height:100%;border:0;background:var(--paper)}
+.viewer-2col{display:grid;grid-template-columns:1fr 1fr;gap:1.3vw}
+.tabs{display:flex;gap:.5rem;margin-bottom:1rem}
+.tabs button{font-family:var(--mono);font-size:.74rem;letter-spacing:.05em;background:var(--ink-2);
+  border:1px solid var(--line-2);color:var(--muted);padding:.5rem .9rem;cursor:pointer;transition:.25s}
+.tabs button.on{color:var(--ink);background:var(--gold);border-color:var(--gold)}
+
+/* ---------- hot grid ---------- */
+.hot{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+.hotcard{border:1px solid var(--line);background:var(--ink-2);padding:1rem 1.1rem;min-height:0}
+.hotcard h4{font-size:.96rem;display:flex;align-items:center;gap:.5rem;font-family:var(--sans);font-weight:600}
+.hotcard h4 .pf{font-family:var(--mono);font-size:.6rem;color:var(--faint);letter-spacing:.12em;margin-left:auto}
+.hotcard ol{list-style:none;margin-top:.7rem;display:flex;flex-direction:column;gap:.42rem;counter-reset:h}
+.hotcard li{counter-increment:h;font-size:.8rem;color:var(--muted);font-weight:300;line-height:1.4;
+  padding-left:1.5rem;position:relative;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hotcard li::before{content:counter(h);position:absolute;left:0;font-family:var(--mono);font-size:.66rem;color:var(--gold);top:.05rem}
+.hotcard.special{border-color:var(--gold-dim);background:linear-gradient(180deg,rgba(199,168,106,.07),var(--ink-2))}
+.hotcard.special .note{font-size:.78rem;color:var(--muted);line-height:1.55;font-weight:300;margin-top:.6rem}
+.hotcard.special .src{font-family:var(--mono);font-size:.64rem;color:var(--slate);letter-spacing:.04em;margin-top:.7rem}
+
+/* edge / taobao callout */
+.edge{margin-top:1.7rem;border:1px dashed var(--line-2);padding:1rem 1.3rem;display:flex;align-items:baseline;gap:1rem;
+  background:rgba(255,255,255,.012)}
+.edge .lbl{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;color:var(--slate);white-space:nowrap}
+.edge p{color:var(--muted);font-size:.88rem;line-height:1.55;font-weight:300}
+.edge b{color:var(--ivory);font-weight:500}
+
+/* ---------- best practice ---------- */
+.bp{display:grid;grid-template-columns:repeat(2,1fr);gap:1.3rem 2.6rem;margin-top:2.4rem;max-width:1080px}
+.bp-item{display:flex;gap:1.1rem;align-items:flex-start}
+.bp-item .no{font-family:var(--serif);font-size:2rem;color:var(--gold);font-weight:600;line-height:1;min-width:2.2rem}
+.bp-item h3{font-size:1.12rem;margin-bottom:.4rem;font-family:var(--sans);font-weight:600}
+.bp-item p{color:var(--muted);font-size:.9rem;line-height:1.6;font-weight:300}
+.bp-item p em{color:var(--slate);font-style:normal;font-family:var(--mono);font-size:.78rem}
+
+/* ---------- closing ---------- */
+.close-stats{display:flex;gap:3.6rem;margin-top:2.6rem;flex-wrap:wrap}
+.close-stats .v{font-family:var(--serif);font-size:3.1rem;font-weight:600;line-height:1}
+.close-stats .v small{font-size:1.1rem;color:var(--gold)}
+.close-stats .k{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--muted);margin-top:.5rem}
+.steps{display:flex;gap:1rem;margin-top:2.4rem;flex-wrap:wrap}
+.step{border:1px solid var(--line);padding:1.1rem 1.3rem;flex:1;min-width:200px;background:var(--ink-2)}
+.step .s{font-family:var(--mono);color:var(--gold);font-size:.7rem;letter-spacing:.16em}
+.step p{margin-top:.5rem;font-size:.95rem;color:var(--ivory);line-height:1.5;font-weight:300}
+
+.fade-note{color:var(--faint);font-size:.78rem;font-family:var(--mono);letter-spacing:.04em;margin-top:1.4rem}
+@media (max-width:880px){
+  .case-wrap,.bp,.grid-pain{grid-template-columns:1fr}
+  .pano,.hot{grid-template-columns:1fr 1fr}
+  .slide{padding:5vh 6vw}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="counter"><b id="cnow">01</b> / <span id="ctot">15</span></div>
+<div class="rail" id="rail"></div>
+<div class="hint">← / → 翻页 · 空格前进</div>
+
+<div class="deck" id="deck">
+
+  <!-- 00 COVER -->
+  <section class="slide cover is-active">
+    <svg class="radar" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="40"/><circle cx="100" cy="100" r="70"/><circle cx="100" cy="100" r="96"/>
+      <line x1="100" y1="4" x2="100" y2="196" stroke="rgba(236,234,227,.07)"/>
+      <line x1="4" y1="100" x2="196" y2="100" stroke="rgba(236,234,227,.07)"/>
+      <g class="sweep"><path d="M100 100 L100 4 A96 96 0 0 1 168 32 Z" fill="url(#g)" opacity=".22"/></g>
+      <defs><radialGradient id="g"><stop offset="0%" stop-color="#5FE08A"/><stop offset="100%" stop-color="transparent"/></radialGradient></defs>
+      <circle class="dot" cx="140" cy="60" r="2.4"/><circle class="dot" cx="68" cy="128" r="2"/><circle class="dot" cx="150" cy="120" r="1.8"/>
+    </svg>
+    <div class="statusbar" data-anim style="--d:0"><span class="live"><i></i>STATUS: LIVE</span><span>RESEARCH_AUTOMATION</span><span>v2026.06</span></div>
+    <div class="kicker" data-anim style="--d:0;margin-top:1.1rem">商业研究与数据分析 · 内部分享</div>
+    <h1 data-anim style="--d:1;margin-top:1.2rem">让 Agent 与 Skill<br>成为商分的研究引擎</h1>
+    <p class="lead" data-anim style="--d:2;margin-top:1.6rem"><span style="color:var(--gold)">&gt; </span>用 Claude Code、Codex、ZCode 等 Agent，把行业研究、财报解读、用户洞察与多平台数据采集，做成可复用、标准化、可滚动验证的自动化产线<span class="term-cursor"></span></p>
+    <div class="cover-meta angles" data-anim style="--d:3">
+      <div>商业研究</div><div>数据获取</div><div>大模型能力边界</div>
+    </div>
+  </section>
+
+  <!-- 01 PAIN -->
+  <section class="slide">
+    <div class="kicker" data-anim>The Problem · 我们每天在跟什么较劲</div>
+    <h2 data-anim style="--d:1;margin-top:1rem">商分的时间，正在被重复劳动吃掉</h2>
+    <div class="grid-pain">
+      <div class="pain" data-anim style="--d:2"><div class="n">01</div><h3>每次从零组织</h3><p>同类研究反复搭框架、调格式，产出质量随手感波动，难以沉淀成资产。</p></div>
+      <div class="pain" data-anim style="--d:3"><div class="n">02</div><h3>覆盖面追不上</h3><p>财报季几十家公司同时出业绩，人工听电话会、读原文，只能挑几家，漏掉信号。</p></div>
+      <div class="pain" data-anim style="--d:4"><div class="n">03</div><h3>洞察难以量化</h3><p>用户访谈、功能优先级靠主观拍脑袋，访谈里的真证据沉在文档里调不出来。</p></div>
+      <div class="pain" data-anim style="--d:5"><div class="n">04</div><h3>数据散且滞后</h3><p>榜单、热点、新品信号散在十几个平台，人工追踪既慢又不全，比媒体还晚半天。</p></div>
+    </div>
+  </section>
+
+  <!-- 02 CONCEPT -->
+  <section class="slide">
+    <div class="kicker" data-anim>The Idea · 三个词讲清这套打法</div>
+    <h2 data-anim style="--d:1;margin-top:1rem">不是换工具，是换一种工作方式</h2>
+    <div class="concept">
+      <div class="cbox" data-anim style="--d:2"><div class="tag">AGENT · CLAUDE CODE / CODEX / ZCODE</div><h3>会干活的同事</h3><p>能读文件、跑脚本、查网络、写报告的 AI Agent，在你的电脑里直接动手。</p></div>
+      <div class="carrow" data-anim style="--d:3">+</div>
+      <div class="cbox" data-anim style="--d:4"><div class="tag">SKILL</div><h3>沉淀好的方法论</h3><p>把"一类研究怎么做"写成模板和流程，Agent 每次都按同一套高标准执行。</p></div>
+      <div class="carrow" data-anim style="--d:5">=</div>
+      <div class="cbox" data-anim style="--d:6"><div class="tag">OUTPUT</div><h3>稳定的专业产出</h3><p>一句话指令，换来一份格式统一、引用原文、可直接交付的研究成果。</p></div>
+    </div>
+    <p class="concept-foot" data-anim style="--d:7">一句话理解：<b>Skill 是把老法师的经验固化成 SOP，Agent 是不知疲倦地照着 SOP 干。</b><br>经验不再绑在某个人身上，而是变成团队随时可调用的能力。</p>
+  </section>
+
+  <!-- 03 PANORAMA -->
+  <section class="slide">
+    <div class="kicker" data-anim>The Map · 七个已落地的案例</div>
+    <h2 data-anim style="--d:1;margin-top:.8rem">三条主线，覆盖商分的研究与取数</h2>
+    <div class="pano">
+      <div class="group-label" data-anim style="--d:2">A · 研究自动化</div>
+      <div class="case" data-anim style="--d:3"><div class="ci">A-1</div><h3>专业研究产线</h3><p>行业研究 / 公司深挖 / 趋势研判等 10 类研究，模板驱动标准化产出。</p><div class="skill">skill · professional-research</div></div>
+      <div class="case" data-anim style="--d:3"><div class="ci">A-2</div><h3>实时财报解读</h3><p>财报季自动抓官方原文 + 电话会全文，逐章引用成稿。</p><div class="skill">skill · realtime-earnings</div></div>
+      <div class="case" data-anim style="--d:3"><div class="ci">A-3</div><h3>KANO 功能排序</h3><p>从访谈稿提取需求证据、统计频次，按 KANO 模型出可视化。</p><div class="skill">skill · kano-from-interviews</div></div>
+      <div class="group-label" data-anim style="--d:4">B · 数据自动化</div>
+      <div class="case" data-anim style="--d:5"><div class="ci">B-1</div><h3>大模型情报雷达</h3><p>聚合 LMArena / AA / SuperCLUE / OpenRouter 等多源榜单与社区反馈。</p><div class="skill">web · model-radar</div></div>
+      <div class="case" data-anim style="--d:5"><div class="ci">B-2</div><h3>众筹新品看板</h3><p>Kickstarter / Indiegogo / Makuake 三平台合一，提前看硬件趋势。</p><div class="skill">web · crowdfunding</div></div>
+      <div class="case" data-anim style="--d:5"><div class="ci">B-3</div><h3>全平台热点聚合</h3><p>微博 / 抖音 / 百度 / B站 / 知乎 / 小红书 热榜一键聚合。</p><div class="skill">email · trending-tracker</div></div>
+      <div class="group-label" data-anim style="--d:6">C · 能力边界测试</div>
+      <div class="case" data-anim style="--d:7;grid-column:1/2"><div class="ci">C-1</div><h3>电商数据采集</h3><p>合规授权下逆向还原加密算法，快速摸清某品类线上价格与销量。</p><div class="skill">边界探索 · 逆向加密算法</div></div>
+    </div>
+  </section>
+
+  <!-- 04 PR · 10 类模板 -->
+  <section class="slide">
+    <div class="kicker" data-anim>A-1 · professional-research</div>
+    <h2 data-anim style="--d:1;margin-top:.6rem">十类研究，同一套模板驱动</h2>
+    <p class="lead" data-anim style="--d:2;max-width:64ch">把商分日常会碰到的研究，固化成 10 类标准模板。每类都规定好流程、数据要求与产出格式，Agent 按同一套高标准执行，产出深度报告 / 一页纸 / 数据表 / 汇报 PPT。</p>
+    <div class="tpl-grid">
+      <div class="tpl" data-anim style="--d:3"><span class="i">01</span><b>产品研究</b><em>功能 / 体验 / 竞品拆解</em></div>
+      <div class="tpl" data-anim style="--d:3"><span class="i">02</span><b>公司研究</b><em>业务 / 财务 / 战略深挖</em></div>
+      <div class="tpl" data-anim style="--d:3"><span class="i">03</span><b>行业全景</b><em>规模 / 链条 / 格局</em></div>
+      <div class="tpl" data-anim style="--d:4"><span class="i">04</span><b>趋势研判</b><em>信号 / 拐点 / 情景</em></div>
+      <div class="tpl" data-anim style="--d:4"><span class="i">05</span><b>政策追踪</b><em>法规 / 监管 / 影响</em></div>
+      <div class="tpl" data-anim style="--d:4"><span class="i">06</span><b>学术简报</b><em>论文 / 方法 / 结论</em></div>
+      <div class="tpl" data-anim style="--d:5"><span class="i">07</span><b>KOL 周报</b><em>大佬推文 / 观点聚合</em></div>
+      <div class="tpl" data-anim style="--d:5"><span class="i">08</span><b>财务数据提取</b><em>财报 / 指标 / 结构化</em></div>
+      <div class="tpl" data-anim style="--d:5"><span class="i">09</span><b>大模型榜单分析</b><em>arena / 榜单对比</em></div>
+      <div class="tpl" data-anim style="--d:6"><span class="i">10</span><b>热点事件速评</b><em>各方观点 / 舆论分析</em></div>
+    </div>
+    <div class="painline" data-anim style="--d:6">解决：研究质量不稳、每次从零组织、格式不统一。真实产出见后页可滚动报告。</div>
+  </section>
+
+  <!-- 05 EARNINGS + viewer -->
+  <section class="slide">
+    <div class="case-wrap">
+      <div class="case-left">
+        <div class="kicker" data-anim>A-2 · realtime-earnings</div>
+        <h2 data-anim style="--d:1;margin-top:.7rem">一个财报季，<br>覆盖一整面墙</h2>
+        <p class="lead" data-anim style="--d:2">自动抓官方新闻稿 + 电话会全文 transcript，逐章引用管理层原话与精确财务数字成稿。右侧是真实生成的一份报告，<b style="color:var(--gold)">可直接在页面里滚动看全文</b>。</p>
+        <div class="metrics" data-anim style="--d:3">
+          <div class="metric"><div class="v" data-count="13">0</div><div class="k">真实生成报告</div></div>
+          <div class="metric"><div class="v" data-count="100">0</div><div class="k">% 引用官方原文</div></div>
+        </div>
+        <div class="painline" data-anim style="--d:4">解决：覆盖面有限、人工实时听会耗时易漏。</div>
+        <div class="tabs" data-anim style="--d:5">
+          <button class="on" data-rep="assets/report_orcl.html" data-t="甲骨文 ORCL · FY2026Q4">甲骨文 ORCL</button>
+          <button data-rep="assets/report_baba.html" data-t="阿里巴巴 BABA · FY26Q4">阿里巴巴 BABA</button>
+        </div>
+      </div>
+      <div class="case-left">
+        <div class="viewer" data-anim style="--d:4">
+          <div class="bar"><i></i><i></i><i></i><span class="t" id="repttl">甲骨文 ORCL · FY2026Q4 业绩分析报告（真实全文 · 可滚动）</span></div>
+          <div class="scrollwrap"><iframe id="repframe" src="assets/report_orcl.html" title="报告全文"></iframe></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 KANO -->
+  <section class="slide">
+    <div class="case-wrap">
+      <div class="case-left">
+        <div class="kicker" data-anim>A-3 · kano-from-interviews</div>
+        <h2 data-anim style="--d:1;margin-top:.7rem">把访谈里的话<br>变成功能优先级</h2>
+        <p class="lead" data-anim style="--d:2">从用户访谈文字稿自动提取需求证据、统计提及频次，按 KANO 模型分类为必备 / 期望 / 魅力 / 无差异 / 反向型，并出四象限可视化。</p>
+        <div class="metrics" data-anim style="--d:3">
+          <div class="metric"><div class="v" data-count="12">0</div><div class="k">功能项自动归类</div></div>
+          <div class="metric"><div class="v" data-count="5">0</div><div class="k">KANO 类别</div></div>
+        </div>
+        <div class="painline" data-anim style="--d:4">解决：优先级靠拍脑袋、访谈洞察难量化沉淀。</div>
+      </div>
+      <div class="case-left">
+        <div class="figure" data-anim style="--d:3">
+          <img src="assets/kano_quadrant_web.png" alt="KANO 四象限">
+          <div class="cap">实际产出 · KANO 四象限（气泡＝提及次数，定性深访主分类 + 定量参考）</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 MODEL RADAR -->
+  <section class="slide">
+    <div class="case-wrap">
+      <div class="case-left">
+        <div class="kicker" data-anim>B-1 · model-radar</div>
+        <h2 data-anim style="--d:1;margin-top:.7rem">大模型动态，<br>比媒体快半天</h2>
+        <p class="lead" data-anim style="--d:2">同时盯 LMArena / Artificial Analysis / SuperCLUE 等 14 个榜单赛道，叠加 GitHub / HuggingFace / OpenRouter 用量、厂商博客与社区，检测关键变动自动告警，每周自动出周报。</p>
+        <div class="metrics" data-anim style="--d:3">
+          <div class="metric"><div class="v" data-count="14">0</div><div class="k">榜单赛道</div></div>
+          <div class="metric"><div class="v" data-count="188442">0</div><div class="k">榜单快照累计</div></div>
+        </div>
+        <div class="painline" data-anim style="--d:4">解决：能力与价格变化太快，人工追踪滞后又不全。</div>
+        <div class="fade-note" data-anim style="--d:5">线上运行中 · modelradar.app</div>
+      </div>
+      <div class="case-left">
+        <div class="figure" data-anim style="--d:3">
+          <img src="assets/mr_live.gif" alt="model-radar 实时看板演示">
+          <div class="cap">线上实录 · modelradar.app 实时模型情报看板（动态演示）</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 CROWDFUNDING -->
+  <section class="slide">
+    <div class="case-wrap">
+      <div class="case-left">
+        <div class="kicker" data-anim>B-2 · crowdfunding-dashboard</div>
+        <h2 data-anim style="--d:1;margin-top:.7rem">硬件趋势的<br>早期信号台</h2>
+        <p class="lead" data-anim style="--d:2">三大众筹平台自动采集新品，按筹款额、支持者、完成度排序，提前看到 AI 硬件早期信号。</p>
+        <div class="metrics" data-anim style="--d:3">
+          <div class="metric"><div class="v" data-count="3">0</div><div class="k">平台合一</div></div>
+          <div class="metric"><div class="v">7<small> 天</small></div><div class="k">滚动窗口 · 保持新品敏感度</div></div>
+        </div>
+        <div class="painline" data-anim style="--d:4">解决：早期信号分散多平台、难以系统追踪。</div>
+        <div class="fade-note" data-anim style="--d:5">线上运行中 · crowdfunding-dashboard-production.up.railway.app</div>
+      </div>
+      <div class="case-left">
+        <div class="figure" data-anim style="--d:3">
+          <img src="assets/cf_live.gif" alt="众筹看板演示">
+          <div class="cap">实际产出 · 众筹新品追踪看板（动态演示 · 含真实筹款额与完成度）</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 HOT · 真实邮件 -->
+  <section class="slide">
+    <div class="case-wrap">
+      <div class="case-left">
+        <div class="kicker" data-anim>B-3 · trending-tracker</div>
+        <h2 data-anim style="--d:1;margin-top:.7rem">六个平台的热榜，<br>一封邮件看完</h2>
+        <p class="lead" data-anim style="--d:2">微博 / 抖音 / 百度 / B站 / 知乎 / 小红书 六平台热榜自动聚合，每天定时一封邮件直达。右侧是<b style="color:var(--gold);white-space:nowrap">真实生成的邮件</b>，可滚动查看。</p>
+        <div class="chips" data-anim style="--d:3">
+          <div class="chip">微博</div><div class="chip">抖音</div><div class="chip">百度</div>
+          <div class="chip">B站</div><div class="chip">知乎</div><div class="chip">小红书</div>
+        </div>
+        <div class="painline" data-anim style="--d:4">解决：热点散落各平台，人工刷效率低又容易漏。</div>
+        <div class="fade-note" data-anim style="--d:5">延伸 · 能力边界：电商数据采集（合规授权下逆向加密算法，轻量摸清品类线上价格与销量）。</div>
+      </div>
+      <div class="case-left">
+        <div class="viewer" data-anim style="--d:3;height:80vh">
+          <div class="bar"><i></i><i></i><i></i><span class="t">全网热榜洞察 · 每日自动推送（真实邮件 · 可滚动）</span></div>
+          <div class="scrollwrap"><iframe src="assets/trending_email.html" title="热榜邮件"></iframe></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 REPORT VIEWER (full · 双列) -->
+  <section class="slide" style="padding-top:5vh">
+    <div class="kicker" data-anim>Live Artifact · 不是截图，是真文档</div>
+    <h2 data-anim style="--d:1;margin:.5rem 0 1rem">所有产出都可追溯、可滚动、可核对</h2>
+    <div class="viewer-2col">
+      <div class="viewer" data-anim style="--d:2;height:71vh">
+        <div class="bar"><i></i><i></i><i></i><span class="t">SpaceX SPCX · IPO 深度梳理报告（真实全文 · 可滚动）</span></div>
+        <div class="scrollwrap"><iframe src="assets/report_spacex.html" title="SpaceX 报告全文"></iframe></div>
+      </div>
+      <div class="viewer" data-anim style="--d:3;height:71vh">
+        <div class="bar"><i></i><i></i><i></i><span class="t">桌面机器人产品扫描报告（真实全文 · 可滚动）</span></div>
+        <div class="scrollwrap"><iframe src="assets/report_robot.html" title="桌面机器人扫描报告全文"></iframe></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 BEST PRACTICE -->
+  <section class="slide">
+    <div class="kicker" data-anim>Best Practice · 从七个案例提炼的方法论</div>
+    <h2 data-anim style="--d:1;margin-top:.7rem">真正能复用的，是这五条</h2>
+    <div class="bp">
+      <div class="bp-item" data-anim style="--d:2"><div class="no">1</div><div><h3>模板驱动，不靠手感</h3><p>把"一类活怎么干"写成 Skill 模板，质量下限由流程保证，而不是当天状态。<em>professional-research / KANO</em></p></div></div>
+      <div class="bp-item" data-anim style="--d:3"><div class="no">2</div><div><h3>原文优先，引用可溯</h3><p>脚本只负责把官方原文与全文 transcript 抓全，结论逐句指回原文，拒绝二手摘要。<em>realtime-earnings</em></p></div></div>
+      <div class="bp-item" data-anim style="--d:4"><div class="no">3</div><div><h3>脚本取数，人定结论</h3><p>把取数、清洗、聚合交给脚本与 Agent，判断与洞察留给人，分工不越界。<em>model-radar / crowdfunding</em></p></div></div>
+      <div class="bp-item" data-anim style="--d:5"><div class="no">4</div><div><h3>多源聚合，对抗滞后</h3><p>同一信号从多个平台交叉验证，单点看不全的，用聚合补齐覆盖面与时效。<em>trending-tracker</em></p></div></div>
+      <div class="bp-item" data-anim style="--d:6"><div class="no">5</div><div><h3>边界先探，合规先行</h3><p>主动测试模型能力边界，但凡涉及采集，授权与合规永远走在技术前面。<em>taobao-market-research</em></p></div></div>
+    </div>
+  </section>
+
+  <!-- 12 CLOSING -->
+  <section class="slide">
+    <div class="kicker" data-anim>So What · 这对商分意味着什么</div>
+    <h2 data-anim style="--d:1;margin-top:.7rem">研究能力，从个人手艺变成团队资产</h2>
+    <div class="close-stats" data-anim style="--d:2">
+      <div><div class="v" data-count="10">0</div><div class="k">类研究已模板化</div></div>
+      <div><div class="v" data-count="7">0</div><div class="k">案例已落地</div></div>
+      <div><div class="v" data-count="6">0</div><div class="k">平台数据一键聚合</div></div>
+    </div>
+    <div class="steps">
+      <div class="step" data-anim style="--d:3"><div class="s">STEP 1</div><p>挑一类你最常做、最耗时的研究，作为第一个模板。</p></div>
+      <div class="step" data-anim style="--d:4"><div class="s">STEP 2</div><p>把它写成 Skill，先跑通一次，再逐步打磨标准。</p></div>
+      <div class="step" data-anim style="--d:5"><div class="s">STEP 3</div><p>沉淀进团队，让每个人都能调用同一套高标准产出。</p></div>
+    </div>
+    <p class="fade-note" data-anim style="--d:6">AI native 不是会用工具，而是把自己的方法论变成机器能执行的能力。</p>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  const deck=document.getElementById('deck');
+  const slides=[...deck.querySelectorAll('.slide')];
+  const total=slides.length;
+  const rail=document.getElementById('rail');
+  const progress=document.getElementById('progress');
+  const cnow=document.getElementById('cnow');
+  document.getElementById('ctot').textContent=String(total).padStart(2,'0');
+  let i=0, animating=false;
+
+  // build rail
+  slides.forEach((_,k)=>{const b=document.createElement('button');b.onclick=()=>go(k);rail.appendChild(b);});
+  const dots=[...rail.children];
+
+  function countUp(slide){
+    slide.querySelectorAll('[data-count]').forEach(el=>{
+      const target=+el.dataset.count; if(el._done)return; el._done=true;
+      const dur=1100, t0=performance.now();
+      const fmt=n=>n>=10000?Math.round(n).toLocaleString('en-US'):Math.round(n);
+      function tick(t){const p=Math.min(1,(t-t0)/dur);const e=1-Math.pow(1-p,3);
+        el.textContent=fmt(target*e);if(p<1)requestAnimationFrame(tick);}
+      requestAnimationFrame(tick);
+    });
+  }
+  function go(n){
+    n=Math.max(0,Math.min(total-1,n)); if(n===i||animating)return;
+    animating=true;
+    slides[i].classList.remove('is-active');slides[i].classList.add('is-prev');
+    const prev=i;i=n;
+    slides[i].classList.remove('is-prev');slides[i].classList.add('is-active');
+    setTimeout(()=>{slides[prev].classList.remove('is-prev');animating=false;},640);
+    update();
+  }
+  function update(){
+    progress.style.width=((i)/(total-1)*100)+'%';
+    cnow.textContent=String(i+1).padStart(2,'0');
+    dots.forEach((d,k)=>d.classList.toggle('on',k===i));
+    countUp(slides[i]);
+  }
+  function next(){go(i+1)} function prev(){go(i-1)}
+
+  document.addEventListener('keydown',e=>{
+    if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();next();}
+    else if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();prev();}
+    else if(e.key==='Home')go(0); else if(e.key==='End')go(total-1);
+  });
+  // click zones (ignore interactive els)
+  deck.addEventListener('click',e=>{
+    if(e.target.closest('button,a,iframe,.viewer,.tabs'))return;
+    if(e.clientX > innerWidth*0.62) next();
+    else if(e.clientX < innerWidth*0.32) prev();
+  });
+  // report tabs
+  const tabBtns=document.querySelectorAll('.tabs button');
+  const repframe=document.getElementById('repframe');
+  const repttl=document.getElementById('repttl');
+  tabBtns.forEach(b=>b.addEventListener('click',()=>{
+    tabBtns.forEach(x=>x.classList.remove('on'));b.classList.add('on');
+    repframe.src=b.dataset.rep; repttl.textContent=b.dataset.t+' 业绩分析报告（真实全文 · 可滚动）';
+  }));
+
+  update();
+})();
+</script>
+</body>
+</html>
